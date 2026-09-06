@@ -71,6 +71,7 @@ module = [
   "sklearn.*",
   "joblib.*",
   "scipy.*",
+  "torch.*",
   "transformers.*",
   "huggingface_hub.*",
   "tokenizers.*",

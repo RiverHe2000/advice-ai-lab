@@ -54,7 +54,7 @@ jobs:
       - name: Test (pytest + coverage)
         run: pytest --cov-report=xml
 
-      - name: Release gate (deterministic: corpus -> classifier -> rules extractor)
+      - name: "Release gate (deterministic: corpus -> classifier -> rules extractor)"
         # A small seeded corpus (JSON documents, no PDFs) is generated on the fly; the
         # classifier must reach macro-F1 >= 0.95 on its held-out split and the rules extractor
         # must reproduce >= 95 % of gold SoAs field-for-field. Non-zero exit fails the build.
