@@ -1,0 +1,105 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opsloop"
+version = "0.1.0"
+description = "The operations loop around an LLM application after it ships: tracing SDK, collector, SLO burn-rate alerts with a measured false-alarm rate, quality judge, feedback, curated evaluation sets, prompt registry, paired-statistics regression gate, prompt canary with automatic rollback, and trace replay."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Chuan He" }]
+dependencies = [
+  "pydantic>=2.8",
+  "pydantic-settings>=2.4",
+  "httpx>=0.27",
+  "fastapi>=0.115",
+  "pyyaml>=6.0",
+  "jinja2>=3.1",
+  "numpy>=1.26",
+  "scipy>=1.12",
+  "scikit-learn>=1.4",
+  "rapidfuzz>=3.6",
+  "prometheus-client>=0.20",
+]
+
+[project.optional-dependencies]
+# Run a Hugging Face chat model in-process (replay / judge / regression gate with a real model).
+hf = ["torch>=2.4", "transformers>=4.45", "accelerate>=1.0"]
+# Dense topic embeddings for the drift detector instead of the hashing embedder.
+embed = ["sentence-transformers>=3.0"]
+serve = ["uvicorn[standard]>=0.30"]
+dev = [
+  "pytest>=8.3",
+  "pytest-cov>=5.0",
+  "ruff==0.16.6",       # pinned: a lint gate must not drift with the tool
+  "mypy==2.3.1",
+  "types-PyYAML",
+  "httpx>=0.27",
+]
+
+[project.scripts]
+opsloop = "opsloop.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+opsloop = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "C4", "PT", "RUF", "PIE", "RET", "ARG", "ASYNC"]
+ignore = ["RUF012", "N812"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG001", "PT011", "PT018", "E501", "RUF001"]
+# Answer and question template tables: one natural-language sentence per line.
+"src/opsloop/demo/model.py" = ["E501"]
+"src/opsloop/demo/questions.py" = ["E501"]
+
+[tool.mypy]
+strict = true
+files = ["src", "tests"]
+warn_unreachable = true
+pretty = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+  "transformers.*",
+  "huggingface_hub.*",
+  "tokenizers.*",
+  "uvicorn.*",
+  "sklearn.*",
+  "scipy.*",
+  "sentence_transformers.*",
+  "rapidfuzz.*",
+  "prometheus_client.*",
+]
+follow_imports = "skip"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=opsloop --cov-report=term-missing"
+markers = [
+  "slow: long-running tests",
+  "gpu: requires a CUDA device",
+  "network: downloads models (skipped in CI)",
+]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]
+
+[tool.coverage.run]
+branch = true
+source = ["opsloop"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+exclude_lines = ["pragma: no cover", "if TYPE_CHECKING:", "raise NotImplementedError"]

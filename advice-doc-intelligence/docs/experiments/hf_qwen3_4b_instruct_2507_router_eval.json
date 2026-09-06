@@ -1,0 +1,26 @@
+{
+  "n_docs": 40,
+  "n_fields": 328,
+  "ece": 0.00205968454503446,
+  "aurc": {
+    "point": 0.04525530002174427,
+    "low": 0.009708582570424677,
+    "high": 0.09844908329027853,
+    "n": 40
+  },
+  "tau": 0.9952980296989262,
+  "review_rate": {
+    "point": 0.275,
+    "low": 0.125,
+    "high": 0.4,
+    "n": 40
+  },
+  "residual_error": {
+    "point": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 40
+  },
+  "base_doc_error": 0.275,
+  "out": "runs\\hf_qwen3_4b_instruct_2507_router"
+}

@@ -1,0 +1,905 @@
+{
+  "n_docs": 120,
+  "n_fields": 969,
+  "base_field_error": 0.042311661506707954,
+  "base_doc_error": 0.31666666666666665,
+  "calibration": {
+    "ece": 0.000472168648872547,
+    "n": 969,
+    "bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "count": 41,
+        "mean_confidence": 0.008993888361069997,
+        "accuracy": 0.0
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "count": 928,
+        "mean_confidence": 0.9999043297435845,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "curve": [
+    {
+      "tau": 1.0,
+      "coverage": 0.0,
+      "review_rate": 1.0,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.008333333333333333,
+      "review_rate": 0.9916666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.016666666666666666,
+      "review_rate": 0.9833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.025,
+      "review_rate": 0.975,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.03333333333333333,
+      "review_rate": 0.9666666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.041666666666666664,
+      "review_rate": 0.9583333333333334,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.05,
+      "review_rate": 0.95,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.058333333333333334,
+      "review_rate": 0.9416666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.06666666666666667,
+      "review_rate": 0.9333333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.075,
+      "review_rate": 0.925,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.08333333333333333,
+      "review_rate": 0.9166666666666666,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.09166666666666666,
+      "review_rate": 0.9083333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.1,
+      "review_rate": 0.9,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.10833333333333334,
+      "review_rate": 0.8916666666666666,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.11666666666666667,
+      "review_rate": 0.8833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.125,
+      "review_rate": 0.875,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.13333333333333333,
+      "review_rate": 0.8666666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.14166666666666666,
+      "review_rate": 0.8583333333333334,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.15,
+      "review_rate": 0.85,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.15833333333333333,
+      "review_rate": 0.8416666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.16666666666666666,
+      "review_rate": 0.8333333333333334,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.175,
+      "review_rate": 0.825,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.18333333333333332,
+      "review_rate": 0.8166666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.19166666666666668,
+      "review_rate": 0.8083333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.2,
+      "review_rate": 0.8,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.20833333333333334,
+      "review_rate": 0.7916666666666666,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.21666666666666667,
+      "review_rate": 0.7833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.225,
+      "review_rate": 0.775,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.23333333333333334,
+      "review_rate": 0.7666666666666666,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.24166666666666667,
+      "review_rate": 0.7583333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.25,
+      "review_rate": 0.75,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.25833333333333336,
+      "review_rate": 0.7416666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.26666666666666666,
+      "review_rate": 0.7333333333333334,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.275,
+      "review_rate": 0.725,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.2833333333333333,
+      "review_rate": 0.7166666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.2916666666666667,
+      "review_rate": 0.7083333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.3,
+      "review_rate": 0.7,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.30833333333333335,
+      "review_rate": 0.6916666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.31666666666666665,
+      "review_rate": 0.6833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.325,
+      "review_rate": 0.675,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.3333333333333333,
+      "review_rate": 0.6666666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.3416666666666667,
+      "review_rate": 0.6583333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.35,
+      "review_rate": 0.65,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.35833333333333334,
+      "review_rate": 0.6416666666666666,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.36666666666666664,
+      "review_rate": 0.6333333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.375,
+      "review_rate": 0.625,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.38333333333333336,
+      "review_rate": 0.6166666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.39166666666666666,
+      "review_rate": 0.6083333333333334,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.4,
+      "review_rate": 0.6,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.4083333333333333,
+      "review_rate": 0.5916666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.4166666666666667,
+      "review_rate": 0.5833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.425,
+      "review_rate": 0.575,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.43333333333333335,
+      "review_rate": 0.5666666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.44166666666666665,
+      "review_rate": 0.5583333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.45,
+      "review_rate": 0.55,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.4583333333333333,
+      "review_rate": 0.5416666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.4666666666666667,
+      "review_rate": 0.5333333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.475,
+      "review_rate": 0.525,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.48333333333333334,
+      "review_rate": 0.5166666666666666,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.49166666666666664,
+      "review_rate": 0.5083333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5,
+      "review_rate": 0.5,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5083333333333333,
+      "review_rate": 0.4916666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5166666666666667,
+      "review_rate": 0.4833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.525,
+      "review_rate": 0.475,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5333333333333333,
+      "review_rate": 0.4666666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5416666666666666,
+      "review_rate": 0.45833333333333337,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.55,
+      "review_rate": 0.44999999999999996,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5583333333333333,
+      "review_rate": 0.44166666666666665,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5666666666666667,
+      "review_rate": 0.43333333333333335,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.575,
+      "review_rate": 0.42500000000000004,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5833333333333334,
+      "review_rate": 0.41666666666666663,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.5916666666666667,
+      "review_rate": 0.4083333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.6,
+      "review_rate": 0.4,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.6083333333333333,
+      "review_rate": 0.3916666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9999422014561559,
+      "coverage": 0.6166666666666667,
+      "review_rate": 0.3833333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9999254908323991,
+      "coverage": 0.625,
+      "review_rate": 0.375,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9985483202494578,
+      "coverage": 0.6333333333333333,
+      "review_rate": 0.3666666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9985483202494578,
+      "coverage": 0.6416666666666667,
+      "review_rate": 0.3583333333333333,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9981612697056488,
+      "coverage": 0.65,
+      "review_rate": 0.35,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9979262874784268,
+      "coverage": 0.6583333333333333,
+      "review_rate": 0.3416666666666667,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9972119432295228,
+      "coverage": 0.6666666666666666,
+      "review_rate": 0.33333333333333337,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.9971913784172699,
+      "coverage": 0.675,
+      "review_rate": 0.32499999999999996,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.984327127466331,
+      "coverage": 0.6833333333333333,
+      "review_rate": 0.31666666666666665,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 0.08228362732589396,
+      "coverage": 0.6916666666666667,
+      "review_rate": 0.30833333333333335,
+      "residual_error": 0.012048192771084338
+    },
+    {
+      "tau": 0.07366424469222428,
+      "coverage": 0.7,
+      "review_rate": 0.30000000000000004,
+      "residual_error": 0.023809523809523808
+    },
+    {
+      "tau": 0.05086996753455584,
+      "coverage": 0.7083333333333334,
+      "review_rate": 0.29166666666666663,
+      "residual_error": 0.03529411764705882
+    },
+    {
+      "tau": 0.026549697158779494,
+      "coverage": 0.7166666666666667,
+      "review_rate": 0.2833333333333333,
+      "residual_error": 0.046511627906976744
+    },
+    {
+      "tau": 0.0202125159913022,
+      "coverage": 0.725,
+      "review_rate": 0.275,
+      "residual_error": 0.05747126436781609
+    },
+    {
+      "tau": 0.019028827887195243,
+      "coverage": 0.7333333333333333,
+      "review_rate": 0.2666666666666667,
+      "residual_error": 0.06818181818181818
+    },
+    {
+      "tau": 0.013763032657808916,
+      "coverage": 0.7416666666666667,
+      "review_rate": 0.2583333333333333,
+      "residual_error": 0.07865168539325842
+    },
+    {
+      "tau": 0.011856240116274824,
+      "coverage": 0.75,
+      "review_rate": 0.25,
+      "residual_error": 0.08888888888888889
+    },
+    {
+      "tau": 0.009038549096227986,
+      "coverage": 0.7583333333333333,
+      "review_rate": 0.2416666666666667,
+      "residual_error": 0.0989010989010989
+    },
+    {
+      "tau": 0.007043774160765411,
+      "coverage": 0.7666666666666667,
+      "review_rate": 0.23333333333333328,
+      "residual_error": 0.10869565217391304
+    },
+    {
+      "tau": 0.006070378425696371,
+      "coverage": 0.775,
+      "review_rate": 0.22499999999999998,
+      "residual_error": 0.11827956989247312
+    },
+    {
+      "tau": 0.004864177673335346,
+      "coverage": 0.7833333333333333,
+      "review_rate": 0.21666666666666667,
+      "residual_error": 0.1276595744680851
+    },
+    {
+      "tau": 0.004422025600572262,
+      "coverage": 0.7916666666666666,
+      "review_rate": 0.20833333333333337,
+      "residual_error": 0.1368421052631579
+    },
+    {
+      "tau": 0.004208615053046833,
+      "coverage": 0.8,
+      "review_rate": 0.19999999999999996,
+      "residual_error": 0.14583333333333334
+    },
+    {
+      "tau": 0.003466116364958992,
+      "coverage": 0.8083333333333333,
+      "review_rate": 0.19166666666666665,
+      "residual_error": 0.15463917525773196
+    },
+    {
+      "tau": 0.003455831889982567,
+      "coverage": 0.8166666666666667,
+      "review_rate": 0.18333333333333335,
+      "residual_error": 0.16326530612244897
+    },
+    {
+      "tau": 0.0014025564969236339,
+      "coverage": 0.825,
+      "review_rate": 0.17500000000000004,
+      "residual_error": 0.1717171717171717
+    },
+    {
+      "tau": 0.0013358331469177634,
+      "coverage": 0.8333333333333334,
+      "review_rate": 0.16666666666666663,
+      "residual_error": 0.18
+    },
+    {
+      "tau": 0.0010566304868849193,
+      "coverage": 0.8416666666666667,
+      "review_rate": 0.15833333333333333,
+      "residual_error": 0.18811881188118812
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.85,
+      "review_rate": 0.15000000000000002,
+      "residual_error": 0.19607843137254902
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.8583333333333333,
+      "review_rate": 0.14166666666666672,
+      "residual_error": 0.20388349514563106
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.8666666666666667,
+      "review_rate": 0.1333333333333333,
+      "residual_error": 0.21153846153846154
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.875,
+      "review_rate": 0.125,
+      "residual_error": 0.21904761904761905
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.8833333333333333,
+      "review_rate": 0.1166666666666667,
+      "residual_error": 0.22641509433962265
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.8916666666666667,
+      "review_rate": 0.10833333333333328,
+      "residual_error": 0.2336448598130841
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9,
+      "review_rate": 0.09999999999999998,
+      "residual_error": 0.24074074074074073
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9083333333333333,
+      "review_rate": 0.09166666666666667,
+      "residual_error": 0.24770642201834864
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9166666666666666,
+      "review_rate": 0.08333333333333337,
+      "residual_error": 0.2545454545454545
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.925,
+      "review_rate": 0.07499999999999996,
+      "residual_error": 0.26126126126126126
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9333333333333333,
+      "review_rate": 0.06666666666666665,
+      "residual_error": 0.26785714285714285
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9416666666666667,
+      "review_rate": 0.05833333333333335,
+      "residual_error": 0.2743362831858407
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.95,
+      "review_rate": 0.050000000000000044,
+      "residual_error": 0.2807017543859649
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9583333333333334,
+      "review_rate": 0.04166666666666663,
+      "residual_error": 0.28695652173913044
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9666666666666667,
+      "review_rate": 0.033333333333333326,
+      "residual_error": 0.29310344827586204
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.975,
+      "review_rate": 0.025000000000000022,
+      "residual_error": 0.29914529914529914
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9833333333333333,
+      "review_rate": 0.01666666666666672,
+      "residual_error": 0.3050847457627119
+    },
+    {
+      "tau": 0.0,
+      "coverage": 0.9916666666666667,
+      "review_rate": 0.008333333333333304,
+      "residual_error": 0.31092436974789917
+    },
+    {
+      "tau": 0.0,
+      "coverage": 1.0,
+      "review_rate": 0.0,
+      "residual_error": 0.31666666666666665
+    }
+  ],
+  "aurc": {
+    "point": 0.05778705824638598,
+    "low": 0.032890922583799824,
+    "high": 0.09516511972949158,
+    "n": 120
+  },
+  "target_residual": 0.01,
+  "chosen": {
+    "name": "router@tau",
+    "review_rate": {
+      "point": 0.31666666666666665,
+      "low": 0.24166666666666667,
+      "high": 0.4,
+      "n": 120
+    },
+    "residual_error": {
+      "point": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 120
+    },
+    "tau": 0.984327127466331
+  },
+  "naive": [
+    {
+      "name": "review_all",
+      "review_rate": {
+        "point": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 120
+      },
+      "residual_error": {
+        "point": 0.0,
+        "low": 0.0,
+        "high": 0.0,
+        "n": 120
+      },
+      "tau": null
+    },
+    {
+      "name": "review_none",
+      "review_rate": {
+        "point": 0.0,
+        "low": 0.0,
+        "high": 0.0,
+        "n": 120
+      },
+      "residual_error": {
+        "point": 0.31666666666666665,
+        "low": 0.23333333333333334,
+        "high": 0.4083333333333333,
+        "n": 120
+      },
+      "tau": null
+    },
+    {
+      "name": "review_if_validator_fails",
+      "review_rate": {
+        "point": 0.09166666666666666,
+        "low": 0.041666666666666664,
+        "high": 0.14166666666666666,
+        "n": 120
+      },
+      "residual_error": {
+        "point": 0.30275229357798167,
+        "low": 0.22318948412698417,
+        "high": 0.39289148351648345,
+        "n": 120
+      },
+      "tau": null
+    }
+  ],
+  "coefficients": {
+    "agree_rules": 2.2978466232097707,
+    "has_rules": 0.0,
+    "validator_error": 0.03892812691553437,
+    "validator_warning": 0.06770951167737521,
+    "fuzzy_score": 0.0,
+    "n_repairs": 0.09997999813868899,
+    "n_parse_failures": 0.02124588157048353,
+    "section_found": 0.0,
+    "len_z": -0.02080925747955626,
+    "amount_log": 0.18998950452900518,
+    "self_conf": 0.25942585455892464,
+    "has_self_conf": -0.07876440110078235,
+    "kind_risk_profile": -0.08138759363191128,
+    "kind_recommendation": 0.016171098122997978,
+    "kind_fee_initial": 0.11295363736201716,
+    "kind_fee_ongoing": 0.05665373822472356,
+    "kind_replacement": -0.10102199378479254
+  },
+  "notes": [
+    "MECHANISM CHECK: labels come from the fake backend at corruption 0.3; the real-model router is produced by the GPU stage."
+  ]
+}

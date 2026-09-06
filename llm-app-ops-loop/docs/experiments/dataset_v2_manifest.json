@@ -1,0 +1,142 @@
+{
+  "name": "adviser_assistant",
+  "version": 2,
+  "content_hash": "0bb1cb603c988889",
+  "n_cases": 205,
+  "created": "2026-09-06T12:46:40Z",
+  "parent_version": 1,
+  "parent_hash": "c216505b996a00fa",
+  "changelog": [
+    "v1 (2026-09-06T12:46:36Z): +159 cases from review, 16 near-duplicates rejected; uniform + stratified sample of the steady run",
+    "v2 (2026-09-06T12:46:40Z): +46 cases from review, 13 near-duplicates rejected; cases from the regressed-prompt incident review queue"
+  ],
+  "slices": {
+    "account_list": 6,
+    "admin_fee": 3,
+    "adviser_fee": 2,
+    "age_pension_estimate": 5,
+    "allocation": 36,
+    "allocation_json": 2,
+    "allocation_vs_profile": 7,
+    "balance_change": 6,
+    "balances": 42,
+    "bdbn_status": 2,
+    "bring_forward": 5,
+    "carry_forward": 3,
+    "cash_weight": 5,
+    "cgt_estimate": 2,
+    "concessional_room": 3,
+    "contribution_json": 3,
+    "contributions": 23,
+    "days_to_review": 7,
+    "fds_summary": 7,
+    "fee_consent": 4,
+    "fee_pct": 6,
+    "fees": 34,
+    "fees_json": 3,
+    "growth_defensive_split": 4,
+    "idps_balance": 5,
+    "income_protection": 1,
+    "insurance": 15,
+    "insurance_premium": 6,
+    "insurance_summary": 1,
+    "international_exposure": 5,
+    "investment_fee": 3,
+    "json": 8,
+    "largest_account": 4,
+    "largest_holding": 8,
+    "last_review": 3,
+    "life_cover": 6,
+    "min_drawdown": 5,
+    "next_review": 9,
+    "non_concessional_room": 4,
+    "out_of_scope": 34,
+    "pension": 10,
+    "pension_balance": 4,
+    "pension_payments": 5,
+    "preservation": 1,
+    "product_switch": 1,
+    "profile": 7,
+    "prompt:v1": 159,
+    "prompt:v2-regressed": 46,
+    "review_overdue": 2,
+    "reviews": 21,
+    "risk_profile": 6,
+    "smsf_rollover": 3,
+    "soa_draft": 4,
+    "super_balance": 5,
+    "top_holdings": 5,
+    "total_balance": 7,
+    "total_fees": 6,
+    "tpd_cover": 1,
+    "valuation_date": 5,
+    "ytd_contributions": 5
+  },
+  "duplicates_rejected": [
+    {
+      "id": "case-1e9dc727b561",
+      "duplicate_of": "case-027e18eae79b",
+      "similarity": 92.7
+    },
+    {
+      "id": "case-d9bfbe1aa522",
+      "duplicate_of": "case-0a0288b4fa59",
+      "similarity": 96.0
+    },
+    {
+      "id": "case-144a21e79d08",
+      "duplicate_of": "case-6138e6ed0204",
+      "similarity": 100.0
+    },
+    {
+      "id": "case-991f479b74a9",
+      "duplicate_of": "case-ddb1fc2fbf3a",
+      "similarity": 92.3
+    },
+    {
+      "id": "case-241c211c6a4f",
+      "duplicate_of": "case-ee5a983e0a74",
+      "similarity": 100.0
+    },
+    {
+      "id": "case-5941b400597b",
+      "duplicate_of": "case-bb0fd3dddd8a",
+      "similarity": 93.3
+    },
+    {
+      "id": "case-3f0bfbbbbe49",
+      "duplicate_of": "case-7a765851e4f7",
+      "similarity": 92.1
+    },
+    {
+      "id": "case-90ee8930d0eb",
+      "duplicate_of": "case-057601b2468a",
+      "similarity": 100.0
+    },
+    {
+      "id": "case-8dcc7527c60b",
+      "duplicate_of": "case-7a0fd67ae44e",
+      "similarity": 100.0
+    },
+    {
+      "id": "case-60a5f4b72f24",
+      "duplicate_of": "case-9f9c9c994366",
+      "similarity": 95.7
+    },
+    {
+      "id": "case-5963459a04cc",
+      "duplicate_of": "case-1c66919b7e39",
+      "similarity": 93.2
+    },
+    {
+      "id": "case-974a7bb038a3",
+      "duplicate_of": "case-c429ab88732b",
+      "similarity": 93.9
+    },
+    {
+      "id": "case-2ba96a4a7f18",
+      "duplicate_of": "case-ddb1fc2fbf3a",
+      "similarity": 92.2
+    }
+  ]
+}

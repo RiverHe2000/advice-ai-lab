@@ -1,0 +1,4859 @@
+{
+  "dataset": "adviser_assistant",
+  "dataset_version": 2,
+  "dataset_hash": "0bb1cb603c988889",
+  "candidate": "adviser_assistant@v2-regressed",
+  "candidate_hash": "1dd96c99f01e",
+  "baseline": "adviser_assistant@v1",
+  "baseline_hash": "238432dcc901",
+  "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+  "n_cases": 80,
+  "decision": "FAIL",
+  "reasons": [
+    "McNemar: 14 losses vs 3 wins on pass/fail (p=0.0127 < 0.05)",
+    "JSON validity 0.000 below floor 0.95"
+  ],
+  "paired": {
+    "mean_candidate": 0.9454,
+    "mean_baseline": 0.9731,
+    "delta": -0.0277,
+    "ci_low": -0.041,
+    "ci_high": -0.0152,
+    "p_improve": 0.0,
+    "wins": 4,
+    "losses": 48,
+    "ties": 28,
+    "margin": 0.05
+  },
+  "mcnemar": {
+    "pass_candidate": 61,
+    "pass_baseline": 72,
+    "wins": 3,
+    "losses": 14,
+    "p_value": 0.0127,
+    "alpha": 0.05
+  },
+  "slices": [
+    {
+      "tag": "allocation",
+      "n": 11,
+      "baseline_mean": 0.9724,
+      "candidate_mean": 0.9061,
+      "delta": -0.0663,
+      "ok": true
+    },
+    {
+      "tag": "balances",
+      "n": 14,
+      "baseline_mean": 0.9821,
+      "candidate_mean": 0.9315,
+      "delta": -0.0506,
+      "ok": true
+    },
+    {
+      "tag": "contributions",
+      "n": 11,
+      "baseline_mean": 0.9446,
+      "candidate_mean": 0.9351,
+      "delta": -0.0095,
+      "ok": true
+    },
+    {
+      "tag": "fees",
+      "n": 15,
+      "baseline_mean": 0.9958,
+      "candidate_mean": 0.9375,
+      "delta": -0.0583,
+      "ok": true
+    },
+    {
+      "tag": "insurance",
+      "n": 7,
+      "baseline_mean": 0.9881,
+      "candidate_mean": 0.9792,
+      "delta": -0.0089,
+      "ok": true
+    },
+    {
+      "tag": "next_review",
+      "n": 7,
+      "baseline_mean": 0.9494,
+      "candidate_mean": 0.9792,
+      "delta": 0.0298,
+      "ok": true
+    },
+    {
+      "tag": "pension",
+      "n": 5,
+      "baseline_mean": 0.9917,
+      "candidate_mean": 0.9792,
+      "delta": -0.0125,
+      "ok": true
+    },
+    {
+      "tag": "prompt:v1",
+      "n": 80,
+      "baseline_mean": 0.9731,
+      "candidate_mean": 0.9454,
+      "delta": -0.0277,
+      "ok": true
+    },
+    {
+      "tag": "reviews",
+      "n": 12,
+      "baseline_mean": 0.9635,
+      "candidate_mean": 0.9792,
+      "delta": 0.0156,
+      "ok": true
+    }
+  ],
+  "json_validity": {
+    "candidate": 0.0,
+    "baseline": 0.0,
+    "n": 2,
+    "floor": 0.95
+  },
+  "cost": {
+    "candidate_mean_usd": null,
+    "baseline_mean_usd": null,
+    "ratio": null,
+    "budget_ratio": 1.5,
+    "candidate_completion_tokens": 34.875,
+    "baseline_completion_tokens": 80.225
+  },
+  "latency": {
+    "candidate_p95_ms": 2847.3,
+    "baseline_p95_ms": 8141.8,
+    "budget_ms": null,
+    "budget_ratio": null
+  },
+  "judge": {
+    "used": true,
+    "weight": 0.5,
+    "candidate_mean": 4.9542,
+    "baseline_mean": 4.95,
+    "missing_candidate": 0,
+    "missing_baseline": 0,
+    "judged": 80
+  },
+  "config": {
+    "margin": 0.05,
+    "alpha": 0.05,
+    "slice_margin": 0.15,
+    "slice_min_cases": 5,
+    "json_validity_floor": 0.95,
+    "cost_budget_ratio": 1.5,
+    "latency_budget_ratio": null,
+    "latency_p95_budget_ms": null,
+    "min_cases": 20,
+    "n_boot": 2000,
+    "seed": 0,
+    "use_judge": true,
+    "judge_weight": 0.5
+  },
+  "candidate_runs": [
+    {
+      "case_id": "case-4973631b2f0d",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Aroha Abbott's next review is due on 2027-03-23, 203 days from now. Last review was on 2026-03-23. Review frequency: every 12 months.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2465.0870000041323,
+      "prompt_tokens": 337,
+      "completion_tokens": 56,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-bc78aaaabb02",
+      "tags": [
+        "balances",
+        "valuation_date",
+        "prompt:v1"
+      ],
+      "answer": "Uma Delacroix's holdings were last valued on 2026-08-27.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1420.7645999995293,
+      "prompt_tokens": 1208,
+      "completion_tokens": 24,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f420eef1a43e",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Quinn Mbeki has a non-concessional contribution room of $120,000 for the 2026-27 financial year, with $0 used so far.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1685.3814999994938,
+      "prompt_tokens": 497,
+      "completion_tokens": 42,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-c3a7845e416c",
+      "tags": [
+        "contributions",
+        "carry_forward",
+        "prompt:v1"
+      ],
+      "answer": "No, Jorge Xu does not have unused carry-forward concessional cap available. Carry-forward unused is $0.00.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1116.650199997821,
+      "prompt_tokens": 488,
+      "completion_tokens": 26,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-9441cadd916a",
+      "tags": [
+        "pension",
+        "min_drawdown",
+        "prompt:v1"
+      ],
+      "answer": "The minimum annual pension drawdown for Benjamin Fairweather is $27,116.49 (5.0% of the pension balance).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1808.0266999968444,
+      "prompt_tokens": 1259,
+      "completion_tokens": 32,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-6910873e6a59",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "{ \"days_until_next_review\": 169 }",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 558.156200000667,
+      "prompt_tokens": 341,
+      "completion_tokens": 13,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-057601b2468a",
+      "tags": [
+        "balances",
+        "idps_balance",
+        "prompt:v1"
+      ],
+      "answer": "Liam Quilty holds $125,738.59 in the IDPS investment account (account ID: NSID01081).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1937.8110999969067,
+      "prompt_tokens": 1252,
+      "completion_tokens": 35,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d3de11fcef68",
+      "tags": [
+        "fees",
+        "fee_consent",
+        "prompt:v1"
+      ],
+      "answer": "Finn Mbeki's ongoing fee consent expires on 2027-01-19.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 979.9681000004057,
+      "prompt_tokens": 510,
+      "completion_tokens": 23,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-76078631dab8",
+      "tags": [
+        "balances",
+        "largest_account",
+        "prompt:v1"
+      ],
+      "answer": "Samuel Xu's largest account is NSSU01770 with a balance of $615,181.",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$615,181"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1673.390500000096,
+      "prompt_tokens": 1299,
+      "completion_tokens": 28,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-c7fea8397768",
+      "tags": [
+        "balances",
+        "account_list",
+        "prompt:v1"
+      ],
+      "answer": "Jack Cavanagh holds two accounts:  \n1. Superannuation (ID: NSSU00120) \u2013 $724,219  \n2. IDPS (ID: NSID00121) \u2013 $121,224",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$724,219",
+        "$121,224"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2993.8084999957937,
+      "prompt_tokens": 1203,
+      "completion_tokens": 60,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-9dc3439c2928",
+      "tags": [
+        "allocation",
+        "top_holdings",
+        "prompt:v1"
+      ],
+      "answer": "1. Northshore Global Bond Index (hedged) \u2013 $173,213  \n2. Ridgeline Diversified Alternatives \u2013 $94,000  \n3. Northshore Cash Account \u2013 $58,454",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$173,213",
+        "$94,000",
+        "3",
+        "$58,454"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2640.2736000018194,
+      "prompt_tokens": 1125,
+      "completion_tokens": 55,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-30e9d40397b6",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Finn Hartigan's next review is due on 2027-03-01, 181 days from now. Last review was on 2026-03-01. Review frequency: every 12 months.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2224.340500004473,
+      "prompt_tokens": 337,
+      "completion_tokens": 56,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b4473e25f9d7",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "283 days until Benjamin Mbeki's next annual review on 2027-06-11.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1048.089700001583,
+      "prompt_tokens": 338,
+      "completion_tokens": 26,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b9f33863d251",
+      "tags": [
+        "balances",
+        "valuation_date",
+        "prompt:v1"
+      ],
+      "answer": "Jack Abbott's holdings were last valued on 2026-08-16.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1140.5413999964367,
+      "prompt_tokens": 969,
+      "completion_tokens": 21,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-3c7d183366f1",
+      "tags": [
+        "balances",
+        "valuation_date",
+        "prompt:v1"
+      ],
+      "answer": "Quinn Rasmussen's holdings were last valued on 2026-08-11.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1568.9082000026247,
+      "prompt_tokens": 1406,
+      "completion_tokens": 24,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-244af94259a7",
+      "tags": [
+        "out_of_scope",
+        "age_pension_estimate",
+        "prompt:v1",
+        "out_of_scope"
+      ],
+      "answer": "Cannot answer. Tool results show no data on Centrelink Age Pension entitlements for Ruby Quilty.",
+      "quality": 0.7222222222222222,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "tone_ok": false,
+        "must_contain": false
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 850.8078000013484,
+      "prompt_tokens": 241,
+      "completion_tokens": 21,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-883f383c60ec",
+      "tags": [
+        "fees",
+        "total_fees",
+        "prompt:v1"
+      ],
+      "answer": "Mei Abbott's total annual fees are $3,861.11. This includes $750.00 in admin fees, $2,111.11 in adviser fees, and $1,000.00 in investment fees.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2373.186800003168,
+      "prompt_tokens": 506,
+      "completion_tokens": 59,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-07cb60a11892",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Olivia Lindqvist's next review is due on 2027-07-28, in 12 months from her last review on 2026-07-28.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1809.0948999961256,
+      "prompt_tokens": 340,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f44d21e0e640",
+      "tags": [
+        "allocation",
+        "growth_defensive_split",
+        "prompt:v1"
+      ],
+      "answer": "Liam Quilty's defensive split is 72.8%. Growth split is 27.2%. Both within target range (20.0%\u201335.0%). Valuation is current (as of 2026-08-07).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2905.220900000131,
+      "prompt_tokens": 1244,
+      "completion_tokens": 59,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-9c35a99c4c1f",
+      "tags": [
+        "balances",
+        "pension_balance",
+        "prompt:v1"
+      ],
+      "answer": "{\"balance\": \"322,318.52\"}",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1066.1914000011166,
+      "prompt_tokens": 1184,
+      "completion_tokens": 16,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d52eb1f99d8b",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Cannot answer. Tool results are empty. Only platform holdings, fees, contributions, insurance, and reviews can be assisted with.",
+      "quality": 0.9285714285714286,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "tone_ok": false
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1033.473999996204,
+      "prompt_tokens": 251,
+      "completion_tokens": 26,
+      "judge_mean": 1.6666666666666667,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-6138e6ed0204",
+      "tags": [
+        "pension",
+        "pension_payments",
+        "prompt:v1"
+      ],
+      "answer": "Jack Rasmussen receives a monthly pension payment of $45,534.16 from his Account-Based Pension.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1655.5989000044065,
+      "prompt_tokens": 1328,
+      "completion_tokens": 27,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-dd2743037503",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "{\"next_review\": \"2027-02-10\"}",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 694.694800004072,
+      "prompt_tokens": 341,
+      "completion_tokens": 17,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-cee4c21a5bda",
+      "tags": [
+        "insurance",
+        "tpd_cover",
+        "prompt:v1"
+      ],
+      "answer": "Zachary Yilmaz has TPD cover of $250,000 with a 60-day waiting period and an annual premium of $1,197.31, funded from cash. Benefit period is until age 65.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2278.958499999135,
+      "prompt_tokens": 362,
+      "completion_tokens": 56,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-08ec5203d991",
+      "tags": [
+        "fees",
+        "investment_fee",
+        "prompt:v1"
+      ],
+      "answer": "Willow Abbott's total investment management fees are $2,287.91 annually, or 0.31% of her total balance.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1419.4277999995393,
+      "prompt_tokens": 612,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-58949aca99a1",
+      "tags": [
+        "pension",
+        "pension_payments",
+        "prompt:v1"
+      ],
+      "answer": "Bao Abbott receives a monthly pension payment of $16,430.45 from their Northshore Account-Based Pension.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1453.9994000006118,
+      "prompt_tokens": 1042,
+      "completion_tokens": 28,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-329712699cc8",
+      "tags": [
+        "fees",
+        "investment_fee",
+        "prompt:v1"
+      ],
+      "answer": "Noah Nakamura's total annual investment management fees are $5,510.87 (1.5% of total balance).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1276.3106999991578,
+      "prompt_tokens": 613,
+      "completion_tokens": 30,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-28abf9a4b6fe",
+      "tags": [
+        "fees",
+        "fee_consent",
+        "prompt:v1"
+      ],
+      "answer": "Liam Quilty's ongoing fee consent expires on 2027-04-01.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1045.7147000051918,
+      "prompt_tokens": 615,
+      "completion_tokens": 23,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-84376c3399cd",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Ruby Quilty's total fees are 1.71% of her balance. Note: Valuation is stale.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1083.1340000004275,
+      "prompt_tokens": 511,
+      "completion_tokens": 25,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f98d0f714da0",
+      "tags": [
+        "pension",
+        "min_drawdown",
+        "prompt:v1"
+      ],
+      "answer": "The minimum annual pension drawdown for Cormac Lindqvist is $41,275.49 (5.0% of the pension balance).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1870.2046000034898,
+      "prompt_tokens": 1245,
+      "completion_tokens": 34,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-16b4efd8df2d",
+      "tags": [
+        "balances",
+        "balance_change",
+        "prompt:v1"
+      ],
+      "answer": "Jorge Underwood's total balance decreased by 6.3% over the last 12 months, from $635,519 to $595,519 (as of 2026-08-15).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "6.3%",
+        "$635,519",
+        "$595,519"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2846.7136999970535,
+      "prompt_tokens": 1261,
+      "completion_tokens": 56,
+      "judge_mean": 4.666666666666667,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-932b26979307",
+      "tags": [
+        "allocation",
+        "cash_weight",
+        "prompt:v1"
+      ],
+      "answer": "Amelia Fitzgerald has $0 in cash.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 659.6335000067484,
+      "prompt_tokens": 921,
+      "completion_tokens": 10,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-25bf291d7892",
+      "tags": [
+        "profile",
+        "risk_profile",
+        "prompt:v1"
+      ],
+      "answer": "Zachary Zielinski's recorded risk profile is Growth.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 793.6812000043574,
+      "prompt_tokens": 969,
+      "completion_tokens": 13,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-16a30e42b369",
+      "tags": [
+        "contributions",
+        "bring_forward",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Ruby Fitzgerald is eligible to trigger the bring-forward rule as she is under preservation age (58) and has bring-forward eligibility confirmed in the data.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1390.858799997659,
+      "prompt_tokens": 483,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-ecd27d65eb88",
+      "tags": [
+        "fees",
+        "total_fees",
+        "prompt:v1"
+      ],
+      "answer": "Aroha Yilmaz's total annual fees are $5,238.09 (rounded to $5,240). Fee consent expires on 2027-01-01. Data is current and not stale.",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$5,240"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2190.3877000004286,
+      "prompt_tokens": 519,
+      "completion_tokens": 54,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f2663c6d0b22",
+      "tags": [
+        "allocation",
+        "largest_holding",
+        "prompt:v1"
+      ],
+      "answer": "The largest holding is the \"Northshore Cash Account\" in the NSSU00540 superannuation account, valued at $315,852 (35.7% weight).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$315,852"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2207.2953000024427,
+      "prompt_tokens": 1147,
+      "completion_tokens": 44,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-48c82628e09e",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Ruby Delacroix's next review is due on 2027-06-19, in 291 days. Review frequency is every 12 months.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1538.1484999961685,
+      "prompt_tokens": 341,
+      "completion_tokens": 39,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-754de4e998fc",
+      "tags": [
+        "reviews",
+        "last_review",
+        "prompt:v1"
+      ],
+      "answer": "The last review for Fatima Nakamura was completed on 2025-12-07.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 971.2209999997867,
+      "prompt_tokens": 341,
+      "completion_tokens": 24,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b34fcf8854e0",
+      "tags": [
+        "profile",
+        "preservation",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Bao Nakamura has reached preservation age. Preservation age is 60, and the record shows \"reached_preservation_age\": true.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1297.4205999998958,
+      "prompt_tokens": 484,
+      "completion_tokens": 32,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-e2258d0796d9",
+      "tags": [
+        "contributions",
+        "carry_forward",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Bao Okonkwo has unused carry-forward concessional cap of $928.82 available.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1116.9481999968411,
+      "prompt_tokens": 504,
+      "completion_tokens": 26,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7a765851e4f7",
+      "tags": [
+        "pension",
+        "pension_payments",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Fairweather receives a monthly pension payment of $62,681.37 from his Northshore Account-Based Pension.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1395.0026000020443,
+      "prompt_tokens": 989,
+      "completion_tokens": 28,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1888410a070d",
+      "tags": [
+        "profile",
+        "risk_profile",
+        "prompt:v1"
+      ],
+      "answer": "Bao Abbott's recorded risk profile is Moderately Conservative.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 856.9827000028454,
+      "prompt_tokens": 1040,
+      "completion_tokens": 13,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b6c05b7462b9",
+      "tags": [
+        "insurance",
+        "life_cover",
+        "prompt:v1"
+      ],
+      "answer": "Giulia Nakamura holds $500,000 in life cover inside super. Premiums are funded from super, with a 90-day waiting period and a TPD cover of $750,000.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1959.185299994715,
+      "prompt_tokens": 356,
+      "completion_tokens": 50,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-beadbfd5d4d0",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "71 days until Samuel Delacroix's next annual review on 2026-11-11.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1063.694199998281,
+      "prompt_tokens": 341,
+      "completion_tokens": 26,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-c8330509a82e",
+      "tags": [
+        "contributions",
+        "concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Finn Underwood has $21,885.44 in concessional contribution room for the 2026-27 financial year.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1387.2325999982422,
+      "prompt_tokens": 488,
+      "completion_tokens": 34,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d2a178af4804",
+      "tags": [
+        "balances",
+        "idps_balance",
+        "prompt:v1"
+      ],
+      "answer": "Uma Eriksen holds $402,607 in the IDPS investment account (account ID: NSID00591).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$402,607"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1811.4666999972542,
+      "prompt_tokens": 1237,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-df5341e7a431",
+      "tags": [
+        "contributions",
+        "concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Xavier Barlow has $7,261.07 of concessional contribution room for the 2026-27 financial year.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1362.1121999967727,
+      "prompt_tokens": 494,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-efa7e1b47dfc",
+      "tags": [
+        "contributions",
+        "bring_forward",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Benjamin Quilty is eligible to trigger the bring-forward rule. He is under preservation age (52), has unused concessional room, and meets the age requirement. Bring-forward cap is $360,000.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2011.476899999252,
+      "prompt_tokens": 496,
+      "completion_tokens": 49,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7bc5caca3f93",
+      "tags": [
+        "balances",
+        "total_balance",
+        "prompt:v1"
+      ],
+      "answer": "Liam Delacroix's total balance is $926,716.37 (as of 2026-08-07).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1699.176299996907,
+      "prompt_tokens": 993,
+      "completion_tokens": 36,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-2866ed4c42d8",
+      "tags": [
+        "insurance",
+        "income_protection",
+        "prompt:v1"
+      ],
+      "answer": "{\"income_protection_monthly\": 12000}",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 641.612500003248,
+      "prompt_tokens": 359,
+      "completion_tokens": 15,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1bd3ad13279a",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "225 days until Uma Papadopoulos's next annual review on 2027-04-14. Last review was on 2026-04-14. Review frequency: 12 months.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1966.0853999957908,
+      "prompt_tokens": 345,
+      "completion_tokens": 51,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d3647d3553ce",
+      "tags": [
+        "profile",
+        "risk_profile",
+        "prompt:v1"
+      ],
+      "answer": "Ruby Delacroix's recorded risk profile is Balanced.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 830.3346000029705,
+      "prompt_tokens": 1063,
+      "completion_tokens": 12,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-6917d0cf4d4b",
+      "tags": [
+        "balances",
+        "super_balance",
+        "prompt:v1"
+      ],
+      "answer": "Esperanza Marchetti's super account balance is $600,177.27 as of 2026-06-16. Valuation is stale (77 days old).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2095.2171000026283,
+      "prompt_tokens": 978,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-90449ead4355",
+      "tags": [
+        "insurance",
+        "insurance_premium",
+        "prompt:v1"
+      ],
+      "answer": "{\"annual_premium\": 1218.47}",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 629.0499000024283,
+      "prompt_tokens": 363,
+      "completion_tokens": 15,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-540bc5132384",
+      "tags": [
+        "allocation",
+        "allocation_json",
+        "prompt:v1",
+        "json"
+      ],
+      "answer": "```json\n{\n  \"asset_allocation\": {\n    \"International equities\": 26.77,\n    \"Alternatives\": 31.23,\n    \"International fixed interest\": 19.62,\n    \"Cash\": 22.38\n  }\n}\n```",
+      "quality": 0.8518518518518519,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "json_valid": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": false,
+      "cost_usd": null,
+      "latency_ms": 2858.754900000349,
+      "prompt_tokens": 999,
+      "completion_tokens": 64,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8c131e294a26",
+      "tags": [
+        "contributions",
+        "contribution_json",
+        "prompt:v1",
+        "json"
+      ],
+      "answer": "```json\n{\"concessional_room\": 21277.19, \"non_concessional_room\": 95000.0}\n```",
+      "quality": 0.8518518518518519,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "json_valid": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": false,
+      "cost_usd": null,
+      "latency_ms": 1545.3231999999844,
+      "prompt_tokens": 487,
+      "completion_tokens": 37,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-68f23c46561a",
+      "tags": [
+        "insurance",
+        "life_cover",
+        "prompt:v1"
+      ],
+      "answer": "Harrison Delacroix holds $750,000 in life cover inside super, with a benefit period to age 65 and premiums funded from super.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1429.6467000021948,
+      "prompt_tokens": 364,
+      "completion_tokens": 36,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-ab9860955a2f",
+      "tags": [
+        "insurance",
+        "insurance_summary",
+        "prompt:v1"
+      ],
+      "answer": "Benjamin Fitzgerald has no insurance cover according to the record.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 548.6853999973391,
+      "prompt_tokens": 265,
+      "completion_tokens": 13,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f8f1ac12502f",
+      "tags": [
+        "fees",
+        "total_fees",
+        "prompt:v1"
+      ],
+      "answer": "Eleanor Nakamura's total annual fees are $9,021. This includes $5,206 in adviser fees, $1,426 in admin fees, and $2,389 in investment fees.",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$9,021",
+        "$5,206",
+        "$1,426",
+        "$2,389"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2032.917800002906,
+      "prompt_tokens": 619,
+      "completion_tokens": 50,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f4e0c6a20cef",
+      "tags": [
+        "allocation",
+        "cash_weight",
+        "prompt:v1"
+      ],
+      "answer": "Zachary Zielinski is holding $73,691 in cash as of 2026-08-29.",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$73,691"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1506.6152999934275,
+      "prompt_tokens": 968,
+      "completion_tokens": 31,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1b150c203621",
+      "tags": [
+        "fees",
+        "fee_consent",
+        "prompt:v1"
+      ],
+      "answer": "Uma Ostrowski's ongoing fee consent expires on 2027-01-10.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1075.3632999985712,
+      "prompt_tokens": 616,
+      "completion_tokens": 24,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-547f19d0aa66",
+      "tags": [
+        "balances",
+        "balance_change",
+        "prompt:v1"
+      ],
+      "answer": "Patrick's total balance increased by 4.76% over the last 12 months, staying within his target growth range of 50%\u201370%. Valuation is current (as of 2026-08-18).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2500.769300000684,
+      "prompt_tokens": 994,
+      "completion_tokens": 55,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d8243efc8622",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Kiara Zielinski's total fees as a percentage of balance are 1.24%.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 878.5865000027115,
+      "prompt_tokens": 622,
+      "completion_tokens": 20,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-823a473f19b7",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Yasmin Marchetti has $95,000 in non-concessional contribution room for 2026-27.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1317.713599994022,
+      "prompt_tokens": 501,
+      "completion_tokens": 31,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-bb0fd3dddd8a",
+      "tags": [
+        "fees",
+        "fds_summary",
+        "prompt:v1"
+      ],
+      "answer": "Admin fee: 0.15% (AUD1,603), Adviser fee: 1.07% (AUD11,002), Investment fee: 0.45% (AUD4,937). Total annual fee: AUD17,542 (1.71% of balance). Valuation is current.",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "603",
+        "002",
+        "937",
+        "542"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3293.9794000049005,
+      "prompt_tokens": 625,
+      "completion_tokens": 79,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f77cb3161819",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Abbott has $120,000 in non-concessional contribution room for 2026-27. No unused carry-forward balance. Valuation is current.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1659.8958999966271,
+      "prompt_tokens": 486,
+      "completion_tokens": 40,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1b48eb0482db",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Uma Eriksen's total fees as a percentage of balance are 1.84%.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 973.026600004232,
+      "prompt_tokens": 623,
+      "completion_tokens": 21,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7179da56192a",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Grace Okonkwo's total fees are 1.71% of her balance.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 888.5637000057613,
+      "prompt_tokens": 512,
+      "completion_tokens": 20,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-963129f0de9d",
+      "tags": [
+        "insurance",
+        "life_cover",
+        "prompt:v1"
+      ],
+      "answer": "{\"life_cover\": \"1,000,000 AUD\"}",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 738.3937000049627,
+      "prompt_tokens": 362,
+      "completion_tokens": 17,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8fa5bac8a8f5",
+      "tags": [
+        "allocation",
+        "international_exposure",
+        "prompt:v1"
+      ],
+      "answer": "Uma Ostrowski's international equities exposure is 5.2% (AUD 32,324).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "5.2%",
+        "32,324"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1615.9109000000171,
+      "prompt_tokens": 1298,
+      "completion_tokens": 27,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8a23036d7145",
+      "tags": [
+        "allocation",
+        "largest_holding",
+        "prompt:v1"
+      ],
+      "answer": "The largest holding is the \"Northshore Cash Account\" with a value of $150,737 (39.73% weight).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$150,737"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1616.1484000040218,
+      "prompt_tokens": 1024,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-274850d5f923",
+      "tags": [
+        "balances",
+        "total_balance",
+        "prompt:v1"
+      ],
+      "answer": "Uma Eriksen's total balance is $417,515 (as of 2026-08-21).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$417,515"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1793.3151000033831,
+      "prompt_tokens": 1195,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-19f542e9c657",
+      "tags": [
+        "fees",
+        "fds_summary",
+        "prompt:v1"
+      ],
+      "answer": "{\"admin_fee\": \"687\", \"adviser_fee\": \"2,313\", \"investment_fee\": \"1,259\", \"total_fee\": \"4,259\", \"fee_pct_of_balance\": \"1.86%\"}",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "687",
+        "2,313",
+        "1,259",
+        "4,259"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2374.317100002372,
+      "prompt_tokens": 513,
+      "completion_tokens": 58,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-0f6d32fec476",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Dilnoza Mbeki's next review is due on 2027-02-06, 158 days from now. Review frequency is every 12 months.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1672.8032999963034,
+      "prompt_tokens": 341,
+      "completion_tokens": 42,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-16db8fc1adb0",
+      "tags": [
+        "fees",
+        "fds_summary",
+        "prompt:v1"
+      ],
+      "answer": "Benjamin Ostrowski's total annual fees are $12,789 (1.53% of balance). Fees include $1,733 admin, $5,354 adviser, and $5,701 investment. Data is stale.",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$12,789",
+        "$1,733",
+        "$5,354",
+        "$5,701"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2344.639700000698,
+      "prompt_tokens": 627,
+      "completion_tokens": 58,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d802a3cab5cb",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Eleanor Fitzgerald's next review is due on 2027-03-09, 189 days from now.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1224.2475999955786,
+      "prompt_tokens": 332,
+      "completion_tokens": 30,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7e1a662d9e7d",
+      "tags": [
+        "allocation",
+        "largest_holding",
+        "prompt:v1"
+      ],
+      "answer": "The largest holding is \"Northshore Global Shares Index (hedged)\" in International equities, valued at $482,328 (53.13% weight).",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$482,328"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1823.5368999958155,
+      "prompt_tokens": 997,
+      "completion_tokens": 39,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-e8e476be8622",
+      "tags": [
+        "balances",
+        "super_balance",
+        "prompt:v1"
+      ],
+      "answer": "Amelia Yilmaz's super account balance is $766,436.31 as of 2026-08-27.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1722.221999996691,
+      "prompt_tokens": 966,
+      "completion_tokens": 36,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8e81044d4c1c",
+      "tags": [
+        "allocation",
+        "allocation_vs_profile",
+        "prompt:v1"
+      ],
+      "answer": "Eleanor's growth allocation is below target (58% vs. 70\u201385%). Excess defensive assets (42%) and low international exposure (4.24%) indicate inconsistency with her Growth risk profile.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2377.082099999825,
+      "prompt_tokens": 1159,
+      "completion_tokens": 48,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-a274e59be366",
+      "tags": [
+        "allocation",
+        "international_exposure",
+        "prompt:v1"
+      ],
+      "answer": "Mei Quilty's international equities exposure is 16.74% (AUD $99,929.79) as of 2026-07-27. Valuation is stale (36 days old).",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2641.753800002334,
+      "prompt_tokens": 1127,
+      "completion_tokens": 55,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    }
+  ],
+  "baseline_runs": [
+    {
+      "case_id": "case-4973631b2f0d",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Aroha Abbott's next review is due on 2027-03-23.\n\nOffer to help further: Let me know if you'd like to check her current platform holdings, contributions, or insurance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1922.5241000021924,
+      "prompt_tokens": 331,
+      "completion_tokens": 48,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-bc78aaaabb02",
+      "tags": [
+        "balances",
+        "valuation_date",
+        "prompt:v1"
+      ],
+      "answer": "Uma Delacroix's holdings were last valued on 2026-08-27.\n\nOffer to help further: Let me know if you'd like to review her contribution history, fee structure, or insurance coverage.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2468.6625999966054,
+      "prompt_tokens": 1202,
+      "completion_tokens": 49,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f420eef1a43e",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Quinn Mbeki can make non-concessional contributions of $120,000 this year. This is because their non-concessional contribution room for the 2026-27 financial year is $120,000, and their year-to-date contributions are $0.00, meaning the full room is available.\n\n{\n  \"non_concessional_room\": 120000.0,\n  \"financial_year\": \"2026-27\",\n  \"non_concessional_ytd\": 0.0\n}\n\nLet me know if you'd like to explore contributions, fees, or platform holdings for Quinn Mbeki.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 5821.219599994947,
+      "prompt_tokens": 491,
+      "completion_tokens": 145,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-c3a7845e416c",
+      "tags": [
+        "contributions",
+        "carry_forward",
+        "prompt:v1"
+      ],
+      "answer": "No, Jorge Xu does not have unused carry-forward concessional cap available. The carry-forward unused amount is $0.00.\n\nOffer to help further: Let me know if you'd like to review his contribution room, non-concessional cap, or super balance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2380.418100001407,
+      "prompt_tokens": 482,
+      "completion_tokens": 57,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-9441cadd916a",
+      "tags": [
+        "pension",
+        "min_drawdown",
+        "prompt:v1"
+      ],
+      "answer": "The minimum annual pension drawdown for Benjamin Fairweather is $27,116.49, which corresponds to a minimum drawdown percentage of 5.0% of the pension balance.\n\nThis information is based on the pension account details in the tool results as of 2026-07-04.\n\nWould you like to explore his current payment frequency, balance, or other account details?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4072.2880000030273,
+      "prompt_tokens": 1253,
+      "completion_tokens": 86,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-6910873e6a59",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "Isla Vasquez's next annual review is in 169 days, on 2027-02-17.\n\nWould you like help with anything else regarding her platform holdings, fees, contributions, insurance, or reviews?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2104.8241000025882,
+      "prompt_tokens": 335,
+      "completion_tokens": 51,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-057601b2468a",
+      "tags": [
+        "balances",
+        "idps_balance",
+        "prompt:v1"
+      ],
+      "answer": "Liam Quilty holds $125,738.59 in the IDPS investment account (account ID: NSID01081).\n\nOffer to help further: Let me know if you'd like details on the account's holdings, performance, or how it compares to the client's risk profile or target range.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3394.495000000461,
+      "prompt_tokens": 1246,
+      "completion_tokens": 70,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d3de11fcef68",
+      "tags": [
+        "fees",
+        "fee_consent",
+        "prompt:v1"
+      ],
+      "answer": "Finn Mbeki's ongoing fee consent expires on 2027-01-19.\n\nI can help with further details about the client's platform holdings, fees, contributions, insurance, or reviews. Let me know how I can assist!",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2126.1768999975175,
+      "prompt_tokens": 504,
+      "completion_tokens": 53,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-76078631dab8",
+      "tags": [
+        "balances",
+        "largest_account",
+        "prompt:v1"
+      ],
+      "answer": "The account with the largest balance is **NSSU01770**, with a balance of **$615,180.78**. This is a superannuation account of type \"super\" under the product \"Northshore Super Essentials\".\n\nOffer to help further: Let me know if you'd like details on the account's holdings, performance, or how it aligns with Samuel Xu's risk profile.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4307.141400000546,
+      "prompt_tokens": 1293,
+      "completion_tokens": 89,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-c7fea8397768",
+      "tags": [
+        "balances",
+        "account_list",
+        "prompt:v1"
+      ],
+      "answer": "Jack Cavanagh holds two accounts on the platform:\n\n1. **Superannuation Account**  \n   - Account ID: NSSU00120  \n   - Balance: $724,219.13  \n   - Product: Northshore Super Wrap  \n   - Type: Super  \n\n2. **IDPS Account**  \n   - Account ID: NSID00121  \n   - Balance: $121,224.39  \n   - Product: Northshore Investment Wrap (IDPS)  \n   - Type: IDPS  \n\nBoth accounts are active, with the superannuation account being the largest in terms of balance.\n\nLet me know if you'd like details on holdings, contributions, or performance trends.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 7154.853099993488,
+      "prompt_tokens": 1197,
+      "completion_tokens": 158,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-9dc3439c2928",
+      "tags": [
+        "allocation",
+        "top_holdings",
+        "prompt:v1"
+      ],
+      "answer": "Olivia Delacroix's top three holdings by value are:\n\n1. **Northshore Global Bond Index (hedged)** \u2013 Account: NSSU01040, Value: $173,212.97, Weight: 41.42%  \n2. **Ridgeline Diversified Alternatives** \u2013 Account: NSSU01040, Value: $93,985.23, Weight: 22.48%  \n3. **Northshore Cash Account** \u2013 Account: NSMA01041, Value: $58,454.37, Weight: 13.98%\n\nThese holdings are based on the as-of date of 2026-08-19.\n\nWould you like to explore her portfolio allocation by asset class or review contribution trends?",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "3"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 8132.538400001067,
+      "prompt_tokens": 1119,
+      "completion_tokens": 187,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-30e9d40397b6",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Finn Hartigan's next review is due on 2027-03-01, which is 181 days from today.\n\nWould you like help with anything else related to Finn Hartigan's financial plan?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1918.8454000031925,
+      "prompt_tokens": 331,
+      "completion_tokens": 49,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b4473e25f9d7",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "Benjamin Mbeki's next annual review is in 283 days, on 2027-06-11.\n\nWould you like help with anything else regarding his account or platform holdings?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1725.4115999967325,
+      "prompt_tokens": 332,
+      "completion_tokens": 44,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b9f33863d251",
+      "tags": [
+        "balances",
+        "valuation_date",
+        "prompt:v1"
+      ],
+      "answer": "Jack Abbott's holdings were last valued on 2026-08-16.\n\nOffer to help further: Let me know if you'd like to review his contribution history, fee structure, or insurance coverage.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2111.982199996419,
+      "prompt_tokens": 963,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-3c7d183366f1",
+      "tags": [
+        "balances",
+        "valuation_date",
+        "prompt:v1"
+      ],
+      "answer": "Quinn Rasmussen's holdings were last valued on 2026-08-11.\n\nWould you like to know more about their portfolio allocations or account performance?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2175.631899997825,
+      "prompt_tokens": 1400,
+      "completion_tokens": 38,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-244af94259a7",
+      "tags": [
+        "out_of_scope",
+        "age_pension_estimate",
+        "prompt:v1",
+        "out_of_scope"
+      ],
+      "answer": "I currently do not have the tool results to determine Ruby Quilty's Centrelink Age Pension entitlement. I can only assist with the client's platform holdings, fees, contributions, insurance, and reviews. Please use the adviser's internal tools or consult Centrelink directly for pension entitlement calculations.\n\nLet me know if you'd like help with anything else related to Ruby Quilty's financial plan.",
+      "quality": 0.7777777777777778,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "tone_ok": true,
+        "must_contain": false
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3089.4792000035523,
+      "prompt_tokens": 235,
+      "completion_tokens": 78,
+      "judge_mean": 3.6666666666666665,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-883f383c60ec",
+      "tags": [
+        "fees",
+        "total_fees",
+        "prompt:v1"
+      ],
+      "answer": "The total annual fees on Mei Abbott's accounts are $3,861.11.\n\nOffer to help further: Let me know if you'd like to review her contribution history, platform holdings, or insurance coverage.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1978.853500004334,
+      "prompt_tokens": 500,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-07cb60a11892",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Olivia Lindqvist's next review is due on 2027-07-28. This is 330 days from her last review on 2026-07-28, with a review frequency of every 12 months.\n\nWould you like help with anything else regarding her portfolio or schedule?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2805.039399994712,
+      "prompt_tokens": 334,
+      "completion_tokens": 72,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f44d21e0e640",
+      "tags": [
+        "allocation",
+        "growth_defensive_split",
+        "prompt:v1"
+      ],
+      "answer": "Liam Quilty's defensive split is 72.8%. The growth split is 27.2%. This allocation falls within the target range of 20.0% to 35.0%, indicating it is aligned with his conservative risk profile.\n\nOffer to help further: Let me know if you'd like a breakdown of the specific assets contributing to the defensive or growth portions, or if you need assistance reviewing the portfolio's performance against benchmarks.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4466.1908999987645,
+      "prompt_tokens": 1238,
+      "completion_tokens": 95,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-9c35a99c4c1f",
+      "tags": [
+        "balances",
+        "pension_balance",
+        "prompt:v1"
+      ],
+      "answer": "The balance in Jack Mbeki's account-based pension is $322,318.52.\n\nOffer to help further: Let me know if you'd like to review his pension payment schedule, growth performance, or compare it with his managed portfolio.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2622.0205999998143,
+      "prompt_tokens": 1178,
+      "completion_tokens": 54,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d52eb1f99d8b",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "I can only help with the client's platform holdings, fees, contributions, insurance and reviews. The tool results do not contain information about Willow Lindqvist's non-concessional contribution limits for the year. Please use the adviser's own tools or consult the relevant superannuation regulations to determine this.\n\nLet me know if you'd like assistance with anything else regarding Willow Lindqvist's superannuation.",
+      "quality": 0.9285714285714286,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "tone_ok": false
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3324.6755999934976,
+      "prompt_tokens": 245,
+      "completion_tokens": 83,
+      "judge_mean": 2.3333333333333335,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-6138e6ed0204",
+      "tags": [
+        "pension",
+        "pension_payments",
+        "prompt:v1"
+      ],
+      "answer": "Jack Rasmussen is receiving a pension payment of $45,534.16 per year, paid monthly.\n\nOffer to help further: Let me know if you'd like details on his pension balance, investment allocations, or contribution history.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2701.0929999960354,
+      "prompt_tokens": 1322,
+      "completion_tokens": 52,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-dd2743037503",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Jack Rasmussen's next review is due on 2027-02-10. This is 162 days from today.\n\nOffer to help further: Let me know if you'd like to check his current platform holdings, contributions, or insurance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2283.2219999982044,
+      "prompt_tokens": 335,
+      "completion_tokens": 58,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-cee4c21a5bda",
+      "tags": [
+        "insurance",
+        "tpd_cover",
+        "prompt:v1"
+      ],
+      "answer": "Zachary Yilmaz has TPD cover of $250,000 with a 60-day waiting period. The annual premium is $1,197.31, and the cover is funded from cash. The benefit period is until age 65.\n\nWould you like me to help with anything else regarding Zachary Yilmaz's insurance or financial plan?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3257.6270999998087,
+      "prompt_tokens": 356,
+      "completion_tokens": 82,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-08ec5203d991",
+      "tags": [
+        "fees",
+        "investment_fee",
+        "prompt:v1"
+      ],
+      "answer": "Willow Abbott's total annual investment management fees are $9,151.24. This includes:\n\n- **Total investment fee**: $2,287.91 (0.31% of the total balance)\n- **Adviser fee**: $5,233.06 (0.77% of the total balance)\n- **Admin fee**: $1,630.27 (0.28% of the total balance)\n\nThe fees are calculated across two accounts:\n- Superannuation account (NSSU00290): $814.57 investment fee (0.31%)\n- IDPS account (NSID00291): $1,473.34 investment fee (0.28%)\n\nThe total fee consent expires on 2027-07-12, with 314 days remaining.\n\nLet me know if you'd like a breakdown by account or assistance with fee reviews or contributions.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 8450.095399995917,
+      "prompt_tokens": 606,
+      "completion_tokens": 215,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-58949aca99a1",
+      "tags": [
+        "pension",
+        "pension_payments",
+        "prompt:v1"
+      ],
+      "answer": "Bao Abbott is receiving a pension payment of $16,430.45 per year, paid monthly.\n\nOffer to help further: Let me know if you'd like details on the pension balance, payment history, or how it aligns with Bao's risk profile.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2701.1716999986675,
+      "prompt_tokens": 1036,
+      "completion_tokens": 59,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-329712699cc8",
+      "tags": [
+        "fees",
+        "investment_fee",
+        "prompt:v1"
+      ],
+      "answer": "Noah Nakamura's investment management fees are as follows:\n\n- For the superannuation account (NSSU01550):  \n  - Investment fee: $1,709.25 (0.71% of balance)\n\n- For the managed portfolio account (NSMA01551):  \n  - Investment fee: $447.30 (0.35% of balance)\n\nThe total annual investment fee across both accounts is $2,156.55.\n\nThe total annual fee (including administration and adviser fees) is $5,510.87, with the investment fee accounting for 0.71% and 0.35% of the respective balances.\n\nLet me know if you'd like a breakdown by account type or a comparison with other clients.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 6840.565400001651,
+      "prompt_tokens": 607,
+      "completion_tokens": 174,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-28abf9a4b6fe",
+      "tags": [
+        "fees",
+        "fee_consent",
+        "prompt:v1"
+      ],
+      "answer": "Liam Quilty's ongoing fee consent expires on 2027-04-01.\n\nI can help further with any other details about Liam Quilty's account, such as fee breakdowns, contributions, or platform holdings.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2089.3197000041255,
+      "prompt_tokens": 609,
+      "completion_tokens": 50,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-84376c3399cd",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Ruby Quilty's total fees as a percentage of balance are 1.71%.\n\nOffer to help further: Let me know if you'd like to review her contribution history, platform holdings, or insurance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1855.1593000011053,
+      "prompt_tokens": 505,
+      "completion_tokens": 44,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f98d0f714da0",
+      "tags": [
+        "pension",
+        "min_drawdown",
+        "prompt:v1"
+      ],
+      "answer": "The minimum pension drawdown for Cormac Lindqvist this year is 5.0%.\n\nThis is based on the pension account details in the tool results, which show a \"min_drawdown_pct\" of 5.0% for his Northshore Account-Based Pension.\n\nOffer to help further: I can provide details on his current pension payment, account balances, or contribution history if needed.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3797.236899998097,
+      "prompt_tokens": 1239,
+      "completion_tokens": 80,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-16b4efd8df2d",
+      "tags": [
+        "balances",
+        "balance_change",
+        "prompt:v1"
+      ],
+      "answer": "Jorge Underwood's total balance has decreased by 6.31% over the last 12 months, as of 15 August 2026. The total balance is currently $635,519.27.\n\nWould you like to explore specific account movements or holding changes in more detail?",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "6.31%"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3344.4942999994964,
+      "prompt_tokens": 1255,
+      "completion_tokens": 69,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-932b26979307",
+      "tags": [
+        "allocation",
+        "cash_weight",
+        "prompt:v1"
+      ],
+      "answer": "Amelia Fitzgerald is not holding any cash. The cash value is $0.00.\n\nOffer to help further: Let me know if you'd like to review her asset allocations, contribution trends, or risk profile adjustments.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2089.309499999217,
+      "prompt_tokens": 915,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-25bf291d7892",
+      "tags": [
+        "profile",
+        "risk_profile",
+        "prompt:v1"
+      ],
+      "answer": "Zachary Zielinski's recorded risk profile is Growth.\n\nI can help further with details about his platform holdings, fees, contributions, insurance, or reviews.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1581.8148999969708,
+      "prompt_tokens": 963,
+      "completion_tokens": 33,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-16a30e42b369",
+      "tags": [
+        "contributions",
+        "bring_forward",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Ruby Fitzgerald is eligible to trigger the bring-forward rule. She is aged 58, which is below her preservation age of 60, and her bring-forward eligibility is confirmed as true. The bring-forward cap for her is $360,000.\n\nWould you like to know more about her current contribution room or super balance?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2953.682999999728,
+      "prompt_tokens": 477,
+      "completion_tokens": 73,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-ecd27d65eb88",
+      "tags": [
+        "fees",
+        "total_fees",
+        "prompt:v1"
+      ],
+      "answer": "The total annual fees on Aroha Yilmaz's accounts are $5,238.09.\n\nOffer to help further: Let me know if you'd like to review her contribution history, platform holdings, or insurance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2067.775299998175,
+      "prompt_tokens": 513,
+      "completion_tokens": 50,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f2663c6d0b22",
+      "tags": [
+        "allocation",
+        "largest_holding",
+        "prompt:v1"
+      ],
+      "answer": "The largest holding in Finn Hartigan's portfolio is the **Northshore Cash Account** in the account with ID **NSSU00540**, with a value of **$315,852.45** and a weight of **35.7%**.\n\nWould you like to explore other holdings or account details further?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3377.3809999984223,
+      "prompt_tokens": 1141,
+      "completion_tokens": 73,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-48c82628e09e",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Ruby Delacroix's next review is due on 2027-06-19, which is 291 days from today.\n\nWould you like me to help with anything else regarding her account?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1804.459399994812,
+      "prompt_tokens": 335,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-754de4e998fc",
+      "tags": [
+        "reviews",
+        "last_review",
+        "prompt:v1"
+      ],
+      "answer": "The last review for Fatima Nakamura was completed on 2025-12-07.\n\nOffer to help further: Let me know if you'd like to check her next review date, contribution status, or platform holdings.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1997.4956000005477,
+      "prompt_tokens": 335,
+      "completion_tokens": 50,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b34fcf8854e0",
+      "tags": [
+        "profile",
+        "preservation",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Bao Nakamura has reached preservation age. The client's preservation age is 60, and the tool result confirms that \"reached_preservation_age\": true.\n\nOffer to help further: I can assist with details about Bao Nakamura's superannuation platform holdings, fees, contributions, insurance, or reviews if needed.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2861.240700003691,
+      "prompt_tokens": 478,
+      "completion_tokens": 70,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-e2258d0796d9",
+      "tags": [
+        "contributions",
+        "carry_forward",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Bao Okonkwo has unused carry-forward concessional cap available. The carry-forward unused amount is $928.82.\n\nOffer to help further: Let me know if you'd like to review the contribution room, non-concessional cap, or other superannuation details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2517.3749000023236,
+      "prompt_tokens": 498,
+      "completion_tokens": 63,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7a765851e4f7",
+      "tags": [
+        "pension",
+        "pension_payments",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Fairweather is receiving a pension payment of $62,681.37 per year, paid monthly.\n\nOffer to help further: Let me know if you'd like details on his pension balance, contribution history, or review the current risk profile alignment.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2484.2328000013367,
+      "prompt_tokens": 983,
+      "completion_tokens": 55,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1888410a070d",
+      "tags": [
+        "profile",
+        "risk_profile",
+        "prompt:v1"
+      ],
+      "answer": "Bao Abbott's recorded risk profile is Moderately Conservative.\n\nWould you like to know more about their current holdings, pension details, or performance metrics?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1559.2284000013024,
+      "prompt_tokens": 1034,
+      "completion_tokens": 31,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-b6c05b7462b9",
+      "tags": [
+        "insurance",
+        "life_cover",
+        "prompt:v1"
+      ],
+      "answer": "Giulia Nakamura holds $500,000 in life cover inside her superannuation fund.\n\nOffer to help further: I can also provide details on her income protection, TPD cover, or premium funding source if needed.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1990.6630000041332,
+      "prompt_tokens": 350,
+      "completion_tokens": 50,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-beadbfd5d4d0",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "Samuel Delacroix's next annual review is in 71 days, on 2026-11-11.\n\nWould you like help with anything else regarding his portfolio or review schedule?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1764.4559999971534,
+      "prompt_tokens": 335,
+      "completion_tokens": 44,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-c8330509a82e",
+      "tags": [
+        "contributions",
+        "concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Finn Underwood has a concessional contribution room of $21,885.44 for the 2026-27 financial year.\n\nOffer to help further: Let me know if you'd like to review his non-concessional contribution room, current contributions, or super balance trends.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2602.153100000578,
+      "prompt_tokens": 482,
+      "completion_tokens": 65,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d2a178af4804",
+      "tags": [
+        "balances",
+        "idps_balance",
+        "prompt:v1"
+      ],
+      "answer": "Uma Eriksen holds $402,606.76 in the IDPS investment account (account ID: NSID00591).\n\n```json\n{\n  \"idps_balance\": 402606.76\n}\n```\n\nLet me know if you'd like a breakdown of the holdings or insights on her overall portfolio.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3736.992800004373,
+      "prompt_tokens": 1231,
+      "completion_tokens": 79,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-df5341e7a431",
+      "tags": [
+        "contributions",
+        "concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Xavier Barlow has a concessional contribution room of $7,261.07 for the 2026-27 financial year.\n\nOffer to help further: Let me know if you'd like to review his non-concessional contribution room, carry-forward options, or contribution history.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2594.4788999986486,
+      "prompt_tokens": 488,
+      "completion_tokens": 64,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-efa7e1b47dfc",
+      "tags": [
+        "contributions",
+        "bring_forward",
+        "prompt:v1"
+      ],
+      "answer": "Yes, Benjamin Quilty is eligible to trigger the bring-forward rule. The tool result shows that `bring_forward_eligible: true`, and he is currently 52 years old, which meets the age requirement for the bring-forward rule. The bring-forward cap for him is $360,000.\n\nWould you like to explore how this might impact his contribution room or super balance?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3334.537899994757,
+      "prompt_tokens": 490,
+      "completion_tokens": 82,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7bc5caca3f93",
+      "tags": [
+        "balances",
+        "total_balance",
+        "prompt:v1"
+      ],
+      "answer": "Liam Delacroix's total balance across all accounts is $926,716.37 as of 2026-08-07.\n\nWould you like to explore his asset allocation, contribution history, or review activity next?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2480.156799996621,
+      "prompt_tokens": 987,
+      "completion_tokens": 55,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-2866ed4c42d8",
+      "tags": [
+        "insurance",
+        "income_protection",
+        "prompt:v1"
+      ],
+      "answer": "Fatima Nakamura's income protection benefit is $12,000.00 per month.\n\nWould you like help with anything else regarding her insurance or financial plan?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1486.2364000000525,
+      "prompt_tokens": 353,
+      "completion_tokens": 37,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1bd3ad13279a",
+      "tags": [
+        "reviews",
+        "days_to_review",
+        "prompt:v1"
+      ],
+      "answer": "Uma Papadopoulos's next annual review is in 225 days, on 2027-04-14.\n\nWould you like help with anything else regarding her account or platform holdings?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1849.3438000004971,
+      "prompt_tokens": 339,
+      "completion_tokens": 45,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d3647d3553ce",
+      "tags": [
+        "profile",
+        "risk_profile",
+        "prompt:v1"
+      ],
+      "answer": "Ruby Delacroix's recorded risk profile is Balanced.\n\nWould you like to know more about her current holdings, pension details, or performance metrics?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1556.9114000027184,
+      "prompt_tokens": 1057,
+      "completion_tokens": 30,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-6917d0cf4d4b",
+      "tags": [
+        "balances",
+        "super_balance",
+        "prompt:v1"
+      ],
+      "answer": "The current balance of Esperanza Marchetti's super account is $600,177.27 as of 2026-06-16.\n\nWould you like to know more about her holdings, risk profile, or recent performance?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2435.925899997528,
+      "prompt_tokens": 972,
+      "completion_tokens": 55,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-90449ead4355",
+      "tags": [
+        "insurance",
+        "insurance_premium",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Okonkwo is paying an annual insurance premium of $1,218.47.\n\nOffer to help further: Let me know if you'd like to review his superannuation contributions, platform holdings, or insurance coverage details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2018.7319999968167,
+      "prompt_tokens": 357,
+      "completion_tokens": 51,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-540bc5132384",
+      "tags": [
+        "allocation",
+        "allocation_json",
+        "prompt:v1",
+        "json"
+      ],
+      "answer": "```json\n{\n  \"asset_allocation\": {\n    \"International equities\": 26.77,\n    \"Alternatives\": 31.23,\n    \"International fixed interest\": 19.62,\n    \"Cash\": 22.38\n  }\n}\n```\n\nLet me know if you'd like a breakdown by holding or further analysis of the risk profile.",
+      "quality": 0.8518518518518519,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "json_valid": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": false,
+      "cost_usd": null,
+      "latency_ms": 3644.588700000895,
+      "prompt_tokens": 993,
+      "completion_tokens": 84,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8c131e294a26",
+      "tags": [
+        "contributions",
+        "contribution_json",
+        "prompt:v1",
+        "json"
+      ],
+      "answer": "```json\n{\n  \"client_name\": \"Ruby Thorne\",\n  \"concessional_room\": 21277.19,\n  \"concessional_ytd\": 8722.81,\n  \"non_concessional_room\": 95000.0,\n  \"non_concessional_ytd\": 25000.0\n}\n```\n\nLet me know if you'd like to explore her contribution limits, balance, or other superannuation details further.",
+      "quality": 0.8518518518518519,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "json_valid": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": false,
+      "cost_usd": null,
+      "latency_ms": 4398.535799999081,
+      "prompt_tokens": 481,
+      "completion_tokens": 110,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-68f23c46561a",
+      "tags": [
+        "insurance",
+        "life_cover",
+        "prompt:v1"
+      ],
+      "answer": "Harrison Delacroix holds a life cover of $750,000 inside superannuation. This cover is funded from super and has a benefit period until age 65. There is also a TPD cover of $500,000 with a 90-day waiting period. The annual premium is $4,839.96.\n\nWould you like to explore how this compares to his risk profile or review the contribution structure?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4044.246999997995,
+      "prompt_tokens": 358,
+      "completion_tokens": 98,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-ab9860955a2f",
+      "tags": [
+        "insurance",
+        "insurance_summary",
+        "prompt:v1"
+      ],
+      "answer": "Benjamin Fitzgerald does not have any insurance cover according to the tool results.\n\nLet me know if you'd like to review his platform holdings, fees, contributions, or insurance options.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1529.3134999956237,
+      "prompt_tokens": 259,
+      "completion_tokens": 37,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f8f1ac12502f",
+      "tags": [
+        "fees",
+        "total_fees",
+        "prompt:v1"
+      ],
+      "answer": "The total annual fees on Eleanor Nakamura's accounts are AUD 9,020.92.\n\nOffer to help further: Let me know if you'd like a breakdown by account type or fee component.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1895.7589999990887,
+      "prompt_tokens": 613,
+      "completion_tokens": 44,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f4e0c6a20cef",
+      "tags": [
+        "allocation",
+        "cash_weight",
+        "prompt:v1"
+      ],
+      "answer": "Zachary Zielinski is holding $73,691.20 in cash, as reported in the \"Northshore Cash Account\" within his superannuation account as of 2026-08-29.\n\nWould you like to explore other aspects of his portfolio or holdings?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2882.919800002128,
+      "prompt_tokens": 962,
+      "completion_tokens": 64,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1b150c203621",
+      "tags": [
+        "fees",
+        "fee_consent",
+        "prompt:v1"
+      ],
+      "answer": "Uma Ostrowski's ongoing fee consent expires on 2027-01-10.\n\nI can help with further details about her platform holdings, fees, contributions, insurance, or reviews. Let me know how I can assist!",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2143.3955999964382,
+      "prompt_tokens": 610,
+      "completion_tokens": 52,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-547f19d0aa66",
+      "tags": [
+        "balances",
+        "balance_change",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Fairweather's total balance has increased by 4.76% over the last 12 months.\n\nOffer to help further: Let me know if you'd like a breakdown of the balance change by asset class or insights into the pension payment structure.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2425.601299997652,
+      "prompt_tokens": 988,
+      "completion_tokens": 53,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d8243efc8622",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Kiara Zielinski's total fees as a percentage of balance are 1.24%.\n\nOffer to help further: Let me know if you'd like to review her platform holdings, contribution patterns, insurance coverage, or recent reviews.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2029.4071000025724,
+      "prompt_tokens": 616,
+      "completion_tokens": 48,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-823a473f19b7",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Yasmin Marchetti can make non-concessional contributions of $95,000 this year. This is calculated from her non-concessional room of $95,000, which is available for the 2026-27 financial year. She has already made $25,000 in non-concessional contributions this year, so she has $70,000 remaining in the current financial year.\n\nOffer to help further: Let me know if you'd like to review her concessional contributions, bring-forward options, or super balance growth projections.",
+      "quality": 0.75,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "$70,000"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4985.818599998311,
+      "prompt_tokens": 495,
+      "completion_tokens": 125,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-bb0fd3dddd8a",
+      "tags": [
+        "fees",
+        "fds_summary",
+        "prompt:v1"
+      ],
+      "answer": "The fee schedule for Hamish Fitzgerald's Fee Disclosure Statement (period: 2025\u20132026) is as follows:\n\n- **Total annual fees**: $17,541.86  \n- **Fee percentage of balance**: 1.71%  \n- **Total administrative fees**: $1,603.12  \n- **Total adviser fees**: $11,001.79  \n- **Total investment fees**: $4,936.95  \n\nBreakdown by account:  \n1. **Superannuation account (NSSU00300)**:  \n   - Administrative fee: $1,379.84 (0.15%)  \n   - Adviser fee: $9,842.84 (1.07%)  \n   - Investment fee: $4,139.51 (0.45%)  \n   - Total fee: $15,362.19  \n\n2. **IDP account (NSID00301)**:  \n   - Administrative fee: $223.28 (0.21%)  \n   - Adviser fee: $1,158.95 (1.09%)  \n   - Investment fee: $797.44 (0.75%)  \n   - Total fee: $2,179.67  \n\nThe fee consent expires on 2027-02-12, with 164 days remaining. The statement is current and not stale.\n\nLet me know if you'd like a breakdown by fee type or account performance.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 13988.658299997041,
+      "prompt_tokens": 619,
+      "completion_tokens": 355,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-f77cb3161819",
+      "tags": [
+        "contributions",
+        "non_concessional_room",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Abbott can make non-concessional contributions of up to $120,000 this financial year (2026-27). There is no unused carry-forward balance available, and he has not yet reached preservation age (60). His current non-concessional contribution year-to-date is $0.00.\n\n{\"non_concessional_room\": 120000.0}\n\nLet me know if you'd like to review his concessional contributions or super balance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4258.252400002675,
+      "prompt_tokens": 480,
+      "completion_tokens": 106,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-1b48eb0482db",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Uma Eriksen's total fees as a percentage of balance are 1.84%.\n\nOffer to help further: Let me know if you'd like to review her platform holdings, contributions, insurance, or recent reviews.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1959.6889999957057,
+      "prompt_tokens": 617,
+      "completion_tokens": 47,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7179da56192a",
+      "tags": [
+        "fees",
+        "fee_pct",
+        "prompt:v1"
+      ],
+      "answer": "Grace Okonkwo's total fees as a percentage of balance are 1.71%.\n\nOffer to help further: Let me know if you'd like to review her contribution history, platform holdings, or insurance details.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 1875.763600000937,
+      "prompt_tokens": 506,
+      "completion_tokens": 46,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-963129f0de9d",
+      "tags": [
+        "insurance",
+        "life_cover",
+        "prompt:v1"
+      ],
+      "answer": "Patrick Okonkwo holds a life cover of $1,000,000 inside his superannuation.\n\nOffer to help further: Let me know if you'd like details on the income protection or TPD cover, or if you need assistance reviewing the premium funding source or benefit period.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2570.0929000013275,
+      "prompt_tokens": 356,
+      "completion_tokens": 63,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8fa5bac8a8f5",
+      "tags": [
+        "allocation",
+        "international_exposure",
+        "prompt:v1"
+      ],
+      "answer": "Uma Ostrowski's international equities exposure is 5.16% of her total portfolio, with a value of AUD 32,324.04. This exposure is held in the \"Northshore Global Shares Index (hedged)\" within her \"Northshore Managed Portfolio - Balanced\" account (account ID: NSMA00942).\n\nWould you like to explore her overall asset allocation or contribution details next?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 4418.4105999956955,
+      "prompt_tokens": 1292,
+      "completion_tokens": 92,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8a23036d7145",
+      "tags": [
+        "allocation",
+        "largest_holding",
+        "prompt:v1"
+      ],
+      "answer": "The largest holding in Uma Xu's portfolio is the **Northshore Cash Account**, with a value of **$150,736.68**, which represents **39.73%** of the portfolio.\n\n```json\n{\n  \"largest_holding\": {\n    \"account_id\": \"NSSU00670\",\n    \"asset_class\": \"Cash\",\n    \"name\": \"Northshore Cash Account\",\n    \"value\": 150736.68,\n    \"weight_pct\": 39.73\n  }\n}\n```\n\nLet me know if you'd like to review her contribution history, fee structure, or insurance coverage.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 6121.137399997679,
+      "prompt_tokens": 1018,
+      "completion_tokens": 144,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-274850d5f923",
+      "tags": [
+        "balances",
+        "total_balance",
+        "prompt:v1"
+      ],
+      "answer": "Uma Eriksen's total balance across all accounts is $417,514.51 as of 2026-08-21.\n\nWould you like to explore her asset allocation, contribution history, or review her insurance and fees next?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2821.058699999412,
+      "prompt_tokens": 1189,
+      "completion_tokens": 58,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-19f542e9c657",
+      "tags": [
+        "fees",
+        "fds_summary",
+        "prompt:v1"
+      ],
+      "answer": "Samuel Delacroix's Fee Disclosure Statement (period: 2025\u20132026) shows the following fees:\n\n- **Total Annual Fee**: $4,258.78 (1.86% of account balance)\n- **Account Type**: Superannuation (Account ID: NSSU01100)\n- **Administrative Fee**: $686.90 (0.3% of balance)\n- **Adviser Fee**: $2,312.56 (1.01% of balance)\n- **Investment Fee**: $1,259.32 (0.55% of balance)\n\nThe total fee is 1.86% of the account balance of $228,966.54. The fee consent expires on 2026-12-18, with 108 days remaining.\n\nWould you like me to help with anything else regarding Samuel Delacroix's account?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 8317.887999997765,
+      "prompt_tokens": 507,
+      "completion_tokens": 213,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-0f6d32fec476",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Dilnoza Mbeki's next review is due on 2027-02-06. This is 158 days from today (2026-09-01), and the review frequency is every 12 months.\n\nWould you like help with anything else related to her account?",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "2026-09-01"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2797.2556999957305,
+      "prompt_tokens": 335,
+      "completion_tokens": 69,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-16db8fc1adb0",
+      "tags": [
+        "fees",
+        "fds_summary",
+        "prompt:v1"
+      ],
+      "answer": "The fee schedule for Benjamin Ostrowski's Fee Disclosure Statement (period: 2025\u20132026) shows the following:\n\n- **Total annual fees**: $12,788.57 (1.53% of total balance).\n- **Total balance**: $835,819.18.\n- **Total administrative fees**: $1,733.35.\n- **Total adviser fees**: $5,353.94.\n- **Total investment fees**: $5,701.28.\n\nBreakdown by account:\n1. **Superannuation account (NSSU00140)**:\n   - Admin fee: $1,100.11 (0.25%)\n   - Adviser fee: $3,256.32 (0.74%)\n   - Investment fee: $3,168.31 (0.72%)\n   - Total fee: $7,524.74\n\n2. **Managed portfolio (NSMA00141)**:\n   - Admin fee: $633.24 (0.16%)\n   - Adviser fee: $2,097.62 (0.53%)\n   - Investment fee: $2,532.97 (0.64%)\n   - Total fee: $5,263.83\n\nThe fee consent expires on 2027-05-12, with 253 days remaining. The statement is marked as stale.\n\nWould you like me to help with any other details regarding Benjamin Ostrowski\u2019s platform holdings, contributions, insurance, or reviews?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 14614.503400000103,
+      "prompt_tokens": 621,
+      "completion_tokens": 373,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-d802a3cab5cb",
+      "tags": [
+        "reviews",
+        "next_review",
+        "prompt:v1"
+      ],
+      "answer": "Eleanor Fitzgerald's next review is due on 2027-03-09. This is 189 days from today (2026-09-01), and her review frequency is every 12 months.\n\nWould you like help with anything else related to her account?",
+      "quality": 0.7083333333333334,
+      "passed": false,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": false,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [
+        "2026-09-01"
+      ],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2594.4062000053236,
+      "prompt_tokens": 326,
+      "completion_tokens": 66,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-7e1a662d9e7d",
+      "tags": [
+        "allocation",
+        "largest_holding",
+        "prompt:v1"
+      ],
+      "answer": "The largest holding in Benjamin Fitzgerald's portfolio is **Northshore Global Shares Index (hedged)** in the **International equities** asset class, with a value of **AUD 482,327.85** and a weight of **53.13%**.\n\nOffer to help further: Let me know if you'd like to review the portfolio's risk alignment, contribution trends, or insurance coverage.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3819.6386999989045,
+      "prompt_tokens": 991,
+      "completion_tokens": 88,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-e8e476be8622",
+      "tags": [
+        "balances",
+        "super_balance",
+        "prompt:v1"
+      ],
+      "answer": "The current balance of Amelia Yilmaz's super account is $766,436.31 as of 2026-08-27.\n\nWould you like to explore her asset allocations or contribution history next?",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 2283.2785999999032,
+      "prompt_tokens": 960,
+      "completion_tokens": 51,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-8e81044d4c1c",
+      "tags": [
+        "allocation",
+        "allocation_vs_profile",
+        "prompt:v1"
+      ],
+      "answer": "Eleanor Nakamura's asset allocation is not consistent with their Growth risk profile. The tool indicates that their current growth allocation is 58.0%, which is below the target range of 70.0% to 85.0%. Additionally, the deviation from the target is -12.0 points, showing a significant underweight in growth assets. The allocation is also relatively high in defensive assets (42.0%), with a notable presence in property and infrastructure and fixed interest, which are less aligned with a Growth profile.\n\nFor further assistance with reviewing specific holdings, contributions, or adjusting the portfolio to better align with the Growth risk profile, I can help.",
+      "quality": 0.9583333333333334,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": false,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 6172.186199997668,
+      "prompt_tokens": 1153,
+      "completion_tokens": 139,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    },
+    {
+      "case_id": "case-a274e59be366",
+      "tags": [
+        "allocation",
+        "international_exposure",
+        "prompt:v1"
+      ],
+      "answer": "Mei Quilty's international equities exposure is 16.74% of her total portfolio, with a value of $99,929.79.\n\nOffer to help further: Let me know if you'd like to review her asset allocation trends, contribution patterns, or risk profile alignment.",
+      "quality": 1.0,
+      "passed": true,
+      "checks": {
+        "non_empty": true,
+        "no_pii": true,
+        "grounded": true,
+        "length_ok": true,
+        "no_refusal": true,
+        "tone_ok": true,
+        "must_not_contain": true
+      },
+      "ungrounded_numbers": [],
+      "json_valid": null,
+      "cost_usd": null,
+      "latency_ms": 3032.611499998893,
+      "prompt_tokens": 1121,
+      "completion_tokens": 65,
+      "judge_mean": 5.0,
+      "judge_missing": false,
+      "error": null
+    }
+  ]
+}

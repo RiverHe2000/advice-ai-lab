@@ -1,0 +1,30 @@
+$ terraform version
+Terraform v1.9.8
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.16.1. You can update by downloading from https://www.terraform.io/downloads.html
+$ terraform fmt -check -recursive
+(formatted)
+$ terraform init -backend=false
+Initializing provider plugins...
+- Finding hashicorp/google versions matching "~> 6.0"...
+- Installing hashicorp/google v6.50.0...
+- Installed hashicorp/google v6.50.0 (signed by HashiCorp)
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+$ terraform validate
+Success! The configuration is valid.
+

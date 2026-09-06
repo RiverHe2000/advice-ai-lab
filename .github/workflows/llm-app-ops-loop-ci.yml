@@ -1,0 +1,100 @@
+name: CI · llm-app-ops-loop
+
+on:
+  push:
+    branches: [main]
+    paths: ["llm-app-ops-loop/**", ".github/workflows/llm-app-ops-loop-ci.yml"]
+  pull_request:
+    paths: ["llm-app-ops-loop/**", ".github/workflows/llm-app-ops-loop-ci.yml"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: llm-app-ops-loop
+
+jobs:
+  quality:
+    name: py${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    env:
+      HF_HUB_OFFLINE: "1"          # tests must never download models
+      TRANSFORMERS_OFFLINE: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: llm-app-ops-loop/pyproject.toml
+
+      # No torch: the package imports torch/transformers lazily inside the hf backend only.
+      - name: Install project (dev extras)
+        run: pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Type-check (mypy --strict)
+        run: mypy
+
+      - name: Test (pytest + coverage)
+        run: pytest --cov-report=xml
+
+      - name: Prompt lint gate
+        run: opsloop prompt lint --gate
+
+      - name: Monitor self-evaluation gate (planted incidents, scripted traffic)
+        # Every incident kind must be detected and the false-alarm rate on quiet ticks must stay
+        # under 5 %; the whole thing runs in simulated time with the fake model (about a minute).
+        run: >
+          opsloop monitor evaluate
+          --scenarios scenarios/steady.yaml scenarios/latency_spike.yaml scenarios/error_burst.yaml
+          scenarios/regressed_prompt.yaml scenarios/topic_shift.yaml scenarios/cost_creep.yaml scenarios/pii_leak.yaml
+          --seeds 1 --minutes 240 --out /tmp/monitor_eval --gate
+
+      - name: Prompt regression gate (v2 must pass, v2-regressed must fail)
+        # The committed dataset is rebuilt into a temporary store so the gate runs against the
+        # same cases the results were produced with; exit code 1 on the regressed prompt is the
+        # expected outcome and is asserted explicitly.
+        run: |
+          mkdir -p /tmp/ds/adviser_assistant
+          cp docs/experiments/dataset_adviser_assistant_v2.jsonl /tmp/ds/adviser_assistant/v1.jsonl
+          python - <<'EOF'
+          import json, pathlib
+          from opsloop.dataset.curate import CuratedCase
+          from opsloop.dataset.versioning import DatasetManifest, content_hash
+          p = pathlib.Path("/tmp/ds/adviser_assistant/v1.jsonl")
+          cases = [CuratedCase.model_validate(json.loads(l)) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+          m = DatasetManifest(name="adviser_assistant", version=1, content_hash=content_hash(cases), n_cases=len(cases), created="ci")
+          p.with_name("v1.manifest.json").write_text(json.dumps(m.model_dump(mode="json")), encoding="utf-8")
+          EOF
+          opsloop --datasets-dir /tmp/ds regress --dataset adviser_assistant@v1 --candidate @v2 --baseline @v1 --model fake --out /tmp/gate_good --gate
+          if opsloop --datasets-dir /tmp/ds regress --dataset adviser_assistant@v1 --candidate @v2-regressed --baseline @v1 --model fake --out /tmp/gate_bad --gate; then
+            echo "the regressed prompt passed the gate - that is a bug"; exit 1
+          fi
+
+      - name: Prometheus rules check
+        uses: docker://prom/prometheus:v2.53.0
+        with:
+          entrypoint: promtool
+          args: check rules llm-app-ops-loop/deploy/prometheus/rules.yml
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-py${{ matrix.python-version }}
+          path: llm-app-ops-loop/coverage.xml
+          if-no-files-found: ignore

@@ -1,0 +1,22 @@
+# Active prompt version per environment, plus the canary in flight (if any).
+# Managed by `opsloop release status|advance|rollback|auto`; edits are appended to `history`.
+policy:
+  min_samples: 100          # per cohort before the canary is judged
+  error_rate_delta: 0.02    # canary error rate may exceed control by at most this (two-proportion test)
+  refusal_rate_delta: 0.05
+  quality_margin: 0.05      # bootstrap CI upper bound of (canary - control) quality must be >= -margin
+  alpha: 0.05
+  n_boot: 1000
+environments:
+  prod:
+    adviser_assistant:
+      active: v1
+      canary: null
+      stages: [10, 50, 100]
+      history: []
+  staging:
+    adviser_assistant:
+      active: v2
+      canary: null
+      stages: [50, 100]
+      history: []

@@ -1,0 +1,39 @@
+{
+  "meetings": 100,
+  "segments": {
+    "total": 4506,
+    "mean": 45.06,
+    "min": 40,
+    "max": 58
+  },
+  "gold_claims": {
+    "total": 1669,
+    "mean": 16.69,
+    "per_section_mean": {
+      "circumstance_changes": 2.14,
+      "goals": 2.06,
+      "topics_discussed": 3.87,
+      "advice_discussed": 2.68,
+      "decisions": 1.32,
+      "action_items": 3.47,
+      "vulnerability_indicators": 0.3,
+      "follow_up": 0.85
+    }
+  },
+  "decisions_total": 132,
+  "deferred_total": 136,
+  "meetings_with_deferral": 100,
+  "small_talk_segments_total": 972,
+  "small_talk_segments_mean": 9.72,
+  "meetings_with_vulnerability": 30,
+  "meetings_with_pii_aside": 30,
+  "meetings_with_two_clients": 46,
+  "meetings_with_paraplanner": 35,
+  "by_type": {
+    "annual_review": 28,
+    "initial": 27,
+    "insurance_review": 26,
+    "retirement_planning": 19
+  },
+  "duration_minutes_mean": 5.66
+}

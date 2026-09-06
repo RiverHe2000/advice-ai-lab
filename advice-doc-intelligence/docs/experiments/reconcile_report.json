@@ -1,0 +1,370 @@
+[
+  {
+    "n_docs": 120,
+    "amount_tolerance": 0.05,
+    "fee_tolerance": 0.05,
+    "source": "gold",
+    "kinds": [
+      {
+        "kind": "not_implemented",
+        "planted": 16,
+        "detected": 16,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "amount_mismatch",
+        "planted": 13,
+        "detected": 13,
+        "false_alarm_docs": 16,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.13333333333333333,
+          "low": 0.075,
+          "high": 0.19187499999999982,
+          "n": 120
+        }
+      },
+      {
+        "kind": "unexpected_product",
+        "planted": 19,
+        "detected": 19,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "fee_mismatch",
+        "planted": 9,
+        "detected": 9,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      }
+    ],
+    "overall_detection": {
+      "point": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 120
+    },
+    "clean_docs_flagged": {
+      "point": 0.12987012987012986,
+      "low": 0.06493506493506493,
+      "high": 0.2077922077922078,
+      "n": 77
+    }
+  },
+  {
+    "n_docs": 120,
+    "amount_tolerance": 0.1,
+    "fee_tolerance": 0.05,
+    "source": "gold",
+    "kinds": [
+      {
+        "kind": "not_implemented",
+        "planted": 16,
+        "detected": 16,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "amount_mismatch",
+        "planted": 13,
+        "detected": 11,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 0.8461538461538461,
+          "low": 0.625,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "unexpected_product",
+        "planted": 19,
+        "detected": 19,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "fee_mismatch",
+        "planted": 9,
+        "detected": 9,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      }
+    ],
+    "overall_detection": {
+      "point": 0.9649122807017544,
+      "low": 0.904739010989011,
+      "high": 1.0,
+      "n": 120
+    },
+    "clean_docs_flagged": {
+      "point": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 77
+    }
+  },
+  {
+    "n_docs": 120,
+    "amount_tolerance": 0.05,
+    "fee_tolerance": 0.05,
+    "source": "rules",
+    "kinds": [
+      {
+        "kind": "not_implemented",
+        "planted": 16,
+        "detected": 16,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "amount_mismatch",
+        "planted": 13,
+        "detected": 13,
+        "false_alarm_docs": 16,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.13333333333333333,
+          "low": 0.075,
+          "high": 0.19187499999999982,
+          "n": 120
+        }
+      },
+      {
+        "kind": "unexpected_product",
+        "planted": 19,
+        "detected": 19,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "fee_mismatch",
+        "planted": 9,
+        "detected": 9,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      }
+    ],
+    "overall_detection": {
+      "point": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 120
+    },
+    "clean_docs_flagged": {
+      "point": 0.12987012987012986,
+      "low": 0.06493506493506493,
+      "high": 0.2077922077922078,
+      "n": 77
+    }
+  },
+  {
+    "n_docs": 120,
+    "amount_tolerance": 0.1,
+    "fee_tolerance": 0.05,
+    "source": "rules",
+    "kinds": [
+      {
+        "kind": "not_implemented",
+        "planted": 16,
+        "detected": 16,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "amount_mismatch",
+        "planted": 13,
+        "detected": 11,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 0.8461538461538461,
+          "low": 0.625,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "unexpected_product",
+        "planted": 19,
+        "detected": 19,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      },
+      {
+        "kind": "fee_mismatch",
+        "planted": 9,
+        "detected": 9,
+        "false_alarm_docs": 0,
+        "detection_rate": {
+          "point": 1.0,
+          "low": 1.0,
+          "high": 1.0,
+          "n": 120
+        },
+        "false_alarm_rate": {
+          "point": 0.0,
+          "low": 0.0,
+          "high": 0.0,
+          "n": 120
+        }
+      }
+    ],
+    "overall_detection": {
+      "point": 0.9649122807017544,
+      "low": 0.904739010989011,
+      "high": 1.0,
+      "n": 120
+    },
+    "clean_docs_flagged": {
+      "point": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 77
+    }
+  }
+]

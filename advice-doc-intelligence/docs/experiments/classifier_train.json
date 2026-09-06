@@ -1,0 +1,19 @@
+{
+  "classifier": "runs\\classifier.joblib",
+  "n_train": 495,
+  "n_test": 165,
+  "classes": [
+    "authority_to_proceed",
+    "bank_statement",
+    "correspondence",
+    "fact_find",
+    "fds",
+    "fee_consent",
+    "insurance_schedule",
+    "roa",
+    "soa",
+    "super_statement"
+  ],
+  "calibration": "sigmoid",
+  "train_s": 1.57
+}

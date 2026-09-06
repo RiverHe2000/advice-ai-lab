@@ -1,0 +1,65 @@
+# Collector (ingest + query API + /metrics) + Prometheus (scrape + alert rules) + Grafana
+# (provisioned dashboard).
+#
+#   docker compose -f deploy/docker-compose.yml up --build --wait
+#   opsloop demo traffic --scenario scenarios/error_burst.yaml --minutes 240 --seed 3 \
+#       --store runs/compose.sqlite --reset --collector-url http://localhost:8090
+#   curl -s localhost:8090/v1/stats?window=30m ; curl -s localhost:9090/api/v1/alerts
+#   open http://localhost:3000 (admin / admin) -> dashboard "opsloop - LLM application operations"
+#
+# The collector anchors its SLO windows on the newest trace it holds, so simulated traffic
+# posted in one go is observable; a live deployment anchors on wall-clock time.
+
+name: opsloop
+
+services:
+  collector:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: opsloop/collector:0.1.0
+    command: ["opsloop", "--store", "/data/traces.sqlite", "--slos", "/app/slos/default.yaml", "serve", "--host", "0.0.0.0", "--port", "8090"]
+    volumes:
+      - collectordata:/data
+    ports:
+      - "8090:8090"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=30d
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/rules.yml:/etc/prometheus/rules.yml:ro
+      - promdata:/prometheus
+    ports:
+      - "9090:9090"
+    depends_on:
+      collector:
+        condition: service_healthy
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  collectordata:
+  promdata:

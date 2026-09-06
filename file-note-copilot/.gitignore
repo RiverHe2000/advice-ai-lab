@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Runtime state (regenerable): draft store, audit logs, evaluation runs, generated corpora
+runs/
+state/
+*.sqlite
+*.sqlite-journal
+*.jsonl.log
+*.bin
+*.pt
+*.safetensors
+*.pdf
+*.wav
+models/
+
+# Terraform
+deploy/terraform/.terraform/
+deploy/terraform/.terraform.lock.hcl
+deploy/terraform/*.tfstate
+deploy/terraform/*.tfstate.backup
+deploy/terraform/*.tfvars
+
+# Local logs and IDE files
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

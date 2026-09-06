@@ -1,0 +1,9 @@
+name: latency_spike
+description: The model provider slows down for 40 minutes (LLM latency x2).
+traffic: {rate_per_minute: 5, sessions: 40, clients: 200}
+active_version: v1
+incidents:
+  - kind: latency_spike
+    start_minute: 90
+    end_minute: 130
+    params: {multiplier: 2.0}

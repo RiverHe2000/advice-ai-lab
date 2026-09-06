@@ -1,0 +1,8 @@
+name: pii_leak
+description: A tool defect adds the client's TFN to get_holdings output and the model echoes it.
+traffic: {rate_per_minute: 5, sessions: 40, clients: 200}
+active_version: v1
+incidents:
+  - kind: pii_leak
+    start_minute: 100
+    end_minute: 140

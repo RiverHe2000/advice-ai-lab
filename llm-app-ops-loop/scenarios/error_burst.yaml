@@ -1,0 +1,9 @@
+name: error_burst
+description: A 30-minute burst of provider timeouts and 5xx responses plus a flaky data service.
+traffic: {rate_per_minute: 5, sessions: 40, clients: 200}
+active_version: v1
+incidents:
+  - kind: error_burst
+    start_minute: 100
+    end_minute: 130
+    params: {error_rate: 0.25, kinds: [timeout, provider_error], tool_error_rate: 0.05}

@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Runtime state (regenerable): trace stores, monitor state, run outputs, review queues, model dirs.
+# docs/experiments/ outputs ARE committed.
+runs/
+state/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.jsonl.log
+*.bin
+*.pt
+*.safetensors
+models/
+
+# Local logs and IDE files
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

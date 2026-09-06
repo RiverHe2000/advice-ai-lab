@@ -1,0 +1,103 @@
+name: Deploy · file-note-copilot → Cloud Run
+
+# Inert until the repository variable GCP_PROJECT_ID is set (see deploy/terraform/README.md).
+# Auth is Workload Identity Federation: the job exchanges its GitHub OIDC token for a
+# short-lived credential of the deployer service account. No JSON key is stored anywhere.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["file-note-copilot/src/**", "file-note-copilot/pyproject.toml", "file-note-copilot/deploy/Dockerfile"]
+
+concurrency:
+  group: deploy-file-note-copilot
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+defaults:
+  run:
+    working-directory: file-note-copilot
+
+env:
+  SERVICE: file-note-copilot
+  REGION: ${{ vars.GCP_REGION || 'australia-southeast1' }}
+  REPOSITORY: ${{ vars.GCP_ARTIFACT_REPOSITORY || 'advice-ai-lab' }}
+
+jobs:
+  deploy:
+    if: vars.GCP_PROJECT_ID != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOYER_SA }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker "${REGION}-docker.pkg.dev" --quiet
+
+      - name: Build and push the image
+        id: image
+        run: |
+          IMAGE="${REGION}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${REPOSITORY}/${SERVICE}"
+          docker build -f deploy/Dockerfile -t "${IMAGE}:${GITHUB_SHA}" -t "${IMAGE}:latest" .
+          docker push "${IMAGE}:${GITHUB_SHA}"
+          docker push "${IMAGE}:latest"
+          echo "ref=${IMAGE}:${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy a new revision with no traffic (canary tag)
+        id: deploy
+        run: |
+          gcloud run deploy "$SERVICE" \
+            --project "${{ vars.GCP_PROJECT_ID }}" --region "$REGION" \
+            --image "${{ steps.image.outputs.ref }}" \
+            --no-traffic --tag "canary-${GITHUB_SHA::7}" --quiet
+          URL=$(gcloud run services describe "$SERVICE" --project "${{ vars.GCP_PROJECT_ID }}" \
+                --region "$REGION" --format "value(status.url)")
+          echo "canary_url=${URL/https:\/\//https://canary-${GITHUB_SHA::7}---}" >> "$GITHUB_OUTPUT"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+
+      - name: Smoke test the canary (health + one scripted draft)
+        env:
+          CANARY: ${{ steps.deploy.outputs.canary_url }}
+        run: |
+          TOKEN=$(gcloud auth print-identity-token)
+          curl -fsS -H "Authorization: Bearer $TOKEN" "$CANARY/health"
+          curl -fsS -H "Authorization: Bearer $TOKEN" "$CANARY/readyz"
+          BODY=$(python - <<'PY'
+          import json
+          lines = [
+              "# meeting: smoke", "# attendee: Sarah Nguyen | adviser", "# attendee: James Chen | client",
+              "s001 [00:00:01] Sarah Nguyen (adviser): Your Northshore Super balance is $250,000.",
+              "s002 [00:00:05] Sarah Nguyen (adviser): You could salary sacrifice $10,000 a year.",
+              "s003 [00:00:09] James Chen (client): Yes, let's go ahead with that.",
+          ]
+          print(json.dumps({"transcript": "\n".join(lines), "strategy": "verified"}))
+          PY
+          )
+          ID=$(curl -fsS -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+               -d "$BODY" "$CANARY/api/drafts" | python -c "import json,sys; print(json.load(sys.stdin)['draft_id'])")
+          for i in $(seq 1 30); do
+            STATUS=$(curl -fsS -H "Authorization: Bearer $TOKEN" "$CANARY/api/drafts/$ID" | python -c "import json,sys; print(json.load(sys.stdin)['status'])")
+            [ "$STATUS" = "done" ] && break
+            [ "$STATUS" = "failed" ] && { echo "draft failed"; exit 1; }
+            sleep 2
+          done
+          [ "$STATUS" = "done" ] || { echo "draft did not finish"; exit 1; }
+          echo "canary drafted $ID"
+
+      - name: Promote the revision to 100 % traffic
+        run: |
+          gcloud run services update-traffic "$SERVICE" \
+            --project "${{ vars.GCP_PROJECT_ID }}" --region "$REGION" --to-latest --quiet
+          echo "live at ${{ steps.deploy.outputs.url }}"

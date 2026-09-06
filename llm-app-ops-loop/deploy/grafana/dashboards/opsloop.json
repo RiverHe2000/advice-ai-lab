@@ -1,0 +1,117 @@
+{
+  "uid": "opsloop-ops",
+  "title": "opsloop - LLM application operations",
+  "tags": ["opsloop", "llm", "slo"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "time": {"from": "now-6h", "to": "now"},
+  "panels": [
+    {
+      "id": 1, "type": "stat", "title": "Requests (fast window)",
+      "gridPos": {"x": 0, "y": 0, "w": 4, "h": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_window_requests", "refId": "A"}],
+      "options": {"colorMode": "none", "graphMode": "none", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 2, "type": "stat", "title": "Error rate",
+      "gridPos": {"x": 4, "y": 0, "w": 4, "h": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_error_rate", "refId": "A"}],
+      "fieldConfig": {"defaults": {"unit": "percentunit", "color": {"mode": "thresholds"}, "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "orange", "value": 0.01}, {"color": "red", "value": 0.03}]}}},
+      "options": {"colorMode": "background", "graphMode": "none", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 3, "type": "stat", "title": "Latency p95",
+      "gridPos": {"x": 8, "y": 0, "w": 4, "h": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_latency_p95_ms", "refId": "A"}],
+      "fieldConfig": {"defaults": {"unit": "ms", "color": {"mode": "thresholds"}, "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "orange", "value": 2000}, {"color": "red", "value": 2500}]}}},
+      "options": {"colorMode": "background", "graphMode": "none", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 4, "type": "stat", "title": "Cost per request (USD)",
+      "gridPos": {"x": 12, "y": 0, "w": 4, "h": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_cost_per_request_usd", "refId": "A"}],
+      "fieldConfig": {"defaults": {"decimals": 5, "color": {"mode": "thresholds"}, "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "orange", "value": 0.0004}, {"color": "red", "value": 0.0005}]}}},
+      "options": {"colorMode": "background", "graphMode": "none", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 5, "type": "stat", "title": "Heuristic quality (mean)",
+      "gridPos": {"x": 16, "y": 0, "w": 4, "h": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_quality_mean", "refId": "A"}],
+      "fieldConfig": {"defaults": {"decimals": 3, "color": {"mode": "thresholds"}, "thresholds": {"mode": "absolute", "steps": [{"color": "red", "value": null}, {"color": "orange", "value": 0.85}, {"color": "green", "value": 0.95}]}}},
+      "options": {"colorMode": "background", "graphMode": "none", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 6, "type": "stat", "title": "PII leak rate",
+      "gridPos": {"x": 20, "y": 0, "w": 4, "h": 4},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_pii_leak_rate", "refId": "A"}],
+      "fieldConfig": {"defaults": {"unit": "percentunit", "color": {"mode": "thresholds"}, "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "red", "value": 0.001}]}}},
+      "options": {"colorMode": "background", "graphMode": "none", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 7, "type": "bargauge", "title": "Burn rate per SLO (fast long window; 1 = spending the budget exactly)",
+      "gridPos": {"x": 0, "y": 4, "w": 12, "h": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_slo_burn_rate", "legendFormat": "{{slo}}", "refId": "A"}],
+      "fieldConfig": {"defaults": {"min": 0, "max": 5, "color": {"mode": "thresholds"}, "thresholds": {"mode": "absolute", "steps": [{"color": "green", "value": null}, {"color": "orange", "value": 1}, {"color": "red", "value": 2}]}}},
+      "options": {"displayMode": "gradient", "orientation": "horizontal", "reduceOptions": {"calcs": ["lastNotNull"]}}
+    },
+    {
+      "id": 8, "type": "table", "title": "Active alerts",
+      "gridPos": {"x": 12, "y": 4, "w": 12, "h": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"expr": "opsloop_alert_active == 1", "format": "table", "instant": true, "refId": "A"}],
+      "transformations": [{"id": "organize", "options": {"excludeByName": {"Time": true, "__name__": true, "instance": true, "job": true, "Value": true}}}]
+    },
+    {
+      "id": 9, "type": "timeseries", "title": "Error rate and refusal rate",
+      "gridPos": {"x": 0, "y": 12, "w": 12, "h": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [
+        {"expr": "opsloop_error_rate", "legendFormat": "error rate", "refId": "A"},
+        {"expr": "opsloop_refusal_rate", "legendFormat": "refusal rate", "refId": "B"},
+        {"expr": "opsloop_negative_feedback_rate", "legendFormat": "negative feedback", "refId": "C"}
+      ],
+      "fieldConfig": {"defaults": {"unit": "percentunit"}}
+    },
+    {
+      "id": 10, "type": "timeseries", "title": "Latency p50 / p95",
+      "gridPos": {"x": 12, "y": 12, "w": 12, "h": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [
+        {"expr": "opsloop_latency_p50_ms", "legendFormat": "p50", "refId": "A"},
+        {"expr": "opsloop_latency_p95_ms", "legendFormat": "p95", "refId": "B"}
+      ],
+      "fieldConfig": {"defaults": {"unit": "ms"}}
+    },
+    {
+      "id": 11, "type": "timeseries", "title": "Quality signals",
+      "gridPos": {"x": 0, "y": 20, "w": 12, "h": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [
+        {"expr": "opsloop_quality_mean", "legendFormat": "heuristic quality", "refId": "A"},
+        {"expr": "opsloop_grounding_rate", "legendFormat": "grounding rate", "refId": "B"},
+        {"expr": "opsloop_json_validity_rate", "legendFormat": "JSON validity", "refId": "C"},
+        {"expr": "opsloop_judge_mean / 5", "legendFormat": "judge mean / 5", "refId": "D"}
+      ],
+      "fieldConfig": {"defaults": {"min": 0, "max": 1}}
+    },
+    {
+      "id": 12, "type": "timeseries", "title": "Topic drift (JS distance vs bootstrap threshold)",
+      "gridPos": {"x": 12, "y": 20, "w": 12, "h": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [
+        {"expr": "opsloop_topic_drift_js", "legendFormat": "JS distance", "refId": "A"},
+        {"expr": "opsloop_topic_drift_threshold", "legendFormat": "threshold (99th pct)", "refId": "B"},
+        {"expr": "opsloop_cost_per_request_usd * 1000", "legendFormat": "cost per request (mUSD)", "refId": "C"}
+      ]
+    }
+  ]
+}

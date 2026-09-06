@@ -1,0 +1,75 @@
+name: CI · advice-doc-intelligence
+
+on:
+  push:
+    branches: [main]
+    paths: ["advice-doc-intelligence/**", ".github/workflows/advice-doc-intelligence-ci.yml"]
+  pull_request:
+    paths: ["advice-doc-intelligence/**", ".github/workflows/advice-doc-intelligence-ci.yml"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: advice-doc-intelligence
+
+jobs:
+  quality:
+    name: py${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    env:
+      HF_HUB_OFFLINE: "1"          # tests must never download models
+      TRANSFORMERS_OFFLINE: "1"
+      TOKENIZERS_PARALLELISM: "false"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: advice-doc-intelligence/pyproject.toml
+
+      # No torch here: the package imports torch/transformers lazily inside the HF backend,
+      # and the tests only use the scripted model.
+      - name: Install project (dev extras)
+        run: pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Type-check (mypy --strict)
+        run: mypy
+
+      - name: Test (pytest + coverage)
+        run: pytest --cov-report=xml
+
+      - name: Release gate (deterministic: corpus -> classifier -> rules extractor)
+        # A small seeded corpus (JSON documents, no PDFs) is generated on the fly; the
+        # classifier must reach macro-F1 >= 0.95 on its held-out split and the rules extractor
+        # must reproduce >= 95 % of gold SoAs field-for-field. Non-zero exit fails the build.
+        run: |
+          advicedoc corpus generate --out /tmp/gate/corpus --n-per-type 30 --n-soa 40 --seed 7 --no-pdf
+          advicedoc train-classifier --corpus /tmp/gate/corpus --out /tmp/gate/classifier.joblib
+          advicedoc eval-classifier --corpus /tmp/gate/corpus --classifier /tmp/gate/classifier.joblib \
+            --out /tmp/gate/classifier_eval --noise 0.05 --n-boot 200 --gate --min-macro-f1 0.95
+          advicedoc eval-extraction --corpus /tmp/gate/corpus --strategies rules llm_validated \
+            --model fake --corruption 0.3 --out /tmp/gate/extraction --n-boot 200 \
+            --gate --gate-strategy rules --min-doc-accuracy 0.95
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-py${{ matrix.python-version }}
+          path: advice-doc-intelligence/coverage.xml
+          if-no-files-found: ignore

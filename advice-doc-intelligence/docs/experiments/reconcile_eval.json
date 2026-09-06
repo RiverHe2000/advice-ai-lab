@@ -1,0 +1,69 @@
+{
+  "out": "runs\\reconcile",
+  "runs": [
+    {
+      "source": "gold",
+      "tolerance": 0.05,
+      "overall_detection": {
+        "point": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 120
+      },
+      "clean_docs_flagged": {
+        "point": 0.12987012987012986,
+        "low": 0.06493506493506493,
+        "high": 0.2077922077922078,
+        "n": 77
+      }
+    },
+    {
+      "source": "gold",
+      "tolerance": 0.1,
+      "overall_detection": {
+        "point": 0.9649122807017544,
+        "low": 0.904739010989011,
+        "high": 1.0,
+        "n": 120
+      },
+      "clean_docs_flagged": {
+        "point": 0.0,
+        "low": 0.0,
+        "high": 0.0,
+        "n": 77
+      }
+    },
+    {
+      "source": "rules",
+      "tolerance": 0.05,
+      "overall_detection": {
+        "point": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 120
+      },
+      "clean_docs_flagged": {
+        "point": 0.12987012987012986,
+        "low": 0.06493506493506493,
+        "high": 0.2077922077922078,
+        "n": 77
+      }
+    },
+    {
+      "source": "rules",
+      "tolerance": 0.1,
+      "overall_detection": {
+        "point": 0.9649122807017544,
+        "low": 0.904739010989011,
+        "high": 1.0,
+        "n": 120
+      },
+      "clean_docs_flagged": {
+        "point": 0.0,
+        "low": 0.0,
+        "high": 0.0,
+        "n": 77
+      }
+    }
+  ]
+}

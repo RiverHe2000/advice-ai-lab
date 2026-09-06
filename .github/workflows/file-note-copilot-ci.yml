@@ -1,0 +1,126 @@
+name: CI · file-note-copilot
+
+on:
+  push:
+    branches: [main]
+    paths: ["file-note-copilot/**", ".github/workflows/file-note-copilot-ci.yml"]
+  pull_request:
+    paths: ["file-note-copilot/**", ".github/workflows/file-note-copilot-ci.yml"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: file-note-copilot
+
+jobs:
+  quality:
+    name: py${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    env:
+      HF_HUB_OFFLINE: "1"          # tests must never download models
+      TRANSFORMERS_OFFLINE: "1"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: file-note-copilot/pyproject.toml
+
+      # The package never imports torch at test time, so no PyTorch install is needed here.
+      - name: Install project (dev extras)
+        run: pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Type-check (mypy --strict)
+        run: mypy
+
+      - name: Test (pytest + coverage, browser tests excluded)
+        run: pytest -m "not e2e" --cov-report=xml
+
+      - name: Verifier gate (planted hallucinations, deterministic)
+        # Every planted hallucination kind must be caught ≥ 90 % of the time and gold claims
+        # must not be flagged; runs on the seeded 100-meeting corpus, no model involved.
+        run: filenote eval-verifier --n 100 --out /tmp/selfeval --gate --min-detection 0.9 --max-false-alarm 0.02
+
+      - name: Drafting gate (scripted model, corruption 0.1, verified strategy)
+        # The verified strategy must surface every hallucination the scripted model plants
+        # and keep the conservative bounds of F1 / hallucination / omission inside thresholds.
+        run: >
+          filenote eval --model fake --corruption 0.1 --n 100 --strategies verified
+          --out /tmp/eval --gate --min-f1 0.9 --min-decisions-f1 0.9
+          --max-hallucination 0.03 --max-omission 0.10 --min-surfaced 0.95
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-py${{ matrix.python-version }}
+          path: file-note-copilot/coverage.xml
+          if-no-files-found: ignore
+
+  e2e:
+    name: browser e2e (Playwright)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: "1"
+      REQUIRE_E2E: "1"             # a browser that cannot launch is a failure here, not a skip
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: file-note-copilot/pyproject.toml
+
+      - name: Install project (dev extras)
+        run: pip install -e ".[dev]"
+
+      - name: Install chromium
+        run: playwright install --with-deps chromium
+
+      - name: Browser tests
+        run: pytest -m e2e --no-cov -p no:cacheprovider
+
+  deploy-artefacts:
+    name: image build + terraform validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the container image
+        run: docker build -f deploy/Dockerfile -t filenote/app:ci .
+
+      - name: Smoke the image
+        run: |
+          docker run -d --name app -p 8080:8080 filenote/app:ci
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8080/health && break; sleep 1; done
+          curl -fsS http://127.0.0.1:8080/readyz
+          docker rm -f app
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+
+      - name: Terraform fmt + validate
+        working-directory: file-note-copilot/deploy/terraform
+        run: |
+          terraform fmt -check -recursive
+          terraform init -backend=false
+          terraform validate

@@ -1,0 +1,6574 @@
+{
+  "minutes": 240.0,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "scenarios": [
+    "steady",
+    "latency_spike",
+    "error_burst",
+    "regressed_prompt",
+    "topic_shift",
+    "cost_creep",
+    "pii_leak"
+  ],
+  "kinds": [
+    {
+      "kind": "cost_creep",
+      "n": 3,
+      "detected": 3,
+      "detection_rate": 1.0,
+      "detection_ci": [
+        1.0,
+        1.0
+      ],
+      "ttd_mean": 8.33,
+      "ttd_ci": [
+        5.0,
+        10.0
+      ],
+      "ttd_values": [
+        10.0,
+        10.0,
+        5.0
+      ]
+    },
+    {
+      "kind": "error_burst",
+      "n": 3,
+      "detected": 3,
+      "detection_rate": 1.0,
+      "detection_ci": [
+        1.0,
+        1.0
+      ],
+      "ttd_mean": 5.0,
+      "ttd_ci": [
+        5.0,
+        5.0
+      ],
+      "ttd_values": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "kind": "latency_spike",
+      "n": 3,
+      "detected": 3,
+      "detection_rate": 1.0,
+      "detection_ci": [
+        1.0,
+        1.0
+      ],
+      "ttd_mean": 13.33,
+      "ttd_ci": [
+        10.0,
+        20.0
+      ],
+      "ttd_values": [
+        10.0,
+        10.0,
+        20.0
+      ]
+    },
+    {
+      "kind": "pii_leak",
+      "n": 3,
+      "detected": 3,
+      "detection_rate": 1.0,
+      "detection_ci": [
+        1.0,
+        1.0
+      ],
+      "ttd_mean": 5.0,
+      "ttd_ci": [
+        5.0,
+        5.0
+      ],
+      "ttd_values": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "kind": "regressed_prompt",
+      "n": 3,
+      "detected": 3,
+      "detection_rate": 1.0,
+      "detection_ci": [
+        1.0,
+        1.0
+      ],
+      "ttd_mean": 6.67,
+      "ttd_ci": [
+        5.0,
+        10.0
+      ],
+      "ttd_values": [
+        5.0,
+        10.0,
+        5.0
+      ]
+    },
+    {
+      "kind": "topic_shift",
+      "n": 3,
+      "detected": 3,
+      "detection_rate": 1.0,
+      "detection_ci": [
+        1.0,
+        1.0
+      ],
+      "ttd_mean": 13.33,
+      "ttd_ci": [
+        5.0,
+        20.0
+      ],
+      "ttd_values": [
+        15.0,
+        20.0,
+        5.0
+      ]
+    }
+  ],
+  "quiet_ticks": 459,
+  "quiet_ticks_with_alert": 1,
+  "false_alarm_rate": 0.0022,
+  "false_alarm_ci": [
+    0.0,
+    0.0066
+  ],
+  "false_alarms_by_name": {
+    "topic_drift": 1
+  },
+  "runs": [
+    {
+      "scenario": "steady",
+      "seed": 1,
+      "n_requests": 1140,
+      "n_ticks": 48,
+      "quiet_ticks": 47,
+      "quiet_ticks_with_alert": 1,
+      "false_alarms_by_name": {
+        "topic_drift": 1
+      },
+      "incidents": [],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 110.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 115.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 120.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 125.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 130.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "steady",
+      "seed": 2,
+      "n_requests": 1214,
+      "n_ticks": 48,
+      "quiet_ticks": 47,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 110.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 115.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 120.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 125.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 130.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "steady",
+      "seed": 3,
+      "n_requests": 1236,
+      "n_ticks": 48,
+      "quiet_ticks": 47,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 110.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 115.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 120.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 125.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 130.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "latency_spike",
+      "seed": 1,
+      "n_requests": 1266,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "latency_spike",
+          "seed": 1,
+          "kind": "latency_spike",
+          "start_minute": 90.0,
+          "end_minute": 130.0,
+          "expected_alerts": [
+            "latency_p95"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 10.0,
+          "first_alert": "latency_p95",
+          "alerts_during": {
+            "latency_p95": 7
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "latency_spike",
+      "seed": 2,
+      "n_requests": 1199,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "latency_spike",
+          "seed": 2,
+          "kind": "latency_spike",
+          "start_minute": 90.0,
+          "end_minute": 130.0,
+          "expected_alerts": [
+            "latency_p95"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 10.0,
+          "first_alert": "latency_p95",
+          "alerts_during": {
+            "latency_p95": 5,
+            "topic_drift": 2
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "latency_spike",
+      "seed": 3,
+      "n_requests": 1203,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "latency_spike",
+          "seed": 3,
+          "kind": "latency_spike",
+          "start_minute": 90.0,
+          "end_minute": 130.0,
+          "expected_alerts": [
+            "latency_p95"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 20.0,
+          "first_alert": "latency_p95",
+          "alerts_during": {
+            "latency_p95": 7
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "latency_p95"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "error_burst",
+      "seed": 1,
+      "n_requests": 1175,
+      "n_ticks": 48,
+      "quiet_ticks": 18,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "error_burst",
+          "seed": 1,
+          "kind": "error_burst",
+          "start_minute": 100.0,
+          "end_minute": 130.0,
+          "expected_alerts": [
+            "error_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "error_rate",
+          "alerts_during": {
+            "error_rate": 11
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "error_burst",
+      "seed": 2,
+      "n_requests": 1261,
+      "n_ticks": 48,
+      "quiet_ticks": 18,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "error_burst",
+          "seed": 2,
+          "kind": "error_burst",
+          "start_minute": 100.0,
+          "end_minute": 130.0,
+          "expected_alerts": [
+            "error_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "error_rate",
+          "alerts_during": {
+            "error_rate": 8
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "error_burst",
+      "seed": 3,
+      "n_requests": 1184,
+      "n_ticks": 48,
+      "quiet_ticks": 18,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "error_burst",
+          "seed": 3,
+          "kind": "error_burst",
+          "start_minute": 100.0,
+          "end_minute": 130.0,
+          "expected_alerts": [
+            "error_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "error_rate",
+          "alerts_during": {
+            "error_rate": 11
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "regressed_prompt",
+      "seed": 1,
+      "n_requests": 1168,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "regressed_prompt",
+          "seed": 1,
+          "kind": "regressed_prompt",
+          "start_minute": 90.0,
+          "end_minute": 150.0,
+          "expected_alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "json_validity",
+            "grounding_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "quality_mean",
+          "alerts_during": {
+            "grounding_rate": 16,
+            "json_validity": 7,
+            "negative_feedback_rate": 4,
+            "quality_mean": 15,
+            "refusal_rate": 5
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "grounding_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "regressed_prompt",
+      "seed": 2,
+      "n_requests": 1206,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "regressed_prompt",
+          "seed": 2,
+          "kind": "regressed_prompt",
+          "start_minute": 90.0,
+          "end_minute": 150.0,
+          "expected_alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "json_validity",
+            "grounding_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 10.0,
+          "first_alert": "quality_mean",
+          "alerts_during": {
+            "grounding_rate": 13,
+            "json_validity": 9,
+            "negative_feedback_rate": 7,
+            "quality_mean": 13,
+            "refusal_rate": 9,
+            "topic_drift": 4
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "regressed_prompt",
+      "seed": 3,
+      "n_requests": 1231,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "regressed_prompt",
+          "seed": 3,
+          "kind": "regressed_prompt",
+          "start_minute": 90.0,
+          "end_minute": 150.0,
+          "expected_alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "json_validity",
+            "grounding_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "grounding_rate",
+          "alerts_during": {
+            "grounding_rate": 14,
+            "json_validity": 11,
+            "negative_feedback_rate": 3,
+            "quality_mean": 13,
+            "refusal_rate": 8,
+            "topic_drift": 2
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [
+            "grounding_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "grounding_rate",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "grounding_rate",
+            "json_validity",
+            "quality_mean"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "topic_shift",
+      "seed": 1,
+      "n_requests": 1215,
+      "n_ticks": 48,
+      "quiet_ticks": 22,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "topic_shift",
+          "seed": 1,
+          "kind": "topic_shift",
+          "start_minute": 120.0,
+          "end_minute": 240.0,
+          "expected_alerts": [
+            "topic_drift"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 15.0,
+          "first_alert": "topic_drift",
+          "alerts_during": {
+            "negative_feedback_rate": 11,
+            "quality_mean": 22,
+            "refusal_rate": 24,
+            "topic_drift": 17
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 110.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 115.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 120.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 165.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 170.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 195.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 200.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 205.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 210.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 215.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 220.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 225.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 230.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 235.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 240.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "topic_shift",
+      "seed": 2,
+      "n_requests": 1162,
+      "n_ticks": 48,
+      "quiet_ticks": 22,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "topic_shift",
+          "seed": 2,
+          "kind": "topic_shift",
+          "start_minute": 120.0,
+          "end_minute": 240.0,
+          "expected_alerts": [
+            "topic_drift"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 20.0,
+          "first_alert": "topic_drift",
+          "alerts_during": {
+            "error_rate": 3,
+            "negative_feedback_rate": 5,
+            "quality_mean": 18,
+            "refusal_rate": 23,
+            "topic_drift": 16
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 110.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 115.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 120.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "error_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "error_rate",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "error_rate",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 165.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 170.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 195.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 200.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 205.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 210.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 215.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 220.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 225.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 230.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 235.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 240.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate"
+          ],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "topic_shift",
+      "seed": 3,
+      "n_requests": 1196,
+      "n_ticks": 48,
+      "quiet_ticks": 22,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "topic_shift",
+          "seed": 3,
+          "kind": "topic_shift",
+          "start_minute": 120.0,
+          "end_minute": 240.0,
+          "expected_alerts": [
+            "topic_drift"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "topic_drift",
+          "alerts_during": {
+            "negative_feedback_rate": 13,
+            "quality_mean": 20,
+            "refusal_rate": 24,
+            "topic_drift": 24
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 105.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 110.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 115.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 120.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 165.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 170.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 195.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 200.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 205.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 210.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 215.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 220.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 225.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 230.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 235.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 240.0,
+          "alerts": [
+            "negative_feedback_rate",
+            "quality_mean",
+            "refusal_rate",
+            "topic_drift"
+          ],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "cost_creep",
+      "seed": 1,
+      "n_requests": 1212,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "cost_creep",
+          "seed": 1,
+          "kind": "cost_creep",
+          "start_minute": 90.0,
+          "end_minute": 180.0,
+          "expected_alerts": [
+            "cost_per_request"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 10.0,
+          "first_alert": "cost_per_request",
+          "alerts_during": {
+            "cost_per_request": 19
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 165.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 170.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "cost_creep",
+      "seed": 2,
+      "n_requests": 1244,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "cost_creep",
+          "seed": 2,
+          "kind": "cost_creep",
+          "start_minute": 90.0,
+          "end_minute": 180.0,
+          "expected_alerts": [
+            "cost_per_request"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 10.0,
+          "first_alert": "cost_per_request",
+          "alerts_during": {
+            "cost_per_request": 19,
+            "topic_drift": 3
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "cost_per_request",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 165.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 170.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [
+            "topic_drift"
+          ],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "cost_creep",
+      "seed": 3,
+      "n_requests": 1226,
+      "n_ticks": 48,
+      "quiet_ticks": 16,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "cost_creep",
+          "seed": 3,
+          "kind": "cost_creep",
+          "start_minute": 90.0,
+          "end_minute": 180.0,
+          "expected_alerts": [
+            "cost_per_request"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "cost_per_request",
+          "alerts_during": {
+            "cost_per_request": 20
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 95.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 100.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 155.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 160.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 165.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 170.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 175.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 180.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [
+            "cost_per_request"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "pii_leak",
+      "seed": 1,
+      "n_requests": 1255,
+      "n_ticks": 48,
+      "quiet_ticks": 18,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "pii_leak",
+          "seed": 1,
+          "kind": "pii_leak",
+          "start_minute": 100.0,
+          "end_minute": 140.0,
+          "expected_alerts": [
+            "pii_leak_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "pii_leak_rate",
+          "alerts_during": {
+            "pii_leak_rate": 10,
+            "topic_drift": 1
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "pii_leak_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "pii_leak",
+      "seed": 2,
+      "n_requests": 1172,
+      "n_ticks": 48,
+      "quiet_ticks": 18,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "pii_leak",
+          "seed": 2,
+          "kind": "pii_leak",
+          "start_minute": 100.0,
+          "end_minute": 140.0,
+          "expected_alerts": [
+            "pii_leak_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "pii_leak_rate",
+          "alerts_during": {
+            "pii_leak_rate": 10,
+            "topic_drift": 3
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "pii_leak_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "pii_leak_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "pii_leak_rate",
+            "topic_drift"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    },
+    {
+      "scenario": "pii_leak",
+      "seed": 3,
+      "n_requests": 1128,
+      "n_ticks": 48,
+      "quiet_ticks": 18,
+      "quiet_ticks_with_alert": 0,
+      "false_alarms_by_name": {},
+      "incidents": [
+        {
+          "scenario": "pii_leak",
+          "seed": 3,
+          "kind": "pii_leak",
+          "start_minute": 100.0,
+          "end_minute": 140.0,
+          "expected_alerts": [
+            "pii_leak_rate"
+          ],
+          "detected": true,
+          "time_to_detect_minutes": 5.0,
+          "first_alert": "pii_leak_rate",
+          "alerts_during": {
+            "pii_leak_rate": 10
+          }
+        }
+      ],
+      "alert_timeline": [
+        {
+          "minute": 5.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 10.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 15.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 20.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 25.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 30.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 35.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 40.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 45.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 50.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 55.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 60.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 65.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 70.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 75.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 80.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 85.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 90.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 95.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 100.0,
+          "alerts": [],
+          "incident_active": true
+        },
+        {
+          "minute": 105.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 110.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 115.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 120.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 125.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 130.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 135.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": true
+        },
+        {
+          "minute": 140.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 145.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 150.0,
+          "alerts": [
+            "pii_leak_rate"
+          ],
+          "incident_active": false
+        },
+        {
+          "minute": 155.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 160.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 165.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 170.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 175.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 180.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 185.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 190.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 195.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 200.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 205.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 210.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 215.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 220.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 225.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 230.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 235.0,
+          "alerts": [],
+          "incident_active": false
+        },
+        {
+          "minute": 240.0,
+          "alerts": [],
+          "incident_active": false
+        }
+      ]
+    }
+  ],
+  "gate": {
+    "min_detection": 0.9,
+    "max_false_alarm": 0.05,
+    "passed": true
+  }
+}

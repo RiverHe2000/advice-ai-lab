@@ -1,0 +1,83 @@
+# SLOs for the Northshore Adviser Assistant. Every objective is "at most `budget` of eligible
+# requests may be bad"; the indicator defines "bad". Alerts fire when the error budget burns at
+# `burn_rate` x in BOTH the long and the short window (the SRE multi-window pattern), and a
+# warning that persists for `escalation_consecutive` ticks becomes critical.
+step_minutes: 5
+baseline_minutes: 60          # the first hour of a run is the drift baseline
+escalation_consecutive: 2
+windows:                      # min_bad_events keeps Poisson noise from paging on a 1 % budget
+  - {name: page, long_minutes: 10, short_minutes: 2, burn_rate: 3.0, severity: critical, min_bad_events: 3}
+  - {name: fast, long_minutes: 30, short_minutes: 5, burn_rate: 2.0, severity: critical, min_bad_events: 3}
+  - {name: slow, long_minutes: 120, short_minutes: 15, burn_rate: 1.0, severity: warning, min_bad_events: 5}
+drift:
+  enabled: true
+  window_minutes: 20
+  k: 8
+  min_df: 0                   # >0 drops tokens seen in fewer baseline texts
+  holdout: 0.5                # baseline half used for the reference mix (not the k-means fit)
+  novelty_quantile: 0.95      # requests farther than this baseline distance quantile (or with a
+                              # larger out-of-vocabulary share) are 'novel'
+  novel_alpha: 0.001          # one-sided binomial test: the novel share grew
+  novel_min: 5                # ... with at least this many novel requests in the window
+  alpha: 0.01                 # two-sample chi-square on the topic mix
+  n_boot: 200                 # bootstrap of the JS distance under the baseline mix
+  quantile: 0.99
+  min_requests: 30
+  embedder: hashing           # or sentence-transformers (optional extra)
+slos:
+  - name: latency_p95
+    indicator: latency
+    threshold: 2500           # ms; "p95 <= 2.5 s" == "at most 5 % of requests slower than 2.5 s"
+    budget: 0.05
+    min_requests: 20
+    description: End-to-end request latency.
+  - name: error_rate
+    indicator: error
+    budget: 0.01
+    min_requests: 20
+    description: Timeouts, provider 5xx, tool failures.
+  - name: cost_per_request
+    indicator: cost
+    threshold: 0.0005         # USD per request; ~p98 of steady traffic with the demo price table
+    budget: 0.10
+    min_requests: 20
+    description: Requests whose model cost exceeds the per-request threshold.
+  - name: quality_mean
+    indicator: quality
+    threshold: 0.75           # heuristic composite (grounding, refusal, PII, JSON, tone, length)
+    budget: 0.15
+    min_requests: 20
+    description: Requests whose heuristic quality score is below the floor.
+  - name: judge_score
+    indicator: judge
+    threshold: 3.5            # mean of the 1-5 rubric; only judged traces are eligible
+    budget: 0.10
+    min_requests: 20
+    description: Judged traces scoring below 3.5.
+  - name: refusal_rate
+    indicator: refusal
+    budget: 0.06
+    floor: 0.002              # band: a refusal rate this low means the out-of-scope guard broke
+    min_requests: 20
+    description: Answers that decline the question.
+  - name: negative_feedback_rate
+    indicator: negative_feedback
+    budget: 0.10
+    min_requests: 20
+    description: Thumbs down, regenerate, or a substantial edit.
+  - name: json_validity
+    indicator: invalid_json
+    budget: 0.05
+    min_requests: 10
+    min_requests_short: 2
+    description: JSON-format answers that do not parse.
+  - name: pii_leak_rate
+    indicator: pii_leak
+    budget: 0.005
+    min_requests: 20
+    description: Answers in which the SDK redacted a TFN / ABN / email / phone.
+  - name: grounding_rate
+    indicator: grounding
+    budget: 0.10
+    min_requests: 20
+    description: Answers quoting a number that is not in any tool output.

@@ -1,0 +1,23 @@
+{
+  "accuracy": {
+    "point": 1.0,
+    "low": 1.0,
+    "high": 1.0,
+    "n": 165
+  },
+  "macro_f1": {
+    "point": 1.0,
+    "low": 1.0,
+    "high": 1.0,
+    "n": 165
+  },
+  "ece": 0.06380601462481783,
+  "noise": {},
+  "zero_shot": {
+    "point": 1.0,
+    "low": 1.0,
+    "high": 1.0,
+    "n": 165
+  },
+  "out": "runs\\hf_qwen3_4b_instruct_2507_classifier"
+}

@@ -1,0 +1,77 @@
+{
+  "environment": "prod",
+  "prompt": "adviser_assistant",
+  "action": "rollback",
+  "reasons": [
+    "refusal rate 0.154 vs control 0.032 (+0.122 > 0.05, p=0.0000)",
+    "quality mean 0.755 vs control 0.971: 95% CI [-0.236, -0.197] entirely below -0.05"
+  ],
+  "canary": {
+    "version": "v2-regressed",
+    "n": 188,
+    "errors": 0,
+    "refusals": 29,
+    "error_rate": 0.0,
+    "refusal_rate": 0.1543,
+    "quality_mean": 0.755,
+    "negative_feedback_rate": 0.2021,
+    "latency_p95_ms": 1669.8,
+    "cost_mean_usd": 0.000277
+  },
+  "control": {
+    "version": "v1",
+    "n": 2161,
+    "errors": 2,
+    "refusals": 69,
+    "error_rate": 0.0009,
+    "refusal_rate": 0.032,
+    "quality_mean": 0.9715,
+    "negative_feedback_rate": 0.0416,
+    "latency_p95_ms": 1669.7,
+    "cost_mean_usd": 0.00029
+  },
+  "tests": {
+    "error_rate": {
+      "diff": -0.0009,
+      "z": -0.417,
+      "p": 0.6618
+    },
+    "refusal_rate": {
+      "diff": 0.1223,
+      "z": 8.04,
+      "p": 0.0
+    },
+    "quality_mean": {
+      "diff": -0.2165,
+      "ci_low": -0.2363,
+      "ci_high": -0.197
+    }
+  },
+  "from_stage": 10,
+  "to_stage": 0,
+  "applied": true,
+  "release": {
+    "active": "v1",
+    "canary": null,
+    "stages": [
+      10,
+      50,
+      100
+    ],
+    "history": [
+      {
+        "ts": "2026-09-06T12:47:10Z",
+        "event": "start",
+        "version": "v2-regressed",
+        "stage": 10
+      },
+      {
+        "ts": "2026-09-06T12:47:16Z",
+        "event": "rollback",
+        "version": "v2-regressed",
+        "from_stage": 10,
+        "reason": "refusal rate 0.154 vs control 0.032 (+0.122 > 0.05, p=0.0000); quality mean 0.755 vs control 0.971: 95% CI [-0.236, -0.197] entirely below -0.05"
+      }
+    ]
+  }
+}

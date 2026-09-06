@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>File-note copilot · Northshore Financial Advice</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#note-pane">Skip to the note</a>
+  <header class="topbar">
+    <h1>File-note copilot</h1>
+    <p class="tagline">Every claim cites the transcript. Nothing is saved until you approve it.</p>
+    <div class="status" id="status" role="status" aria-live="polite">Paste a transcript to start.</div>
+  </header>
+
+  <section class="intake" id="intake" aria-labelledby="intake-heading">
+    <h2 id="intake-heading">1. Transcript</h2>
+    <form id="draft-form">
+      <label for="transcript">Transcript text (one line per segment: <code>[hh:mm:ss] Name (role): text</code>, or just <code>Name: text</code>)</label>
+      <textarea id="transcript" name="transcript" rows="8" spellcheck="false" placeholder="# meeting: m0001&#10;s001 [00:00:04] Sarah Nguyen (adviser): Thanks for coming in..."></textarea>
+      <div class="row">
+        <label for="file">or upload a .txt</label>
+        <input id="file" name="file" type="file" accept=".txt,text/plain">
+        <label for="strategy">Strategy</label>
+        <select id="strategy" name="strategy">
+          <option value="verified" selected>verified (extract → compose → verify → repair)</option>
+          <option value="extract_then_compose">extract_then_compose</option>
+          <option value="single_shot">single_shot</option>
+        </select>
+        <button type="submit" id="draft-button" class="primary">Draft note</button>
+        <button type="button" id="sample-button">Load sample</button>
+      </div>
+    </form>
+    <ol class="progress" id="progress" aria-label="Drafting progress"></ol>
+  </section>
+
+  <main class="workspace" id="workspace" hidden>
+    <section class="pane transcript-pane" aria-labelledby="transcript-heading">
+      <h2 id="transcript-heading">2. Transcript</h2>
+      <ol class="segments" id="segments"></ol>
+    </section>
+
+    <section class="pane note-pane" id="note-pane" aria-labelledby="note-heading">
+      <div class="note-header">
+        <h2 id="note-heading">3. Draft note</h2>
+        <div class="verdict" id="verdict" aria-live="polite"></div>
+      </div>
+      <div id="note"></div>
+      <div class="actions">
+        <button type="button" id="approve-button" class="primary" disabled aria-describedby="approve-help">Approve and save</button>
+        <span id="approve-help" class="help">Approval is enabled once every unsupported claim has been edited or deleted.</span>
+        <label for="approver">Approver</label>
+        <input id="approver" type="text" value="adviser@northshore" autocomplete="off">
+      </div>
+      <section class="feedback" aria-labelledby="feedback-heading">
+        <h3 id="feedback-heading">Feedback</h3>
+        <div class="row">
+          <button type="button" id="thumbs-up" aria-pressed="false" aria-label="Thumbs up">👍 Good</button>
+          <button type="button" id="thumbs-down" aria-pressed="false" aria-label="Thumbs down">👎 Needs work</button>
+          <input id="feedback-comment" type="text" placeholder="What was wrong? (optional)">
+          <button type="button" id="feedback-button">Send feedback</button>
+        </div>
+        <p class="help">Tick "wrong" on a claim to include it in the feedback.</p>
+      </section>
+      <section class="approval" id="approval" hidden aria-labelledby="approval-heading">
+        <h3 id="approval-heading">Approved</h3>
+        <p id="approval-meta"></p>
+        <pre id="approval-diff" class="diff" tabindex="0" aria-label="Diff between the AI draft and the approved note"></pre>
+      </section>
+    </section>
+  </main>
+
+  <template id="claim-template">
+    <li class="claim" tabindex="0">
+      <div class="claim-main">
+        <span class="flag" hidden><span class="flag-icon" aria-hidden="true">⚠</span> <span class="flag-text">Unsupported</span></span>
+        <span class="claim-text"></span>
+        <span class="claim-meta"></span>
+      </div>
+      <ul class="reasons" hidden></ul>
+      <div class="chips" role="group" aria-label="Evidence"></div>
+      <div class="claim-actions">
+        <button type="button" class="edit-button">Edit</button>
+        <button type="button" class="delete-button">Delete</button>
+        <label class="wrong"><input type="checkbox" class="wrong-box"> wrong</label>
+      </div>
+    </li>
+  </template>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

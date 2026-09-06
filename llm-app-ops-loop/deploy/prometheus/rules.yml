@@ -1,0 +1,56 @@
+# Alert rules on the collector's gauges. The burn-rate decision itself is made by the monitor
+# (multi-window, min bad events, escalation) and exported as opsloop_alert_active; the rules
+# here page on that, and add a few plain guards (stale collector, budget nearly spent) that do
+# not need the monitor's state. `for:` keeps a single odd scrape from paging anyone.
+groups:
+  - name: opsloop
+    rules:
+      - alert: CollectorStale
+        expr: time() - opsloop_last_refresh_timestamp_seconds > 300
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: "The opsloop collector has not refreshed its metrics for 5 minutes"
+
+      - alert: SloBurnCritical
+        expr: opsloop_alert_active{severity="critical"} == 1
+        for: 0m
+        labels: {severity: critical}
+        annotations:
+          summary: "SLO {{ $labels.name }} is burning its error budget (critical)"
+          description: "The monitor's multi-window burn-rate check fired for {{ $labels.name }}. See docs/RUNBOOK.md#{{ $labels.name }}."
+
+      - alert: SloBurnWarning
+        expr: opsloop_alert_active{severity="warning"} == 1
+        for: 5m
+        labels: {severity: warning}
+        annotations:
+          summary: "SLO {{ $labels.name }} is burning its error budget (warning)"
+
+      - alert: ErrorBudgetHalfSpent
+        expr: opsloop_slo_burn_rate > 0.5 and opsloop_slo_burn_rate < 1.0
+        for: 30m
+        labels: {severity: info}
+        annotations:
+          summary: "{{ $labels.slo }} has used more than half its budget in the fast window for 30 minutes"
+
+      - alert: PiiLeakDetected
+        expr: opsloop_pii_leak_rate > 0
+        for: 0m
+        labels: {severity: critical}
+        annotations:
+          summary: "An answer contained a TFN / ABN / email / phone (redacted by the SDK, rate {{ $value | printf \"%.3f\" }})"
+
+      - alert: TopicDrift
+        expr: opsloop_topic_drift_detected == 1
+        for: 10m
+        labels: {severity: warning}
+        annotations:
+          summary: "The topic mix of incoming questions moved away from the baseline (JS {{ $value }})"
+
+      - alert: CostPerRequestHigh
+        expr: opsloop_cost_per_request_usd > 0.0005
+        for: 15m
+        labels: {severity: warning}
+        annotations:
+          summary: "Mean model cost per request is {{ $value | printf \"%.5f\" }} USD over the fast window"

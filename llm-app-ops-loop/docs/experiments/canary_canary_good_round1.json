@@ -1,0 +1,87 @@
+{
+  "environment": "prod",
+  "prompt": "adviser_assistant",
+  "action": "advance",
+  "reasons": [
+    "canary healthy at 50%: advance to 100%"
+  ],
+  "canary": {
+    "version": "v2",
+    "n": 1027,
+    "errors": 2,
+    "refusals": 23,
+    "error_rate": 0.0019,
+    "refusal_rate": 0.0224,
+    "quality_mean": 0.986,
+    "negative_feedback_rate": 0.0302,
+    "latency_p95_ms": 1654.5,
+    "cost_mean_usd": 0.000324
+  },
+  "control": {
+    "version": "v1",
+    "n": 1402,
+    "errors": 4,
+    "refusals": 39,
+    "error_rate": 0.0029,
+    "refusal_rate": 0.0279,
+    "quality_mean": 0.9722,
+    "negative_feedback_rate": 0.0428,
+    "latency_p95_ms": 1615.6,
+    "cost_mean_usd": 0.00029
+  },
+  "tests": {
+    "error_rate": {
+      "diff": -0.0009,
+      "z": -0.444,
+      "p": 0.6716
+    },
+    "refusal_rate": {
+      "diff": -0.0055,
+      "z": -0.841,
+      "p": 0.7997
+    },
+    "quality_mean": {
+      "diff": 0.0138,
+      "ci_low": 0.0082,
+      "ci_high": 0.0199
+    }
+  },
+  "from_stage": 50,
+  "to_stage": 100,
+  "applied": true,
+  "release": {
+    "active": "v1",
+    "canary": {
+      "version": "v2",
+      "stage": 100,
+      "started": "2026-09-06T12:46:47Z"
+    },
+    "stages": [
+      10,
+      50,
+      100
+    ],
+    "history": [
+      {
+        "ts": "2026-09-06T12:46:47Z",
+        "event": "start",
+        "version": "v2",
+        "stage": 10
+      },
+      {
+        "ts": "2026-09-06T12:46:54Z",
+        "event": "advance",
+        "version": "v2",
+        "stage": 50,
+        "reason": "canary healthy at 10%: advance to 50%"
+      },
+      {
+        "ts": "2026-09-06T12:47:01Z",
+        "event": "advance",
+        "version": "v2",
+        "stage": 100,
+        "reason": "canary healthy at 50%: advance to 100%"
+      }
+    ]
+  }
+}

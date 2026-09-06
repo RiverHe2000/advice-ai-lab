@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+
+# Runtime state (regenerable): generated corpus, trained models, job database, evaluation runs
+runs/
+state/
+data/
+inbox/
+*.sqlite
+*.sqlite-journal
+*.joblib
+*.jsonl.log
+*.bin
+*.pt
+*.safetensors
+models/
+
+# Local logs and IDE files
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# docs/experiments/ outputs ARE committed (they are the evidence behind docs/RESULTS.md)

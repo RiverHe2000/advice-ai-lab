@@ -1,0 +1,360 @@
+{
+  "meetings": 100,
+  "clean_claims": 1669,
+  "kinds": [
+    {
+      "kind": "invented_decision",
+      "n": 100,
+      "detected": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      }
+    },
+    {
+      "kind": "changed_number",
+      "n": 100,
+      "detected": {
+        "mean": 0.98,
+        "low": 0.95,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 0.98,
+        "low": 0.95,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 0.98,
+        "low": 0.95,
+        "high": 1.0,
+        "n": 100.0
+      }
+    },
+    {
+      "kind": "wrong_owner",
+      "n": 100,
+      "detected": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      }
+    },
+    {
+      "kind": "wrong_date",
+      "n": 100,
+      "detected": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      }
+    },
+    {
+      "kind": "deferred_as_decided",
+      "n": 100,
+      "detected": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      }
+    },
+    {
+      "kind": "wrong_citation",
+      "n": 100,
+      "detected": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 1.0,
+        "low": 1.0,
+        "high": 1.0,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 0.99,
+        "low": 0.97,
+        "high": 1.0,
+        "n": 100.0
+      }
+    },
+    {
+      "kind": "small_talk_leakage",
+      "n": 100,
+      "detected": {
+        "mean": 0.95,
+        "low": 0.9,
+        "high": 0.99,
+        "n": 100.0
+      },
+      "flagged": {
+        "mean": 0.95,
+        "low": 0.9,
+        "high": 0.99,
+        "n": 100.0
+      },
+      "attributed": {
+        "mean": 0.95,
+        "low": 0.9,
+        "high": 0.99,
+        "n": 100.0
+      }
+    }
+  ],
+  "false_alarm_unsupported": {
+    "mean": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 1669.0
+  },
+  "false_alarm_any": {
+    "mean": 0.06051527860994608,
+    "low": 0.051730843397510065,
+    "high": 0.06986558537592671,
+    "n": 1669.0
+  },
+  "false_alarm_by_section": {
+    "circumstance_changes": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 214.0
+    },
+    "goals": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 206.0
+    },
+    "topics_discussed": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 387.0
+    },
+    "advice_discussed": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 268.0
+    },
+    "decisions": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 132.0
+    },
+    "action_items": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 347.0
+    },
+    "vulnerability_indicators": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 30.0
+    },
+    "follow_up": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 85.0
+    }
+  },
+  "calibration": {
+    "ece": 0.050341536513296745,
+    "n": 2369,
+    "bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "n": 693,
+        "mean_confidence": 0.0,
+        "mean_accuracy": 0.0
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "n": 0,
+        "mean_confidence": null,
+        "mean_accuracy": null
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "n": 0,
+        "mean_confidence": null,
+        "mean_accuracy": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "n": 0,
+        "mean_confidence": null,
+        "mean_accuracy": null
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "n": 0,
+        "mean_confidence": null,
+        "mean_accuracy": null
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "n": 31,
+        "mean_confidence": 0.5822580645161288,
+        "mean_accuracy": 1.0
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "n": 70,
+        "mean_confidence": 0.6217885714285712,
+        "mean_accuracy": 1.0
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "n": 0,
+        "mean_confidence": null,
+        "mean_accuracy": null
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "n": 334,
+        "mean_confidence": 0.8635227544910179,
+        "mean_accuracy": 0.9940119760479041
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "n": 1241,
+        "mean_confidence": 0.9667599516518937,
+        "mean_accuracy": 0.9959709911361805
+      }
+    ]
+  },
+  "n_boot": 1000,
+  "config": {
+    "support_overlap": 0.5,
+    "weak_overlap": 0.25,
+    "require_numbers": true,
+    "require_dates": true,
+    "check_decision_language": true,
+    "check_owner": true,
+    "check_off_topic": true,
+    "check_speaker": true,
+    "section_speakers": {
+      "decisions": [
+        "client",
+        "adviser"
+      ],
+      "goals": [
+        "client",
+        "adviser"
+      ],
+      "circumstance_changes": [
+        "client",
+        "adviser"
+      ],
+      "vulnerability_indicators": [
+        "client"
+      ]
+    },
+    "commitment_patterns": [
+      "\\bagree(?:d|s)?\\b",
+      "\\bgo ahead\\b",
+      "\\blet'?s (?:do|go|proceed|lock)\\b",
+      "\\block (?:that|it|this) in\\b",
+      "\\bhappy to proceed\\b",
+      "\\bproceed with\\b",
+      "\\bwe'?ll (?:set up|put|move|switch|increase|reduce|start|lodge|renew|make|go|get|update|proceed)\\b",
+      "\\bdo it\\b",
+      "\\bsign(?:ed)? off\\b",
+      "\\bdecided\\b",
+      "\\bgo with\\b"
+    ],
+    "deferral_patterns": [
+      "\\bthink about\\b",
+      "\\bnot yet\\b",
+      "\\bnext time\\b",
+      "\\bnext review\\b",
+      "\\bhold off\\b",
+      "\\bpark (?:that|it|this)\\b",
+      "\\brevisit\\b",
+      "\\bnot ready\\b",
+      "\\bsleep on it\\b",
+      "\\bcome back to\\b",
+      "\\bleave (?:it|that) for now\\b",
+      "\\bno rush\\b",
+      "\\bnot sure\\b",
+      "\\bmaybe later\\b",
+      "\\bdefer\\b",
+      "\\bnot today\\b"
+    ],
+    "semantic": false,
+    "semantic_threshold": 0.5,
+    "embedder": "hashing"
+  }
+}

@@ -1,0 +1,576 @@
+{
+  "summary": {
+    "model": "northshore-judge-8b",
+    "slo_eligible": false,
+    "judged": 35,
+    "scored": 35,
+    "missing": 0,
+    "repairs": 35,
+    "helpfulness_mean": 3.343,
+    "grounding_mean": 4.2,
+    "tone_mean": 4.314,
+    "overall_mean": 3.952
+  },
+  "results": [
+    {
+      "trace_id": "d445de343e8d5d84ab410bc8184bbf41",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ddb1fc2fbf3a5256b664d23707c111cd",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "9e3bbea2a2a3500f8851e8a7889a59eb",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "533f11dc16895f668bd52a09a8e24ec7",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.4%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "5ae8128258a4556f9686d82e3667d5c7",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "16db8fc1adb05e079a370f2569439799",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.5%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "3890477059025d00ae60ead475ace237",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "97217dbc0d1b5445922d0fb8024a2d4f",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "c012366a90045479992881530cc96564",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "0a28ac93f6655977a3ad15426a493630",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.9%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "37f7f17f0ff156c8ad3b0d5f5222d33a",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.8%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "df5341e7a43151d4979af66430ca1da1",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "b919bc0ea775516dadfdfa41c25c3c75",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "40ff65daa879550fbb4c3d5f05b0118a",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ef63dfba5f6f584b89578327e9bb7cde",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "dbdf02d4a3ce5348927e96223f5ad5c9",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "figures match tool results"
+      },
+      "mean": 4.333,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "1b48eb0482db5f49a952659ce955d879",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.8%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "90d9974ec49a52099f2912bf1f914bfe",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ccc164d4db0151beafad26a06a7ad2bf",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "7bf6b1d1e9855260a4bdf600e049f1c9",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "71660cc06c8b5df88ad8cdf1ac8b060d",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "f77cb31618195649801e4946ac264b48",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ced6dff00b6f503090ccebe4f619fdff",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "027e18eae79b59a79ed9450210fea4d2",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "18183d52d0f9586cb1a959db7225d852",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ecd27d65eb885372a6e5bdc6598114f6",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.6%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "09f570e23aa55bf5a5578ccd0495a587",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "d9aa8170180e575e9105fcd3df706180",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "4d2f62300f38592fa013e45db1e04ecd",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "1284122cd26653a3bfe5c12dead5234e",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "478b5f430fad540390c152edf20ea016",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "2a38e127efde5b0081e211f777398d2f",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "19f542e9c65759f9a8845af955ab1d67",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 3,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": "ungrounded: ['1.9%']"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "327cb0b1f8ea5b26876996e721df3c2f",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 5,
+        "tone": 3,
+        "rationale": "refusal"
+      },
+      "mean": 3.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "5350ced04fb554f788b37ecc2bdc1f45",
+      "model": "northshore-judge-8b",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "figures match tool results"
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 1,
+      "attempts": 1,
+      "error": null
+    }
+  ]
+}

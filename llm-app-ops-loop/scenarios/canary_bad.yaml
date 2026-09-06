@@ -1,0 +1,6 @@
+name: canary_bad
+description: Prompt v2-regressed as a 10 % canary next to v1 (the canary should roll back).
+traffic: {rate_per_minute: 5, sessions: 200, clients: 200}
+active_version: v1
+canary: {version: v2-regressed, stage: 10}
+incidents: []

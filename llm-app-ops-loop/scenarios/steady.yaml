@@ -1,0 +1,5 @@
+name: steady
+description: Four hours of ordinary adviser traffic with no incident (the false-alarm control).
+traffic: {rate_per_minute: 5, sessions: 40, clients: 200, out_of_scope_share: 0.03}
+active_version: v1
+incidents: []

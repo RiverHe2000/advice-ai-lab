@@ -1,0 +1,976 @@
+{
+  "summary": {
+    "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+    "slo_eligible": true,
+    "judged": 60,
+    "scored": 60,
+    "missing": 0,
+    "repairs": 0,
+    "helpfulness_mean": 4.733,
+    "grounding_mean": 4.733,
+    "tone_mean": 4.9,
+    "overall_mean": 4.789
+  },
+  "results": [
+    {
+      "trace_id": "b919bc0ea775516dadfdfa41c25c3c75",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately lists the top three holdings by value as extracted from the tool results. Each holding's name, value, and weight percentage are directly taken from the 'top_holdings' array in the JSON output. All figures are present in the tool results, ensuring full grounding. The tone is professional, direct, and courteous, and the response is helpful and relevant to the query."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "9e1bb0b2d9945e23b2a29601d57c3e73",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing next_review as '2027-07-08', days_until_next_review as 310, and mentions Wei Zhang as the adviser. All figures are directly from the tool results, ensuring full grounding. The response is clear, professional, and directly addresses the question."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "837ef344687f5ebdab5fc713dc51e6a5",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the TPD cover amount ($500,000.00) and life cover ($1,000,000.00) directly from the tool result, with no invented or altered figures. The response is clear, professional, and provides relevant information without unnecessary detail."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "d6a0d44a9f9458f3b533b2fc3ea9f5df",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the expiry date from the tool result (2026-09-24) and includes the correct number of days remaining (23), both of which are explicitly provided in the JSON output. The tone is professional and courteous. All figures are accurately derived from the tool results, ensuring full grounding and helpfulness."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "4833d5a006c251de9a42f9cbff761881",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 1,
+        "tone": 3,
+        "rationale": ""
+      },
+      "mean": 1.667,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "2ce42f86abf55c8284d5034ee06c44a1",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately lists the top three holdings by value as extracted from the tool results' 'top_holdings' array. Each holding's name, value, and weight percentage are directly taken from the data, with no invented or altered figures. The response is professional, direct, and courteous, and provides a clear, concise summary relevant to the question."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "971ba65ec46f5b69922e7b30f913d8f9",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer includes all relevant fee details from the tool results, accurately reflects the total fees, percentages, and consent expiry, and is structured as requested in JSON format. All figures are directly taken from the tool output, ensuring full grounding and precision."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "e12d53cf46f3513690ec1e9048ec17aa",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the total balance of $582,583.08 from the tool result, which is the sum of the two account balances (277131.28 + 305451.80). All figures are directly supported by the tool output, including account details, valuation date, and breakdown. The tone is professional, direct, and courteous, and the response is helpful and complete."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "91f2a009c83a5ab6bfa9d2785858101f",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies Samuel Delacroix as eligible for the bring-forward rule based on the tool result showing 'bring_forward_eligible': true. It accurately states his age (46) and the bring-forward cap ($360,000.00), both of which are directly supported by the tool results. The tone is professional, direct, and courteous. All figures are grounded in the provided data."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "3cad86f6038053ad9e130a65f9dee9b3",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing a 0.28% balance change over 12 months and the total balance of $582,583.08 as of 2026-08-18. All figures are directly supported by the tool output, with correct context and professional tone."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ecd27d65eb885372a6e5bdc6598114f6",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately extracts and presents the total annual fee of $5,238.09 from the tool result, includes the relevant breakdown by fee type, and references the balance and percentage (1.6%) as provided in the data. All figures are directly supported by the tool output, with no invented or altered values. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "5c9facaa4e3454688841c9fde856dd61",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly extracts the annual premium figure ($2,406.43) and correctly states it is funded from super, both of which are explicitly mentioned in the tool results. The response is concise, accurate, and professionally phrased."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "c9236bc2bc125136b8b9f2ea0af0ec5c",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the balance of $157,323.47 from the tool result, which is explicitly stated in the 'balance' and 'total_balance' fields for Aroha Barlow's account. The date, account ID, and product are also accurately reflected. All figures are directly supported by the tool output, with no invented or altered data. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "2bab4cfffa905b29aa7376afb6fd3a82",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states that Fatima Vasquez's total fees are 1.24% of the balance (rounded to 1.2%), matches the total fee amount of $12,084.89 and the balance of $973,945.33 as directly extracted from the tool results. All figures are accurately derived and presented in a clear, professional tone."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "84376c3399cd5d5a9a3138e2fa0664e8",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states the total fees as 1.7% of the balance, which is directly supported by the tool result 'fee_pct_of_balance': 1.71. It also accurately cites the dollar amounts ($6,369.95 and $372,511.50) from the tool result. The response is clear, professional, and directly addresses the question with verified data."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "879f8461234250ccbcb218d181895cc7",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the balance of Daniel Xu's account-based pension (NSPE00320) as $94,311.07, which is directly extracted from the tool result under the 'pension' section. All figures are accurately reflected in the provided data, and the tone is professional, direct, and courteous. The response is fully grounded in the tool results with no invented or altered information."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "80fe7c6b97825c29a8e78b0045e9982b",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states the 12-month balance change of 4.01% and the total balance of $565,588.49, both of which are directly supported by the tool result. The date of valuation (2026-08-14) is also included as per the data. All figures are accurate and sourced from the provided results, with a professional and concise tone."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "86b6a7b1679453669345caa739c259db",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately summarizes the fees from the tool results, including all relevant figures (adviser, admin, investment fees, total, percentage of balance, and consent expiry), with precise values matching the JSON data. The tone is professional, direct, and courteous. All figures are directly derived from the tool results, ensuring full grounding."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "0a9ac6c27e745c0c825cadac8a6438e4",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The JSON answer includes all relevant fee details for Fatima Nakamura, directly extracted from the tool results. All figures match exactly with the provided data, and the structure is concise and relevant to the request. The tone is professional and direct, and the information is fully grounded in the tool output without invention or alteration."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "9f7ffc29b0f8529dada245dad8aae8f2",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly extracts the annual premium figure ($4,066.11) and correctly states it is funded from super, both of which are explicitly mentioned in the tool results. The response is concise, accurate, and professionally phrased."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "7172fd9b4a855a40b181b0392249a78e",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly references the tool result showing 'carry_forward_unused': 0.0 and 'carry_forward_available': false, accurately stating that no carry-forward is available. All figures are directly supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "5c56ceb7bd165c3c94ab9e6d94906d4f",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The JSON answer accurately extracts and presents Fatima Nakamura's asset allocation from the tool results, including all relevant holdings with their asset classes, names, weights, and values. Every figure and field is directly supported by the tool results, with no invented or altered data. The response is clear, structured, and professionally formatted."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "77b4e5ffce755991af3b450cd99fcd2d",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing next_review as '2027-01-15', days_until_next_review as 136, and mentions Priya Raman as the adviser. All figures are directly from the tool results, ensuring full grounding. The response is clear, professional, and directly addresses the question."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "fdd8aa2156db501caab2efe58d0da678",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the adviser fee as $1,964.81, which is explicitly stated in the tool result under 'adviser_fee' and 'adviser_fee_pct'. The calculation 0.78% of the balance is not required for accuracy, as the exact fee is directly provided. All figures are grounded in the tool results, the tone is professional and direct, and the response is concise and helpful."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "939813ec904e58b1b76e915833783440",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the balance from the tool result for account NSSU01090, which is explicitly stated as $673,556.12 as of 2026-08-13. All figures are accurately derived from the provided tool output, and the response is professional, direct, and courteous while offering additional context."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "2e8a3c4ead495b7bb284aaaafb59555e",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately extracts and presents the last review date (2026-04-14) and the adviser (Sofia Marin) from the tool result, which is fully supported by the provided data. The information is directly relevant, clearly stated, and presented in a professional and courteous tone."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "ae0c0ecc9d3e5a18a25c7cb64418c519",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the year-to-date contributions from the tool results: $11,653.45 concessional and $60,000.00 non-concessional. All figures are directly taken from the provided data, ensuring full grounding. The response is clear, professional, and directly addresses the query with a courteous offer for further details."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "9e894227d2bc59f4bd842e3d7ef27e49",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The tool result explicitly states that Giulia Yilmaz's international equities exposure is 0.0% with a value of $0.00, directly supporting the answer. All figures are accurately derived from the provided data, and the response is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "a0a03dda0ea553b5a8ea53fe4c9d1470",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer includes all relevant contribution position details directly from the tool results, accurately reflects Willow Stavros's data, and is structured as requested in JSON. All figures are present in the tool results, ensuring full grounding. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "71225bfd29ea5398ba7e0285b7f3de25",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the total balance of $312,356.99 from the tool result, specifies the account type (pension), includes the account ID, and references the valuation date. All figures are directly taken from the tool output, ensuring full grounding. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "3242623b9f3a5675bbccab713aaad22a",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately lists Ruby Fitzgerald's top three holdings by value as extracted directly from the tool results' 'top_holdings' array. All values and percentages match exactly with the provided data. The response is clear, professional, and directly addresses the query with precise figures and relevant context."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "6db8f729461155c39f55e0cc551c9d23",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the cash value ($162,625.07) and percentage (14.83%) from the tool results, which are explicitly present in the JSON output. The information is accurate, relevant, and fully supported by the data. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "e74824c303d8527cb625609294bbba44",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states that Jack Abbott has not reached preservation age (60), and the age of 28 is directly taken from the tool result. All figures are supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "61811deb288653bba1b43ab8840d6a72",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the IDPS account balance of $377,385.22 (account ID NSID01991) as stated in the tool results, with the correct date and context. All figures are directly supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "815e04b3bde456459c866917e14c94bb",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the total annual fee of $8,422.02 from the tool result, includes the correct breakdown of fees, and references the balance and percentage. All figures are directly supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "7cbd2e1c5b2651bc8cac1c136b1f46a7",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the IDPS account (NSID01191) and provides the exact balance of $210,680.59 as stated in the tool results. The date and account details are fully supported by the data. The tone is professional, direct, and courteous. All figures are directly from the tool results, ensuring full grounding and helpfulness."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "f464f8fa33a05f108e317dee14069e1e",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing next_review as '2027-05-31', days_until_next_review as 272, and mentions Callum Reid as the adviser, all of which are directly supported by the tool output. The tone is professional and direct, and the information is fully grounded in the provided data."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "d89a2ffafb165b91824947f4cfdc3444",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The JSON answer includes all relevant contribution positions for Bao Abbott directly extracted from the tool results, with accurate figures and proper structure. Every field is supported by the tool output, and the response is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "de7b2d48b42b5220b81094528cb75ceb",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the total investment management fees of $3,555.65, which is derived from the sum of the investment fees for each account (1318.38 + 1744.01 + 493.26) as stated in the tool results. Each percentage and fee amount is directly supported by the provided data. The tone is professional, direct, and courteous. All figures are grounded in the tool results with no invention or alteration."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "f1bfdb114a5f5ca1a60ac2379b5ee0a5",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 1,
+        "tone": 3,
+        "rationale": ""
+      },
+      "mean": 1.667,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "c3959b4ab1c05515a5c29d6a79ef750b",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the total balance of $155,424.64 from the tool result, specifies the account type and ID, includes the valuation date, and provides context without inventing or altering any figures. All details are explicitly supported by the tool output."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "3948a4d750b75a7fae52475a5ceb6253",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately summarizes the fees from the tool results, including all relevant figures (adviser, admin, investment fees, total, percentage of balance) and includes the fee consent expiry date. All figures are directly taken from the provided JSON data, ensuring full grounding. The tone is professional, direct, and courteous, and the response is concise and helpful."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "7dc7333f26205b5f8f037713c6bf2b94",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result values for concessional and non-concessional year-to-date contributions, directly quoting the figures from the JSON data. The tone is professional and courteous, and the information is fully grounded in the provided results without invention or alteration."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "da17fc21b6475597955a56ba7aae0c89",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states that Willow Abbott's total fees are 1.16% of the balance, which is supported by the tool result 'fee_pct_of_balance': 1.16. It also accurately cites the total fees ($9,151.24) and balance ($788,956.62) from the tool result. The tone is professional, direct, and courteous. All figures are directly derived from the provided tool results, ensuring full grounding and helpfulness."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "b88bdb8d52f7537b98fcdd37a56da161",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 1,
+        "tone": 5,
+        "rationale": ""
+      },
+      "mean": 2.333,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "68e92a0600d957438a627666e1c15dfb",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the balance of $300,384.03 from the tool result, which is explicitly stated in the 'balance' and 'total_balance' fields for Xavier Barlow's account. The date and account details are also accurately reflected. The response is professional, direct, and provides relevant information without unnecessary elaboration."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "b7ba534ff0625a60a40bced7bdbd7d93",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the investment management fee as $322.11, which matches the tool result for 'investment_fee' and 'investment_fee_pct' (0.28%). The calculation is accurate and directly supported by the data. The tone is professional and courteous. All figures are grounded in the tool results."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "b8d05de00d0955f19421dfe7bad000ba",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately lists Patrick Cavanagh's top three holdings by value as extracted from the tool results. Each value and percentage matches exactly with the 'top_holdings' array in the JSON output. All figures are directly supported by the data, with no invented or altered numbers. The tone is professional, direct, and courteous, and the response is helpful and relevant to the query."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "75610cfd43da5acb89d1896626d37e9e",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly cites the 'as_of' date (2026-07-25) from the tool result and includes the valuation age (38 days), which is also explicitly stated in the tool result. The tone is professional, direct, and courteous. All figures are accurately derived from the provided tool output, ensuring full grounding and helpfulness."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "f646d4925bd750c5b72533743bd2256f",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing Finn Papadopoulos has $19,836.66 of unused carry-forward concessional cap and correctly notes the total super balance is under the $500,000 threshold. All figures are directly supported by the tool results, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "05ad3335aa2450fda5e4b71ab92f8f26",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The tool result explicitly states that Tahlia Zielinski's cash value is $0.00 and cash_pct is 0.0%, directly supporting the answer. All figures are accurately derived from the provided data, with no invented or altered values. The response is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "76c26e867398595cbbe2ad18b528483f",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states that Liam Quilty has not reached preservation age (60), and the age of 46 is directly taken from the tool result. All figures are supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "d3a5409752b85918941727c5b4cefe72",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 1,
+        "grounding": 1,
+        "tone": 3,
+        "rationale": ""
+      },
+      "mean": 1.667,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "774499f9721f5a6ea863b0561a0d9ba5",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the IDPS account balance of $106,325.24 (account ID NSID00301) for Hamish Fitzgerald, which is directly supported by the tool result. The date and account details are accurate and fully grounded in the provided data. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "b84ea7556c4853c697569824f64dde17",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing Olivia Barlow has $21,870.84 of concessional contribution room, with $8,129.16 already contributed and a $30,000.00 cap. All figures are directly from the tool result, ensuring full grounding. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "8458680c8372591bb097108885d93fb0",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly identifies the IDPS account balance ($322,750.93) and the account ID (NSID00581) from the tool result, which explicitly states this information under the 'accounts' section for the client 'Fatima Vasquez'. All figures are directly supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "310312a4502d5de89e8817a27ad810db",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer correctly states the number of days (110) and the next review date (2026-12-20), both of which are directly supported by the tool result. The tone is professional and courteous. All figures are accurately derived from the provided data."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "9fb08375390a5bdcbd9ab43f1653e139",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer accurately reflects the tool result showing the review is not overdue (overdue: false), with the correct next review date (2027-02-08) and days until next review (160). All figures are directly supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "54aa03b7f48f5c68b02e52fe3d665aa4",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly references the tool result showing 'carry_forward_unused': 0.0 and 'carry_forward_available': false, accurately stating that no carry-forward is available. All figures are directly supported by the tool output, and the tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "trace_id": "e2c84fcd06035fbf9323b0eac0714f7a",
+      "model": "hf[D:/models/Qwen3-4B-Instruct-2507]",
+      "prompt_version": "judge-v1",
+      "scores": {
+        "helpfulness": 5,
+        "grounding": 5,
+        "tone": 5,
+        "rationale": "The answer directly quotes the balance from the tool result ($322,318.52) for Jack Mbeki's account-based pension (NSPE01740), matches the date (2026-08-10), and includes a polite offer for further details. All figures are accurately derived from the provided tool results, with no invented or altered data. The tone is professional, direct, and courteous."
+      },
+      "mean": 5.0,
+      "missing": false,
+      "repairs": 0,
+      "attempts": 1,
+      "error": null
+    }
+  ]
+}

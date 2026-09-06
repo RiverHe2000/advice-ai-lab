@@ -1,0 +1,32 @@
+{
+  "report": "docs\\experiments\\extraction_rules.md",
+  "doc_accuracy": {
+    "rules": {
+      "point": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 120
+    },
+    "rules@noise0.02": {
+      "point": 0.15833333333333333,
+      "low": 0.1,
+      "high": 0.225,
+      "n": 120
+    },
+    "rules@noise0.05": {
+      "point": 0.008333333333333333,
+      "low": 0.0,
+      "high": 0.025,
+      "n": 120
+    },
+    "rules@noise0.1": {
+      "point": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n": 120
+    }
+  },
+  "gate": "PASS",
+  "gate_strategy": "rules",
+  "min_doc_accuracy": 0.95
+}

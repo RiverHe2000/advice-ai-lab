@@ -1,0 +1,26 @@
+{
+  "n_docs": 40,
+  "n_fields": 247,
+  "ece": 0.0051520048612612585,
+  "aurc": {
+    "point": 0.7416092720797718,
+    "low": 0.5300049681861342,
+    "high": 1.0,
+    "n": 40
+  },
+  "tau": 0.8758669124649259,
+  "review_rate": {
+    "point": 0.925,
+    "low": 0.825,
+    "high": 1.0,
+    "n": 40
+  },
+  "residual_error": {
+    "point": 0.0,
+    "low": 0.0,
+    "high": 0.0,
+    "n": 40
+  },
+  "base_doc_error": 0.925,
+  "out": "runs\\hf_qwen2_5_1_5b_instruct_router"
+}

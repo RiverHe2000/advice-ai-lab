@@ -1,0 +1,18 @@
+{
+  "out": "data\\corpus",
+  "documents": 660,
+  "by_type": {
+    "soa": 120,
+    "roa": 60,
+    "fact_find": 60,
+    "fds": 60,
+    "fee_consent": 60,
+    "super_statement": 60,
+    "insurance_schedule": 60,
+    "authority_to_proceed": 60,
+    "bank_statement": 60,
+    "correspondence": 60
+  },
+  "elapsed_s": 3.9,
+  "pdf": true
+}

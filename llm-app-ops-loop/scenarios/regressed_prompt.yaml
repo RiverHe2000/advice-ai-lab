@@ -1,0 +1,9 @@
+name: regressed_prompt
+description: A bad prompt edit (v2-regressed) ships at minute 90 and is reverted at minute 150.
+traffic: {rate_per_minute: 5, sessions: 40, clients: 200}
+active_version: v1
+incidents:
+  - kind: regressed_prompt
+    start_minute: 90
+    end_minute: 150
+    params: {version: v2-regressed}

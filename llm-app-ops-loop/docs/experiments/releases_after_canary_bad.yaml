@@ -1,0 +1,35 @@
+policy:
+  min_samples: 100
+  error_rate_delta: 0.02
+  refusal_rate_delta: 0.05
+  quality_margin: 0.05
+  alpha: 0.05
+  n_boot: 1000
+environments:
+  prod:
+    adviser_assistant:
+      active: v1
+      canary: null
+      stages:
+      - 10
+      - 50
+      - 100
+      history:
+      - ts: '2026-09-06T12:47:10Z'
+        event: start
+        version: v2-regressed
+        stage: 10
+      - ts: '2026-09-06T12:47:16Z'
+        event: rollback
+        version: v2-regressed
+        from_stage: 10
+        reason: 'refusal rate 0.154 vs control 0.032 (+0.122 > 0.05, p=0.0000); quality
+          mean 0.755 vs control 0.971: 95% CI [-0.236, -0.197] entirely below -0.05'
+  staging:
+    adviser_assistant:
+      active: v2
+      canary: null
+      stages:
+      - 50
+      - 100
+      history: []

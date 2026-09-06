@@ -1,0 +1,436 @@
+{
+  "n_train": 495,
+  "n_test": 165,
+  "classes": [
+    "authority_to_proceed",
+    "bank_statement",
+    "correspondence",
+    "fact_find",
+    "fds",
+    "fee_consent",
+    "insurance_schedule",
+    "roa",
+    "soa",
+    "super_statement"
+  ],
+  "accuracy": {
+    "point": 1.0,
+    "low": 1.0,
+    "high": 1.0,
+    "n": 165
+  },
+  "macro_f1": {
+    "point": 1.0,
+    "low": 1.0,
+    "high": 1.0,
+    "n": 165
+  },
+  "per_class": [
+    {
+      "class": "authority_to_proceed",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "bank_statement",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "correspondence",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "fact_find",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "fds",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "fee_consent",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "insurance_schedule",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "roa",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "soa",
+      "support": 30,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "class": "super_statement",
+      "support": 15,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  ],
+  "confusion": {
+    "authority_to_proceed": {
+      "authority_to_proceed": 15,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "bank_statement": {
+      "authority_to_proceed": 0,
+      "bank_statement": 15,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "correspondence": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 15,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "fact_find": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 15,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "fds": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 15,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "fee_consent": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 15,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "insurance_schedule": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 15,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "roa": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 15,
+      "soa": 0,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "soa": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 30,
+      "super_statement": 0,
+      "unknown": 0
+    },
+    "super_statement": {
+      "authority_to_proceed": 0,
+      "bank_statement": 0,
+      "correspondence": 0,
+      "fact_find": 0,
+      "fds": 0,
+      "fee_consent": 0,
+      "insurance_schedule": 0,
+      "roa": 0,
+      "soa": 0,
+      "super_statement": 15,
+      "unknown": 0
+    }
+  },
+  "calibration": {
+    "ece": 0.06380601462481783,
+    "n": 165,
+    "bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "count": 5,
+        "mean_confidence": 0.8847937347089736,
+        "accuracy": 1.0
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "count": 160,
+        "mean_confidence": 0.9378002432085012,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "abstain_curve": [
+    {
+      "threshold": 0.0,
+      "abstain_rate": 0.0,
+      "accuracy_when_answered": 1.0
+    },
+    {
+      "threshold": 0.5,
+      "abstain_rate": 0.0,
+      "accuracy_when_answered": 1.0
+    },
+    {
+      "threshold": 0.6,
+      "abstain_rate": 0.0,
+      "accuracy_when_answered": 1.0
+    },
+    {
+      "threshold": 0.7,
+      "abstain_rate": 0.0,
+      "accuracy_when_answered": 1.0
+    },
+    {
+      "threshold": 0.8,
+      "abstain_rate": 0.0,
+      "accuracy_when_answered": 1.0
+    },
+    {
+      "threshold": 0.9,
+      "abstain_rate": 0.030303030303030276,
+      "accuracy_when_answered": 1.0
+    },
+    {
+      "threshold": 0.95,
+      "abstain_rate": 1.0,
+      "accuracy_when_answered": NaN
+    },
+    {
+      "threshold": 0.99,
+      "abstain_rate": 1.0,
+      "accuracy_when_answered": NaN
+    }
+  ],
+  "noise": {},
+  "zero_shot": {
+    "model": "hf[Qwen/Qwen2.5-1.5B-Instruct]",
+    "accuracy": {
+      "point": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 165
+    },
+    "macro_f1": {
+      "point": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 165
+    },
+    "n_missing": 0,
+    "n_repaired": 0,
+    "vs_ml": {
+      "zero_shot_wins": 0,
+      "ml_wins": 0,
+      "mcnemar_p": 1.0
+    }
+  },
+  "metadata": {
+    "overall": {
+      "client_names": 1.0,
+      "adviser_name": 1.0,
+      "document_date": 1.0
+    },
+    "by_type": {
+      "authority_to_proceed": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "bank_statement": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "correspondence": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "fact_find": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "fds": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "fee_consent": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "insurance_schedule": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "roa": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "soa": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      },
+      "super_statement": {
+        "client_names": 1.0,
+        "adviser_name": 1.0,
+        "document_date": 1.0
+      }
+    },
+    "n": 165
+  },
+  "latency_ms_per_doc": 0.9153678787918056,
+  "calibration_method": "sigmoid",
+  "notes": []
+}

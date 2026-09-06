@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Regenerable run artefacts (every project keeps its committed results in docs/experiments/)
+runs/
+state/
+data/
+*.sqlite
+*.sqlite-journal
+*.db
+*.joblib
+*.bin
+*.pt
+*.safetensors
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+
+# Local logs and IDE files
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

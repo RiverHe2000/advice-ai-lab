@@ -1,0 +1,44 @@
+policy:
+  min_samples: 100
+  error_rate_delta: 0.02
+  refusal_rate_delta: 0.05
+  quality_margin: 0.05
+  alpha: 0.05
+  n_boot: 1000
+environments:
+  prod:
+    adviser_assistant:
+      active: v2
+      canary: null
+      stages:
+      - 10
+      - 50
+      - 100
+      history:
+      - ts: '2026-09-06T12:46:47Z'
+        event: start
+        version: v2
+        stage: 10
+      - ts: '2026-09-06T12:46:54Z'
+        event: advance
+        version: v2
+        stage: 50
+        reason: 'canary healthy at 10%: advance to 50%'
+      - ts: '2026-09-06T12:47:01Z'
+        event: advance
+        version: v2
+        stage: 100
+        reason: 'canary healthy at 50%: advance to 100%'
+      - ts: '2026-09-06T12:47:08Z'
+        event: promote
+        version: v2
+        from: v1
+        reason: 'canary healthy at 100%: promote to active'
+  staging:
+    adviser_assistant:
+      active: v2
+      canary: null
+      stages:
+      - 50
+      - 100
+      history: []

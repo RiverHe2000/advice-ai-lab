@@ -1,0 +1,64 @@
+{
+  "jobs": 6,
+  "by_state": {
+    "done": 6
+  },
+  "by_type": {
+    "bank_statement": 1,
+    "correspondence": 1,
+    "fds": 1,
+    "soa": 3
+  },
+  "review_rate": 0.0,
+  "elapsed_s": 0.94,
+  "jobs_detail": [
+    {
+      "id": "5de3b67d3ff7",
+      "source": "bank_statement_0001.pdf",
+      "doc_type": "bank_statement",
+      "state": "done",
+      "route": "auto",
+      "error": null
+    },
+    {
+      "id": "699f07613541",
+      "source": "correspondence_0001.pdf",
+      "doc_type": "correspondence",
+      "state": "done",
+      "route": "auto",
+      "error": null
+    },
+    {
+      "id": "536a656202d9",
+      "source": "fds_0001.pdf",
+      "doc_type": "fds",
+      "state": "done",
+      "route": "auto",
+      "error": null
+    },
+    {
+      "id": "8a097b8231ec",
+      "source": "soa_0001.pdf",
+      "doc_type": "soa",
+      "state": "done",
+      "route": "auto",
+      "error": null
+    },
+    {
+      "id": "4412aebe2754",
+      "source": "soa_0002.pdf",
+      "doc_type": "soa",
+      "state": "done",
+      "route": "auto",
+      "error": null
+    },
+    {
+      "id": "29e032bbbfbf",
+      "source": "soa_0003.pdf",
+      "doc_type": "soa",
+      "state": "done",
+      "route": "auto",
+      "error": null
+    }
+  ]
+}

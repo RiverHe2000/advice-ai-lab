@@ -1,0 +1,23 @@
+{
+  "report": "docs\\experiments\\hf_qwen3_4b_instruct_2507_extraction.md",
+  "doc_accuracy": {
+    "rules": {
+      "point": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n": 40
+    },
+    "llm": {
+      "point": 0.725,
+      "low": 0.6,
+      "high": 0.85,
+      "n": 40
+    },
+    "llm_validated": {
+      "point": 0.725,
+      "low": 0.5993750000000005,
+      "high": 0.85,
+      "n": 40
+    }
+  }
+}
