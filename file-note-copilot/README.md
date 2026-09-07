@@ -117,7 +117,7 @@ filenote corpus show --corpus runs/corpus/meetings.jsonl --id m0007 > runs/m0007
 # draft with the scripted model (no download), the OpenAI-compatible backend, or a local HF model
 filenote draft runs/m0007.txt --model fake --strategy verified --markdown
 filenote draft meeting.txt --model openai --base-url http://localhost:8000/v1 --model-name Qwen/Qwen2.5-7B-Instruct
-filenote draft meeting.txt --model hf --model-name D:/models/Qwen3-4B-Instruct-2507 --pseudonymise on --out runs/note.json
+filenote draft meeting.txt --model hf --model-name Qwen/Qwen3-4B-Instruct-2507 --pseudonymise on --out runs/note.json
 filenote verify meeting.txt runs/note.json                # exit 1 if any claim is unsupported
 
 # evaluation and the CI gates

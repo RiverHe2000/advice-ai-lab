@@ -133,7 +133,7 @@ advicedoc eval-extraction --corpus data/corpus --strategies rules llm llm_valida
 advicedoc eval-extraction --corpus data/corpus --strategies rules llm_validated \
   --model openai --model-name qwen3-4b --base-url http://localhost:8000/v1 --out runs/extraction_qwen
 # ... or in-process
-advicedoc extract data/corpus/soa/soa_0001.pdf --strategy llm_validated --model hf --model-name D:/models/Qwen3-4B-Instruct-2507
+advicedoc extract data/corpus/soa/soa_0001.pdf --strategy llm_validated --model hf --model-name Qwen/Qwen3-4B-Instruct-2507
 
 # review router and reconciliation
 advicedoc eval-router --corpus data/corpus --strategy llm_validated --model fake --corruption 0.3 --out runs/router_eval
