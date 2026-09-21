@@ -23,7 +23,7 @@ cd deploy/terraform
 terraform init
 terraform apply -var project_id=my-incubator-project \
   -var model_kind=openai -var model_base_url=https://vllm.internal/v1 \
-  -var model_api_key="$MODEL_KEY" -var github_repository=ChuanHe-PhD/advice-ai-lab
+  -var model_api_key="$MODEL_KEY" -var github_repository=RiverHe2000/advice-ai-lab
 terraform output            # → workload_identity_provider, deployer_service_account, service_url
 ```
 

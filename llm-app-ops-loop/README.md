@@ -18,9 +18,9 @@ planted incidents the way a classifier is scored against labels.
 | Real model (Qwen3-4B-Instruct-2507 answering *and* judging, 80 cases, one RTX 4070) | v1 → v2 is non-inferior (Δ +0.009 [−0.000, +0.020], every slice OK) and the gate **still refuses**: both prompts fail the JSON-validity floor on the two cases that require JSON (0 / 2) — an instruction-following defect only a real model exposes; v1 → v2-regressed **FAIL** on McNemar (14 losses / 3 wins, p = 0.013) with an effect a tenth of the scripted one; the judge scored 60 production traces with 0 missing (grounding 4.73 / 5); replay reproduced the prompt hash and the fee total ([RESULTS §8](docs/RESULTS.md#8-real-model-stage--qwen3-4b-instruct-2507-answering-and-judging)) |
 | Stack | SDK → SQLite / HTTP collector / OTLP JSON · FastAPI collector · Prometheus rules · Grafana dashboard · `docker compose` — brought up on Docker Desktop, 1 797 traces posted over HTTP, `SloBurnCritical{name="error_rate"}` **firing** in Prometheus, dashboard provisioned ([RESULTS §7](docs/RESULTS.md#7-compose-stack-verified-end-to-end-2026-09-06)) |
 
-**Related projects.** [`llm-gateway-release`](https://github.com/ChuanHe-PhD/genai-platform-lab)
+**Related projects.** [`llm-gateway-release`](https://github.com/RiverHe2000/genai-platform-lab)
 (genai-platform-lab) promotes a *model* behind an endpoint with an eval-gated, paired-statistics
-decision; [`model-monitoring-drift`](https://github.com/ChuanHe-PhD/mlops-lab) (mlops-lab)
+decision; [`model-monitoring-drift`](https://github.com/RiverHe2000/mlops-lab) (mlops-lab)
 monitors a *tabular* model's inputs and performance with a calibrated alert policy. This project
 sits one layer up: the unit of change is the *prompt and application version*, the evidence is
 *production traces and human feedback*, and the loop closes by turning those into a versioned

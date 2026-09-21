@@ -237,9 +237,9 @@ but live inside an application rather than a registry. Sibling projects: `../fil
 (drafts adviser file notes with claim-level evidence) and `../llm-app-ops-loop` (operates LLM
 applications in production). The `ChatModel` protocol, the JSON-repair discipline and the
 paired-statistics vocabulary are the same as in
-[`genai-platform-lab`](https://github.com/ChuanHe-PhD/genai-platform-lab)
+[`genai-platform-lab`](https://github.com/RiverHe2000/genai-platform-lab)
 (`langgraph-agent-guardrails`, `llm-gateway-release`); the "validate the detector against a
 simulator with a known truth" method is the one from
-[`mlops-lab`](https://github.com/ChuanHe-PhD/mlops-lab) (`model-monitoring-drift`);
-[`llm-engineering-lab`](https://github.com/ChuanHe-PhD/llm-engineering-lab) is where the
+[`mlops-lab`](https://github.com/RiverHe2000/mlops-lab) (`model-monitoring-drift`);
+[`llm-engineering-lab`](https://github.com/RiverHe2000/llm-engineering-lab) is where the
 serving and fine-tuning side lives.

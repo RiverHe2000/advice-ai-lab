@@ -84,7 +84,7 @@ variable "model_api_key" {
 variable "github_repository" {
   description = "GitHub repository (owner/name) allowed to deploy through Workload Identity Federation."
   type        = string
-  default     = "ChuanHe-PhD/advice-ai-lab"
+  default     = "RiverHe2000/advice-ai-lab"
 }
 
 variable "allow_unauthenticated" {

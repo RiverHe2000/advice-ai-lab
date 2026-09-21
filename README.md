@@ -1,8 +1,8 @@
 # advice-ai-lab
 
-[![advice-doc-intelligence](https://github.com/ChuanHe-PhD/advice-ai-lab/actions/workflows/advice-doc-intelligence-ci.yml/badge.svg)](https://github.com/ChuanHe-PhD/advice-ai-lab/actions/workflows/advice-doc-intelligence-ci.yml)
-[![file-note-copilot](https://github.com/ChuanHe-PhD/advice-ai-lab/actions/workflows/file-note-copilot-ci.yml/badge.svg)](https://github.com/ChuanHe-PhD/advice-ai-lab/actions/workflows/file-note-copilot-ci.yml)
-[![llm-app-ops-loop](https://github.com/ChuanHe-PhD/advice-ai-lab/actions/workflows/llm-app-ops-loop-ci.yml/badge.svg)](https://github.com/ChuanHe-PhD/advice-ai-lab/actions/workflows/llm-app-ops-loop-ci.yml)
+[![advice-doc-intelligence](https://github.com/RiverHe2000/advice-ai-lab/actions/workflows/advice-doc-intelligence-ci.yml/badge.svg)](https://github.com/RiverHe2000/advice-ai-lab/actions/workflows/advice-doc-intelligence-ci.yml)
+[![file-note-copilot](https://github.com/RiverHe2000/advice-ai-lab/actions/workflows/file-note-copilot-ci.yml/badge.svg)](https://github.com/RiverHe2000/advice-ai-lab/actions/workflows/file-note-copilot-ci.yml)
+[![llm-app-ops-loop](https://github.com/RiverHe2000/advice-ai-lab/actions/workflows/llm-app-ops-loop-ci.yml/badge.svg)](https://github.com/RiverHe2000/advice-ai-lab/actions/workflows/llm-app-ops-loop-ci.yml)
 
 Three AI applications for a financial-advice platform, built the way an incubator team would
 have to ship them — **read the paperwork, draft the adviser's note, run the app in
@@ -27,9 +27,9 @@ are in each project's `docs/RESULTS.md`; the short version:
 | `filenote` | One-pass draft macro F1 **0.545**; verification on top of it is non-inferior on F1 and lowers hallucination 17.1 % → 14.7 % (paired, p = 0.031) with **every surviving hallucination flagged**; the two-pass draft is **worse** (−0.11 macro F1) and collapses on the 1.5 B model; **pseudonymising names costs 0.065 macro F1** [0.013, 0.118] | Two design assumptions the scripted checks had passed were overturned by the real model, and both are written up as negative results |
 | `opsloop` | Regression gate with the real model answering *and* judging on 80 curated cases: v2 is non-inferior to v1 (paired Δ +0.009 [−0.000, +0.020], every slice OK) yet the gate **refuses to promote** — both prompts fail the JSON-validity floor on the two cases that require JSON (0 / 2), an instruction-following defect only a real model exposes; v2-regressed fails on McNemar (14 losses / 3 wins, p = 0.013) with a real effect a tenth of what the scripted model suggested; the judge scored 60 production traces with 0 missing (grounding mean 4.73 / 5); replay reproduced the prompt hash and the fee total | The scripted model overstates regressions and cannot see instruction-following failures; the gate's floor and paired tests behaved correctly on both |
 
-Companion repositories: [`llm-engineering-lab`](https://github.com/ChuanHe-PhD/llm-engineering-lab)
-(Transformer internals, LoRA, an inference server), [`genai-platform-lab`](https://github.com/ChuanHe-PhD/genai-platform-lab)
-(RAG, an agent with guardrails, an LLM gateway) and [`mlops-lab`](https://github.com/ChuanHe-PhD/mlops-lab)
+Companion repositories: [`llm-engineering-lab`](https://github.com/RiverHe2000/llm-engineering-lab)
+(Transformer internals, LoRA, an inference server), [`genai-platform-lab`](https://github.com/RiverHe2000/genai-platform-lab)
+(RAG, an agent with guardrails, an LLM gateway) and [`mlops-lab`](https://github.com/RiverHe2000/mlops-lab)
 (MLflow lifecycle, SageMaker deployment, drift monitoring). This repository is the
 *application* layer those three sit under; [docs/DESIGN.md](docs/DESIGN.md) records the gap
 analysis and the design choices.

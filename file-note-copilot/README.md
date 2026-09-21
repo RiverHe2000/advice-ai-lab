@@ -15,7 +15,7 @@ OpenAI-compatible model endpoint — so the business, not the tool, chooses the 
 | Headline | Verifier on 700 planted hallucinations: **95–100 % detected per kind, 0 % false alarms** on 1 669 gold claims. With a scripted model corrupting 30 % of items, the `verified` strategy surfaces **100 % of the hallucinations** left in a note and lifts decisions F1 from 0.75 to 0.90 (paired Δ +0.15, CI [+0.07, +0.23], McNemar p < 0.001). Full tables in [docs/RESULTS.md](docs/RESULTS.md) |
 | Real model (Qwen3-4B-Instruct-2507, one RTX 4070, 20 meetings) | One-pass draft macro F1 **0.545** [0.48, 0.61]; verification on top of it is non-inferior on F1 and lowers the hallucination rate 17.1 % → 14.7 % (paired, p = 0.031) with **every surviving hallucination flagged** (44 / 44); the two-pass draft is *worse* (−0.11 macro F1, decisions recall 0.50 vs 0.83) and collapses on the 1.5 B model; **pseudonymising names costs 0.065 macro F1** [0.013, 0.118] — a finding the scripted check could not show. Section 8 of [docs/RESULTS.md](docs/RESULTS.md) |
 
-**Related projects.** [`langgraph-agent-guardrails`](https://github.com/ChuanHe-PhD/genai-platform-lab/tree/main/langgraph-agent-guardrails)
+**Related projects.** [`langgraph-agent-guardrails`](https://github.com/RiverHe2000/genai-platform-lab/tree/main/langgraph-agent-guardrails)
 (genai-platform-lab) guards an *agent's* inputs, tool calls and outputs; this project guards
 a *document the adviser signs*: every claim carries evidence, an independent verifier scores
 it, and nothing is saved without a named approver. The PII rails share the same checksum
@@ -23,8 +23,8 @@ discipline (TFN mod-11) but are applied for data minimisation *before* the model
 for output filtering. Sibling projects in this repository: [`../advice-doc-intelligence`](../advice-doc-intelligence)
 (reads advice documents into typed records) and [`../llm-app-ops-loop`](../llm-app-ops-loop)
 (operates LLM applications in production). The owner's other repositories:
-[`llm-engineering-lab`](https://github.com/ChuanHe-PhD/llm-engineering-lab),
-[`mlops-lab`](https://github.com/ChuanHe-PhD/mlops-lab).
+[`llm-engineering-lab`](https://github.com/RiverHe2000/llm-engineering-lab),
+[`mlops-lab`](https://github.com/RiverHe2000/mlops-lab).
 
 ---
 
