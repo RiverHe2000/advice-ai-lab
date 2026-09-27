@@ -20,8 +20,8 @@ locals {
     FILENOTE_DRAFT__STRATEGY = "verified_single_shot"
     FILENOTE_PSEUDONYMISE    = "true"
     # Disposable demonstration storage: not durable across revisions or instances.
-    FILENOTE_DB_PATH         = "/tmp/drafts.sqlite"
-    FILENOTE_AUDIT_PATH      = "/tmp/audit.jsonl"
+    FILENOTE_DB_PATH    = "/tmp/drafts.sqlite"
+    FILENOTE_AUDIT_PATH = "/tmp/audit.jsonl"
   }, var.extra_env)
 }
 
