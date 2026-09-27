@@ -14,6 +14,7 @@ from rapidfuzz import fuzz
 
 from filenote.corpus.generate import Meeting
 from filenote.draft.base import DraftResult
+from filenote.numbers import find_dates, number_set
 from filenote.schema import CLAIM_SECTIONS, ActionItem, Evidenced, FileNote
 from filenote.verify.verifier import VerificationReport, Verifier
 
@@ -42,6 +43,11 @@ def match_items(
                 isinstance(p, ActionItem) and isinstance(g, ActionItem) and p.owner != g.owner
             )
             if require_owner and owners_differ:
+                continue
+            if (
+                number_set(p.label) != number_set(g.label)
+                or find_dates(p.label)[0] != find_dates(g.label)[0]
+            ):
                 continue
             score = fuzz.token_set_ratio(p.label.lower(), g.label.lower())
             if score >= threshold:
@@ -206,11 +212,11 @@ def evaluate_note(
                 metrics.small_talk_leaks += 1
             if i in matched_pred:
                 continue
-            verdict = report.verdict_for(section, i)
-            if verdict is not None and verdict.status == "unsupported":
-                hallucinated += 1
-                if item.unsupported and not item.edited:
-                    surfaced += 1
+            # The reference is the gold note, never the detector being measured.
+            # An unmatched claim is a gold-disagreement proxy, not a human semantic label.
+            hallucinated += 1
+            if item.unsupported and not item.edited:
+                surfaced += 1
         total_pred += len(pred)
         total_gold += len(gold_items)
         total_matched += tp

@@ -219,15 +219,10 @@ def field_records(
             )
         correct = cmp.replacements.item_correct[i] if cmp else None
         records.append(FieldRecord(primary.doc_id, f"repl:{i}", "replacement", feats, correct))
-    if (
-        gold is not None
-        and cmp is not None
-        and not cmp.replacements.exact
-        and len(x.replacements) < len(gold.replacements)
-    ):
-        feats = _base(primary, "replacement", ("replacements",))
-        if r is not None:
-            feats["has_rules"] = 1.0
-            feats["agree_rules"] = float(len(r.replacements) == len(x.replacements))
-        records.append(FieldRecord(primary.doc_id, "repl:missing", "replacement", feats, False))
+    if cmp is not None:
+        # Gold supplies evaluation labels only. It must never invent a feature row
+        # that would be absent at inference time. Complete-document error includes
+        # omitted list items and every compared scalar, even those without a score row.
+        for record in records:
+            record.extra["document_correct"] = all(cmp.fields.values())
     return records

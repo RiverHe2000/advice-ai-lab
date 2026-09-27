@@ -25,7 +25,8 @@
         <input id="file" name="file" type="file" accept=".txt,text/plain">
         <label for="strategy">Strategy</label>
         <select id="strategy" name="strategy">
-          <option value="verified" selected>verified (extract → compose → verify → repair)</option>
+          <option value="verified_single_shot" selected>Draft → verify → repair (default)</option>
+          <option value="verified">Extract → compose → verify → repair</option>
           <option value="extract_then_compose">extract_then_compose</option>
           <option value="single_shot">single_shot</option>
         </select>

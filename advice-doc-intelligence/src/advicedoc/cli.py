@@ -45,9 +45,9 @@ from advicedoc.reconcile import (
     render_reconciliation_md,
     save_reconcile_evaluation,
 )
-from advicedoc.route.evaluate import evaluate_router, save_router_report
+from advicedoc.route.evaluate import evaluate_router_holdout, save_router_report
 from advicedoc.route.features import FieldRecord, field_records
-from advicedoc.route.model import ReviewRouter, cross_val_probabilities, train_router
+from advicedoc.route.model import ReviewRouter, train_router
 from advicedoc.schema import GoldRecord, HoldingsSnapshot, SoAExtraction
 from advicedoc.workflow import (
     InMemoryQueue,
@@ -388,6 +388,7 @@ def _records_json(records: Sequence[FieldRecord]) -> list[dict[str, Any]]:
             "kind": r.kind,
             "features": r.features,
             "correct": r.correct,
+            "evaluation_labels": r.extra,
         }
         for r in records
     ]
@@ -415,17 +416,14 @@ def cmd_train_router(args: argparse.Namespace) -> int:
 
 def cmd_eval_router(args: argparse.Namespace) -> int:
     records, n_docs = _router_records(args)
-    probs = cross_val_probabilities(records, seed=args.seed, cv=args.cv)
-    full = train_router(records, seed=args.seed, cv=args.cv)
-    report = evaluate_router(
+    report = evaluate_router_holdout(
         records,
-        probs,
+        cv=args.cv,
         target_residual=args.target_residual,
         seed=args.seed,
         n_boot=args.n_boot,
-        coefficients=full.coefficients(),
     )
-    report.notes = list(args.note or [])
+    report.notes.extend(args.note or [])
     save_router_report(report, args.out)
     _print(
         {
@@ -435,7 +433,9 @@ def cmd_eval_router(args: argparse.Namespace) -> int:
             "aurc": report.aurc.to_dict(),
             "tau": report.chosen.tau,
             "review_rate": report.chosen.review_rate.to_dict(),
-            "residual_error": report.chosen.residual_error.to_dict(),
+            "residual_error": report.chosen.to_dict()["residual_error"],
+            "test_docs": report.n_docs,
+            "target_supported": report.to_dict()["target_supported"],
             "base_doc_error": report.base_doc_error,
             "out": str(args.out),
         }

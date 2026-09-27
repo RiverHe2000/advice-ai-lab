@@ -1,5 +1,13 @@
 # advicedoc · document intelligence for a financial-advice platform
 
+**Current router protocol:** [review and results](../docs/EVALUATION_REVISION.md).
+The old OOF threshold-selection and 0% residual figures below are historical and superseded.
+The new 72/24/24 document split fits features on training data, chooses a tied-score-safe
+threshold on calibration data, and scores complete-document errors on untouched test data.
+It reviews all 24 test documents in the committed synthetic check; no automatic-acceptance
+accuracy can be estimated. Feature rows are identical with and without gold labels.
+
+
 Classify the documents that flow through an adviser platform (ten types: Statement of Advice,
 Record of Advice, fact-find, Fee Disclosure Statement, ongoing fee consent, super member
 statement, insurance schedule, authority to proceed, bank statement, correspondence), extract
@@ -11,9 +19,9 @@ with a known truth, with bootstrap intervals, paired tests and a simulator for e
 
 | | |
 |---|---|
-| Quality gates | `ruff`, `mypy --strict` (src and tests), **121 tests** (offline, CPU, ≈ 15 s, incl. Hypothesis properties, a real PDF round trip and a crash-and-resume of the workflow), **98 % branch coverage** |
+| Quality gates | `ruff`, `mypy --strict` (src and tests), **125 tests** (offline, CPU, ≈ 15 s, incl. Hypothesis properties, a real PDF round trip and a crash-and-resume of the workflow), **98 % branch coverage** |
 | Corpus | 660 real PDFs (reportlab, byte-identical on re-run) with gold JSON: 120 SoAs of 4–8 pages in three layout styles, 60 of each other type, distractor content, a holdings snapshot per SoA with planted discrepancies |
-| Models | TF-IDF + calibrated logistic regression classifier with an abstain threshold; `rules` / `llm` / `llm_validated` SoA extractors behind one protocol; a calibrated review router for selective prediction; one `ChatModel` protocol with scripted / OpenAI-compatible / in-process HF backends |
+| Models | TF-IDF + calibrated logistic regression classifier with an abstain threshold; `rules` / `llm` / `llm_validated` SoA extractors behind one protocol; a review router with separately held-out threshold evaluation; one `ChatModel` protocol with scripted / OpenAI-compatible / in-process HF backends |
 | Headline (CPU, deterministic) | Classifier **macro-F1 1.000** on 165 held-out documents (0.982 at 5 % OCR-like noise, 0.958 at 10 %), isotonic **ECE 0.001** vs sigmoid 0.064; rules extractor **120 / 120 SoAs exact** from the PDF text (field accuracy 0.60 at 5 % noise); reconciliation **57 / 57 planted discrepancies detected** with a measured 13 % false-alarm rate at a 5 % tolerance and 0 % at 10 %; validators + one re-ask per section lift the scripted-model extraction from 0.358 to 0.508 document accuracy at 30 % corruption (McNemar p < 0.001); the router reviews **31.7 %** of documents for **0 % residual error** on clean text and shows an honest 25 % → 14 %, 50 % → 3.3 % review-vs-residual curve on noisy text |
 | Real models (one RTX 4070, 40 SoAs) | Qwen3-4B-Instruct-2507 zero-shot classifies the 165 test documents at **1.000** (ties the ML model, McNemar p = 1); as extractor it gets every scalar field right (field accuracy **0.945**, recommendations F1 0.982) and fails only on the two things validators cannot check — a boolean (authority signed, 0.45) and the replacement list (0.775) — so document accuracy is 0.725 and the **router reviews 27.5 % of documents for 0 % residual error** (ECE 0.002) where "review iff a validator fails" leaves 25.6 % residual. Qwen2.5-1.5B: 0 / 40 documents fully correct, recommendations F1 0.21, router needs 92.5 % review. Section 8 of [docs/RESULTS.md](docs/RESULTS.md) |
 
@@ -52,7 +60,7 @@ The scripted rows are *mechanism checks* — we chose the corruption — and the
 validators buy (fee basis 0.942 → 1.000, advice date 0.858 → 0.975) and what they cannot see (a
 wrong-but-valid risk profile stays at 0.867), which is the router's job.
 
-**Review router** ([router_report.md](docs/experiments/router_report.md),
+**Historical review router (v1, superseded)** ([router_report.md](docs/experiments/router_report.md),
 [router_report_noise005.md](docs/experiments/router_report_noise005.md)) — P(field correct)
 out-of-fold, τ chosen for ≤ 1 % residual document error among auto-accepted documents:
 
@@ -171,9 +179,10 @@ Every flag is also an environment variable (`ADVICEDOC_MODEL__KIND=openai`,
   the violation explained, and the report says how often that fixed it (44 / 58 at 30 %
   corruption).
 * **The router is a calibrated probability, not a heuristic.** Selective prediction needs a
-  ranking that is also a probability a reviewer can act on: out-of-fold isotonic calibration,
-  an ECE table, and τ chosen from the risk-coverage curve for a stated residual-error target,
-  compared against three naive policies with bootstrap intervals.
+  ranking that is also a probability a reviewer can act on: training-only isotonic calibration, a separate threshold-calibration split, and a locked
+  test split. Exact binomial policy intervals remain nonzero after zero observed errors;
+  full-document truth includes missing list items and every compared schema field.
+  A low field-level ECE does not guarantee correct documents.
 * **Detectors are evaluated against a simulator.** The reconciliation reports detection *and*
   false-alarm rates per discrepancy kind because the holdings simulator plants the truth; two
   simulator bugs surfaced that way and were fixed before the numbers were written.
@@ -195,10 +204,10 @@ Interview preparation notes: [docs/INTERVIEW_NOTES.md](docs/INTERVIEW_NOTES.md).
 
 ## 5. Limitations (what was not done)
 
-* The real-model stage (`scripts/run_experiments.sh` stage 2: zero-shot classification,
-  `llm` / `llm_validated` extraction and the router on Qwen3-4B and Qwen2.5-1.5B) has not been
-  run; every LLM number above is a mechanism check with a scripted model whose error rate we
-  chose. Section 8 of `docs/RESULTS.md` says what the run produces and what it should cost.
+* The real-model stage ran on 2026-09-07; RESULTS §8 retains its historical findings.
+  The revised router protocol has only been rerun with a scripted model. No new GPU result
+  or external-template generalisation claim is made. Historical router operating points
+  must not be used as evidence for the revised evaluation.
 * Clean-text accuracy of 1.000 for the classifier and the rules extractor reflects a templated
   corpus with three styles per type; it is not a claim about real licensee templates or scans.
 * No Pub/Sub adapter, no object storage, no auth on the API, no retraining loop for the router
@@ -218,7 +227,7 @@ src/advicedoc/
 ├── extract/     sections.py, rules.py, llm.py, validated.py, fake.py
 ├── route/       features.py, model.py, evaluate.py
 └── eval/        matching.py, extraction.py, report.py
-tests/           117 tests: checksums (Hypothesis), statistics, JSON repair and HTTP backend, corpus determinism and PDF round trip,
+tests/           125 tests: checksums (Hypothesis), statistics, JSON repair and HTTP backend, corpus determinism and PDF round trip,
                  ingestion and noise, classifier and metadata rules, every validator, all three extractors incl. bounded retries
                  and re-asks, evaluation matching, router and curve, reconciliation on planted discrepancies, workflow crash/resume/
                  retry/review, API incl. upload and review patch, CLI incl. gates

@@ -117,6 +117,33 @@ def test_prf_edge_cases() -> None:
     assert prf(2, 1, 1) == (2 / 3, 2 / 3, 2 / 3)
 
 
+def test_gold_matching_rejects_changed_figures_independent_of_lexical_overlap() -> None:
+    gold = [Claim(text="Client will contribute $25,000 to super.", evidence=["s1"])]
+    wrong = [Claim(text="Client will contribute $35,000 to super.", evidence=["s1"])]
+    assert match_items(wrong, gold) == []
+    assert match_items(gold, gold) == [(0, 0, 100.0)]
+
+
+def test_hallucination_denominator_does_not_depend_on_detector(
+    meeting: Meeting,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from filenote.verify.verifier import VerificationReport
+
+    verifier = Verifier()
+    note = meeting.gold.model_copy(deep=True)
+    note.decisions.append(
+        Claim(text="Invented unrelated decision to buy a yacht", evidence=["s001"])
+    )
+    actual = evaluate_note(meeting, note, verifier)
+    empty = VerificationReport()
+    monkeypatch.setattr(verifier, "verify", lambda *_args, **_kwargs: empty)
+    blind = evaluate_note(meeting, note, verifier)
+    assert blind.hallucinated == actual.hallucinated == 1
+    assert blind.hallucination_rate == actual.hallucination_rate
+    assert blind.surfaced_rate == 0.0
+
+
 def test_match_items_fuzzy_owner_and_one_to_one() -> None:
     gold = [
         ActionItem(

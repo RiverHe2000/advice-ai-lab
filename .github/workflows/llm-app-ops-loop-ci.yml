@@ -1,6 +1,7 @@
 name: CI · llm-app-ops-loop
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["llm-app-ops-loop/**", ".github/workflows/llm-app-ops-loop-ci.yml"]

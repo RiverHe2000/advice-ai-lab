@@ -1,0 +1,349 @@
+{
+  "n_docs": 24,
+  "n_fields": 191,
+  "base_field_error": 0.020942408376963373,
+  "base_doc_error": 0.7916666666666666,
+  "calibration": {
+    "ece": 0.00027062250996037095,
+    "n": 191,
+    "bins": [
+      {
+        "low": 0.0,
+        "high": 0.1,
+        "count": 4,
+        "mean_confidence": 0.012922224850607712,
+        "accuracy": 0.0
+      },
+      {
+        "low": 0.1,
+        "high": 0.2,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.2,
+        "high": 0.30000000000000004,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.30000000000000004,
+        "high": 0.4,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.4,
+        "high": 0.5,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.5,
+        "high": 0.6000000000000001,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.6000000000000001,
+        "high": 0.7000000000000001,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.7000000000000001,
+        "high": 0.8,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.8,
+        "high": 0.9,
+        "count": 0,
+        "mean_confidence": NaN,
+        "accuracy": NaN
+      },
+      {
+        "low": 0.9,
+        "high": 1.0,
+        "count": 187,
+        "mean_confidence": 1.0,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "curve": [
+    {
+      "tau": 1.0001,
+      "coverage": 0.0,
+      "review_rate": 1.0,
+      "residual_error": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.8333333333333334,
+      "review_rate": 0.16666666666666663,
+      "residual_error": 0.75
+    },
+    {
+      "tau": 0.03737502999777016,
+      "coverage": 0.875,
+      "review_rate": 0.125,
+      "residual_error": 0.7619047619047619
+    },
+    {
+      "tau": 0.014192269994823262,
+      "coverage": 0.9166666666666666,
+      "review_rate": 0.08333333333333337,
+      "residual_error": 0.7727272727272727
+    },
+    {
+      "tau": 0.00012159940983743047,
+      "coverage": 0.9583333333333334,
+      "review_rate": 0.04166666666666663,
+      "residual_error": 0.782608695652174
+    },
+    {
+      "tau": 0.0,
+      "coverage": 1.0,
+      "review_rate": 0.0,
+      "residual_error": 0.7916666666666666
+    }
+  ],
+  "aurc": {
+    "point": 0.7545378082062864,
+    "low": 0.5589091614906833,
+    "high": 0.9425501688248399,
+    "n": 24
+  },
+  "target_residual": 0.01,
+  "chosen": {
+    "name": "router@tau",
+    "review_rate": {
+      "point": 1.0,
+      "low": 0.8575264022774743,
+      "high": 1.0,
+      "n": 24
+    },
+    "residual_error": {
+      "point": null,
+      "low": null,
+      "high": null,
+      "n": 0
+    },
+    "tau": 1.0001
+  },
+  "naive": [
+    {
+      "name": "review_all",
+      "review_rate": {
+        "point": 1.0,
+        "low": 0.8575264022774743,
+        "high": 1.0,
+        "n": 24
+      },
+      "residual_error": {
+        "point": null,
+        "low": null,
+        "high": null,
+        "n": 0
+      },
+      "tau": null
+    },
+    {
+      "name": "review_none",
+      "review_rate": {
+        "point": 0.0,
+        "low": 0.0,
+        "high": 0.14247359772252563,
+        "n": 24
+      },
+      "residual_error": {
+        "point": 0.7916666666666666,
+        "low": 0.5784871563627474,
+        "high": 0.928681382801945,
+        "n": 24
+      },
+      "tau": null
+    },
+    {
+      "name": "review_if_validator_fails",
+      "review_rate": {
+        "point": 0.0,
+        "low": 0.0,
+        "high": 0.14247359772252563,
+        "n": 24
+      },
+      "residual_error": {
+        "point": 0.7916666666666666,
+        "low": 0.5784871563627474,
+        "high": 0.928681382801945,
+        "n": 24
+      },
+      "tau": null
+    }
+  ],
+  "coefficients": {
+    "agree_rules": 2.004636473749641,
+    "has_rules": 0.0,
+    "validator_error": 0.031144641250207657,
+    "validator_warning": 0.056444743982725726,
+    "fuzzy_score": 0.0,
+    "n_repairs": 0.20155235479937417,
+    "n_parse_failures": 0.017470819478783754,
+    "section_found": 0.0,
+    "len_z": 0.05284195439346426,
+    "amount_log": 0.08357169208424871,
+    "self_conf": 0.16103260761834734,
+    "has_self_conf": -0.08793169795383228,
+    "kind_risk_profile": -0.17146067479797977,
+    "kind_recommendation": 0.086425773370364,
+    "kind_fee_initial": 0.10752904576582178,
+    "kind_fee_ongoing": 0.01624340012317571,
+    "kind_replacement": -0.07618767543421537
+  },
+  "notes": [
+    "Document split: 72 train / 24 threshold calibration / 24 test; seed 7. All fields of a document stay together.",
+    "The calibration target is empirical, not a population guarantee. Test labels never choose tau or fit the router; report the test upper bound before claiming the target.",
+    "This split does not establish generalisation to unseen template families or real documents.",
+    "Field ECE concerns scored fields only. Document residual error uses every gold-compared schema field, including omitted list items. Gold labels never create inference features.",
+    "Offline synthetic mechanism check; not a real-model or external-template generalisation result."
+  ],
+  "evaluation_protocol": "frozen_threshold_test_v2",
+  "split": {
+    "train": [
+      "soa_0059",
+      "soa_0111",
+      "soa_0020",
+      "soa_0029",
+      "soa_0117",
+      "soa_0069",
+      "soa_0062",
+      "soa_0003",
+      "soa_0065",
+      "soa_0097",
+      "soa_0046",
+      "soa_0081",
+      "soa_0090",
+      "soa_0091",
+      "soa_0057",
+      "soa_0038",
+      "soa_0033",
+      "soa_0036",
+      "soa_0021",
+      "soa_0103",
+      "soa_0112",
+      "soa_0119",
+      "soa_0002",
+      "soa_0055",
+      "soa_0077",
+      "soa_0050",
+      "soa_0114",
+      "soa_0017",
+      "soa_0075",
+      "soa_0024",
+      "soa_0011",
+      "soa_0089",
+      "soa_0058",
+      "soa_0005",
+      "soa_0037",
+      "soa_0049",
+      "soa_0115",
+      "soa_0086",
+      "soa_0084",
+      "soa_0013",
+      "soa_0015",
+      "soa_0025",
+      "soa_0027",
+      "soa_0054",
+      "soa_0066",
+      "soa_0108",
+      "soa_0068",
+      "soa_0047",
+      "soa_0098",
+      "soa_0052",
+      "soa_0045",
+      "soa_0008",
+      "soa_0078",
+      "soa_0041",
+      "soa_0076",
+      "soa_0023",
+      "soa_0018",
+      "soa_0043",
+      "soa_0007",
+      "soa_0074",
+      "soa_0071",
+      "soa_0051",
+      "soa_0113",
+      "soa_0118",
+      "soa_0030",
+      "soa_0107",
+      "soa_0079",
+      "soa_0085",
+      "soa_0001",
+      "soa_0100",
+      "soa_0105",
+      "soa_0040"
+    ],
+    "calibration": [
+      "soa_0109",
+      "soa_0009",
+      "soa_0080",
+      "soa_0110",
+      "soa_0092",
+      "soa_0087",
+      "soa_0048",
+      "soa_0101",
+      "soa_0063",
+      "soa_0120",
+      "soa_0106",
+      "soa_0028",
+      "soa_0064",
+      "soa_0093",
+      "soa_0010",
+      "soa_0004",
+      "soa_0083",
+      "soa_0056",
+      "soa_0060",
+      "soa_0102",
+      "soa_0104",
+      "soa_0014",
+      "soa_0116",
+      "soa_0031"
+    ],
+    "test": [
+      "soa_0082",
+      "soa_0019",
+      "soa_0032",
+      "soa_0035",
+      "soa_0006",
+      "soa_0073",
+      "soa_0072",
+      "soa_0034",
+      "soa_0095",
+      "soa_0016",
+      "soa_0094",
+      "soa_0039",
+      "soa_0088",
+      "soa_0053",
+      "soa_0026",
+      "soa_0070",
+      "soa_0044",
+      "soa_0067",
+      "soa_0096",
+      "soa_0099",
+      "soa_0061",
+      "soa_0022",
+      "soa_0042",
+      "soa_0012"
+    ]
+  },
+  "target_supported": false
+}

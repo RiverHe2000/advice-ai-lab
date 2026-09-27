@@ -1,4 +1,6 @@
-# Results
+# Historical results
+
+**Protocol revision — 2026-09-27:** All drafting metrics below retain the historical v1 matching/denominator. The old hallucination denominator depended on the verifier, so 100% surfaced is not independent hallucination recall. Revised numeric/date matching also changes F1. See [current evaluation](../../docs/EVALUATION_REVISION.md); historical artifacts are preserved and no new real-model score is claimed.
 
 Produced by `bash scripts/run_experiments.sh` (`STAGE=cpu`) on 2026-09-06, Windows 11,
 Python 3.12, CPU only, in about 20 s of compute. Every artefact is in

@@ -25,6 +25,7 @@ from advicedoc.route.evaluate import (
     aurc,
     choose_tau,
     evaluate_router,
+    evaluate_router_holdout,
     render_router_report,
     risk_coverage_curve,
     save_router_report,
@@ -76,8 +77,23 @@ def test_field_records_flag_missing_items(soa_golds: list[SoAExtraction]) -> Non
     keys = {r.key for r in records}
     assert "rec:missing" in keys and "fee:initial" in keys
     assert next(r for r in records if r.key == "rec:missing").correct is False
-    if soa_golds[0].replacements:
-        assert "repl:missing" in keys
+    assert "repl:missing" not in keys  # gold may label an omission, never invent an input row
+    assert all(r.extra["document_correct"] is False for r in records)
+
+
+def test_omissions_affect_document_truth_but_never_features(soa_golds: list[SoAExtraction]) -> None:
+    gold = next(g for g in soa_golds if len(g.recommendations) >= 2)
+    partial = gold.model_copy(deep=True)
+    partial.recommendations.pop()
+    partial.replacements = []
+    primary = ExtractionResult(strategy="x", doc_id="d", extraction=partial)
+    inferred = field_records(primary)
+    labelled = field_records(primary, gold=gold)
+    assert [(r.key, r.features) for r in labelled] == [(r.key, r.features) for r in inferred]
+    assert all(r.correct for r in labelled)  # each present field can be right despite omissions
+    report = evaluate_router(labelled, [0.99] * len(labelled), tau=0.5, n_boot=10)
+    assert report.base_doc_error == report.chosen.residual_error.point == 1.0
+    assert all(not r.extra for r in inferred)
 
 
 def test_router_training_prediction_and_persistence(
@@ -115,24 +131,67 @@ def test_router_falls_back_to_constant_when_labels_are_uniform(routed: list[Fiel
 def test_router_evaluation_and_curve(tmp_path: Path, routed: list[FieldRecord]) -> None:
     probs = cross_val_probabilities(routed, seed=0, cv=3)
     report = evaluate_router(
-        routed, probs, target_residual=0.01, n_boot=30, coefficients={"a": 1.0}
+        routed, probs, tau=0.9, target_residual=0.01, n_boot=30, coefficients={"a": 1.0}
     )
     coverages = [p["coverage"] for p in report.curve]
     assert coverages == sorted(coverages) and coverages[-1] == 1.0
     assert report.curve[-1]["residual_error"] == pytest.approx(report.base_doc_error)
-    assert report.chosen.residual_error.point <= 0.01 or report.chosen.review_rate.point == 1.0
+    assert report.chosen.tau == 0.9  # evaluation never retunes a frozen threshold
     assert {p.name for p in report.naive} == {
         "review_all",
         "review_none",
         "review_if_validator_fails",
     }
-    assert report.naive[0].residual_error.point == 0.0
+    assert np.isnan(report.naive[0].residual_error.point)
+    assert report.naive[0].residual_error.n == 0
     md = render_router_report(report)
     assert "risk-coverage" in md and "| a | +1.000 |" in md
     save_router_report(report, tmp_path)
     assert json.loads((tmp_path / "router_report.json").read_text())["n_docs"] == report.n_docs
     with pytest.raises(ValueError, match="one probability"):
-        evaluate_router(routed, probs[:-1])
+        evaluate_router(routed, probs[:-1], tau=0.9)
+
+
+def test_tied_probabilities_never_select_an_impossible_partial_group() -> None:
+    for wrong in (np.array([False, True]), np.array([True, False])):
+        scores = np.array([0.9, 0.9])
+        assert choose_tau(scores, wrong, 0.01) > 1.0
+        assert risk_coverage_curve(scores, wrong)[-1]["residual_error"] == 0.5
+        assert len(risk_coverage_curve(scores, wrong)) == 2
+        assert aurc(scores, wrong) == 0.5
+
+
+def test_zero_error_bound_and_all_review_are_not_zero_uncertainty() -> None:
+    records = [FieldRecord(f"d{i}", "k", "risk_profile", {}, True) for i in range(20)]
+    report = evaluate_router(records, [0.9] * 20, tau=0.8, n_boot=10)
+    assert report.chosen.residual_error.point == 0.0
+    assert report.chosen.residual_error.high == pytest.approx(1 - 0.025 ** (1 / 20))
+    assert report.to_dict()["target_supported"] is False
+    wrong = [FieldRecord(r.doc_id, r.key, r.kind, r.features, False) for r in records]
+    failed = evaluate_router(wrong, [0.9] * 20, tau=0.8, n_boot=10)
+    assert failed.chosen.residual_error.high == 1.0
+    assert 0 < failed.chosen.residual_error.low < 1
+
+
+def test_holdout_keeps_documents_disjoint_and_test_labels_out_of_fit(
+    routed: list[FieldRecord],
+) -> None:
+    report = evaluate_router_holdout(routed, seed=3, cv=3, n_boot=10)
+    train, calibration, test = (set(report.split[k]) for k in ("train", "calibration", "test"))
+    assert not (train & calibration or train & test or calibration & test)
+    assert train | calibration | test == {r.doc_id for r in routed}
+    changed = [
+        FieldRecord(
+            r.doc_id, r.key, r.kind, r.features, not r.correct if r.doc_id in test else r.correct
+        )
+        for r in routed
+    ]
+    counterfactual = evaluate_router_holdout(changed, seed=3, cv=3, n_boot=10)
+    assert counterfactual.chosen.tau == report.chosen.tau
+    assert counterfactual.coefficients == report.coefficients
+    assert counterfactual.split == report.split
+    with pytest.raises(ValueError, match="at least five"):
+        evaluate_router_holdout([r for r in routed if r.doc_id == routed[0].doc_id])
 
 
 def test_curve_helpers() -> None:

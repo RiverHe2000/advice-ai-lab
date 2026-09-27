@@ -24,7 +24,7 @@ def _totals_rows(run: StrategyRun) -> list[tuple[str, str]]:
     a = run.aggregate
     return [
         (
-            "Hallucination rate (no gold match AND verifier-unsupported)",
+            "Gold-disagreement rate (independent of verifier; legacy key hallucination_rate)",
             _ci(a["hallucination_rate"], pct=True),
         ),
         ("Unmatched predicted claims", _ci(a["unmatched_rate"], pct=True)),
@@ -89,6 +89,12 @@ def render_report_md(report: EvalReport) -> str:
         "# File-note evaluation report",
         "",
         f"- created: {report.created}",
+        f"- metric definition: {report.metric_definition}",
+        "- v2 counts every gold-unmatched predicted claim regardless of verifier output; "
+        "matching requires numbers/dates to agree and owners to agree for actions. This is "
+        "an approximate reference-matching measure, not human-adjudicated hallucination recall. "
+        "Legacy v1 reports conditioned the denominator on verifier detection "
+        "and are not comparable.",
         f"- corpus: {corpus.get('meetings', '?')} meetings, seed {corpus.get('seed', '?')}",
         f"- intervals: 95 % bootstrap over meetings, {corpus.get('n_boot', 1000)} resamples; "
         "the gate uses the conservative bound",
@@ -130,4 +136,4 @@ def render_report_md(report: EvalReport) -> str:
         )
         lines.extend(f"- {f}" for f in failures)
         lines.append("")
-    return "\n".join(lines) + "\n"
+    return "\n".join(lines).rstrip() + "\n"

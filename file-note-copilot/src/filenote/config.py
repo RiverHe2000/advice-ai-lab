@@ -56,7 +56,7 @@ class FakeSettings(BaseModel):
 class DraftSettings(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    strategy: Strategy = "verified"
+    strategy: Strategy = "verified_single_shot"
     window_size: int = Field(20, ge=1, description="segments per extraction window")
     max_parse_retries: int = Field(2, ge=0)
     repair_passes: int = Field(1, ge=0)

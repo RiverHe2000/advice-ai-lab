@@ -1,5 +1,17 @@
 # Cloud Run deployment (Terraform)
 
+**Disposable deployment demonstration.** Drafts and the audit log live in
+`/tmp/drafts.sqlite` and `/tmp/audit.jsonl` inside each instance. Restarting,
+scale-to-zero or replacing a revision can lose them; up to three instances can
+hold different records. A one-instance limit would not make this storage durable.
+Use synthetic transcripts only in this configuration. A business pilot requires
+shared persistent storage, durable audit delivery, user authentication and
+verified recovery before accepting real client records.
+
+The application default is `verified_single_shot` (draft, verify, bounded repair),
+matching the one-pass strategy favoured by the recorded small Qwen experiment.
+That experiment does not establish general superiority on new meetings/models.
+
 What `terraform apply` creates in one GCP project:
 
 | Resource | Purpose |
@@ -8,7 +20,7 @@ What `terraform apply` creates in one GCP project:
 | Cloud Run v2 service `file-note-copilot` | the app: 1 vCPU / 1 GiB, **min 0** (scale to zero) / max 3 instances, startup probe on `/health`, liveness on `/readyz`, CPU only allocated while serving |
 | Secret Manager secret `file-note-copilot-model-api-key` | the model endpoint key, mounted as `OPENAI_API_KEY`; the runtime service account is the only reader |
 | Service account `file-note-copilot-run` | runtime identity with exactly one role (secret accessor) |
-| Workload Identity Federation pool `github-actions` + OIDC provider | lets `ci/deploy-cloud-run.yml` obtain short-lived credentials; the provider's attribute condition pins the GitHub repository, so no static JSON key ever exists |
+| Workload Identity Federation pool `github-actions` + OIDC provider | lets `.github/workflows/file-note-copilot-deploy-cloud-run.yml` obtain short-lived credentials; the provider's attribute condition pins the GitHub repository, so no static JSON key is needed |
 | Service account `file-note-copilot-deploy` | what the workflow impersonates: push images, deploy revisions, act as the runtime identity — nothing else |
 
 The model itself is **not** in this stack. The service talks to any OpenAI-compatible endpoint
@@ -48,13 +60,11 @@ The output of these three commands is committed in `docs/experiments/terraform_v
 
 ## Cost
 
-With `min_instances = 0` the service costs nothing while idle. Cloud Run's free tier
-(2 million requests, 360 000 vCPU-seconds and 180 000 GiB-seconds a month at the time of
-writing) covers an incubator pilot; beyond it, 1 vCPU / 1 GiB is roughly AUD 0.10 per
-hour *of actual request time*. Artifact Registry storage is cents per GB-month, Secret
-Manager access is negligible at this volume and WIF is free. The GPU model server, if you
-run one, is the real cost — which is exactly why it is a separate endpoint the app points at,
-not part of this stack.
+`min_instances = 0` permits scale-to-zero; it is not a promise of a zero bill.
+Check current Cloud Run, Artifact Registry, Secret Manager, networking and model
+endpoint charges for the selected region before applying. Storage, external
+inference and a separately running GPU server can incur charges independently of
+request traffic. No measured cloud cost or live cloud deployment is claimed here.
 
 ## Teardown
 

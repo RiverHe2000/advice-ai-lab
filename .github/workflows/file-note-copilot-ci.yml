@@ -1,6 +1,7 @@
 name: CI · file-note-copilot
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["file-note-copilot/**", ".github/workflows/file-note-copilot-ci.yml"]
@@ -57,13 +58,20 @@ jobs:
         # must not be flagged; runs on the seeded 100-meeting corpus, no model involved.
         run: filenote eval-verifier --n 100 --out /tmp/selfeval --gate --min-detection 0.9 --max-false-alarm 0.02
 
-      - name: Drafting gate (scripted model, corruption 0.1, verified strategy)
-        # The verified strategy must surface every hallucination the scripted model plants
-        # and keep the conservative bounds of F1 / hallucination / omission inside thresholds.
-        run: >
-          filenote eval --model fake --corruption 0.1 --n 100 --strategies verified
-          --out /tmp/eval --gate --min-f1 0.9 --min-decisions-f1 0.9
-          --max-hallucination 0.03 --max-omission 0.10 --min-surfaced 0.95
+      - name: Drafting gate (independent gold reference; clean pass and corrupted reject)
+        # v2 counts gold disagreements independently of verifier output. Keep the original
+        # quality limits: a clean control must pass; the 10% corrupting control must fail.
+        run: |
+          filenote eval --model fake --corruption 0 --n 100 --strategies verified_single_shot \
+            --out /tmp/eval-clean --gate --min-f1 0.9 --min-decisions-f1 0.9 \
+            --max-hallucination 0.03 --max-omission 0.10 --min-surfaced 0.95
+          set +e
+          filenote eval --model fake --corruption 0.1 --n 100 --strategies verified_single_shot \
+            --out /tmp/eval-corrupt --gate --min-f1 0.9 --min-decisions-f1 0.9 \
+            --max-hallucination 0.03 --max-omission 0.10 --min-surfaced 0.95
+          result=$?
+          set -e
+          test "$result" -eq 1  # gate rejection, not an arbitrary execution error
 
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v4

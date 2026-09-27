@@ -11,6 +11,23 @@ from filenote.corpus import Meeting, save_corpus
 from filenote.transcribe import TranscribedSegment
 
 
+def test_eval_rejects_legacy_comparison_before_model_run(tmp_path: Path) -> None:
+    legacy = tmp_path / "legacy.json"
+    legacy.write_text(json.dumps({"created": "historical", "runs": []}), encoding="utf-8")
+    with pytest.raises(ValueError, match="different metric definitions"):
+        main(
+            [
+                "eval",
+                "--model",
+                "openai",
+                "--compare-with",
+                str(legacy),
+                "--out",
+                str(tmp_path / "out"),
+            ]
+        )
+
+
 def test_corpus_generate_and_show(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     out = tmp_path / "c" / "meetings.jsonl"
     stats = tmp_path / "c" / "stats.md"

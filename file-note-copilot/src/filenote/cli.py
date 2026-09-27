@@ -228,6 +228,14 @@ def cmd_eval(args: argparse.Namespace) -> int:
     from filenote.llm import build_model
     from filenote.verify import Verifier
 
+    other: EvalReport | None = None
+    if args.compare_with and Path(args.compare_with).exists():
+        other = EvalReport.model_validate_json(Path(args.compare_with).read_text(encoding="utf-8"))
+        if other.metric_definition != "gold_disagreement_v2":
+            raise ValueError(
+                "cannot compare reports with different metric definitions; "
+                "re-evaluate saved drafts under the same definition first"
+            )
     settings = settings_from_args(args)
     meetings = _load_meetings(args, settings)
     if args.model == "fake" or settings.model.kind == "fake":
@@ -262,6 +270,7 @@ def cmd_eval(args: argparse.Namespace) -> int:
             )
             runs.append(run)
     report = EvalReport(
+        metric_definition="gold_disagreement_v2",
         created=dt.datetime.now(dt.UTC).isoformat(timespec="seconds"),
         corpus={
             "meetings": len(meetings),
@@ -282,8 +291,7 @@ def cmd_eval(args: argparse.Namespace) -> int:
                 non_inferiority_margin=args.margin,
             )
         )
-    if args.compare_with and Path(args.compare_with).exists():
-        other = EvalReport.model_validate_json(Path(args.compare_with).read_text(encoding="utf-8"))
+    if other is not None:
         for run in runs:
             for prior in other.runs:
                 if [m.meeting_id for m in prior.meetings] == [m.meeting_id for m in run.meetings]:

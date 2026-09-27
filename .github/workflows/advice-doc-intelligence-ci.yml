@@ -1,6 +1,7 @@
 name: CI · advice-doc-intelligence
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
     paths: ["advice-doc-intelligence/**", ".github/workflows/advice-doc-intelligence-ci.yml"]

@@ -220,6 +220,7 @@ def compare_runs(
 
 
 class EvalReport(BaseModel):
+    metric_definition: str = "legacy_verifier_conditioned_v1"
     model_config = ConfigDict(extra="forbid")
 
     created: str

@@ -17,8 +17,9 @@ locals {
     FILENOTE_MODEL__KIND     = var.model_kind
     FILENOTE_MODEL__BASE_URL = var.model_base_url
     FILENOTE_MODEL__MODEL    = var.model_name
-    FILENOTE_DRAFT__STRATEGY = "verified"
+    FILENOTE_DRAFT__STRATEGY = "verified_single_shot"
     FILENOTE_PSEUDONYMISE    = "true"
+    # Disposable demonstration storage: not durable across revisions or instances.
     FILENOTE_DB_PATH         = "/tmp/drafts.sqlite"
     FILENOTE_AUDIT_PATH      = "/tmp/audit.jsonl"
   }, var.extra_env)

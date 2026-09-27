@@ -1,4 +1,6 @@
-# Results
+# Historical results
+
+**Protocol revision — 2026-09-27:** Router operating points below use the superseded v1 protocol. Training/calibration/test separation, inference-only feature rows and full-document truth are now required. See [current evaluation](../../docs/EVALUATION_REVISION.md). No historical real-model router result has been rerun.
 
 Produced by `bash scripts/run_experiments.sh` (stage 1, CPU) on 2026-09-06, Windows 11,
 Python 3.12, seed 7. Every table below is copied from a file in [`experiments/`](experiments/)
